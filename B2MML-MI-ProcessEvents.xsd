@@ -1,0 +1,2286 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+ <xsd:schema 
+	xmlns:xsd 		= "http://www.w3.org/2001/XMLSchema"
+	targetNamespace = "http://www.mesa.org/xml/B2MML-MI"
+	xmlns 			= "http://www.mesa.org/xml/B2MML-MI"
+	xmlns:Extended 	= "http://www.mesa.org/xml/B2MML-MI-AllExtensions"
+ 
+	elementFormDefault 		= "qualified"
+	attributeFormDefault 	= "unqualified">
+
+	<xsd:include schemaLocation ="B2MML-MI-CoreComponents.xsd"/>
+	<xsd:include schemaLocation ="B2MML-MI-Common.xsd"/>
+	<xsd:include schemaLocation ="B2MML-MI-Equipment.xsd"/>
+	<xsd:include schemaLocation ="B2MML-MI-PhysicalAsset.xsd"/>
+	<xsd:include schemaLocation ="B2MML-MI-Material.xsd"/>
+	<xsd:include schemaLocation ="B2MML-MI-Personnel.xsd"/>
+	<xsd:include schemaLocation ="B2MML-MI-ProcessSegment.xsd"/>
+	<xsd:include schemaLocation ="B2MML-MI-OperationsDefinition.xsd"/>
+	<xsd:include schemaLocation ="B2MML-MI-OperationsCapability.xsd"/>
+	<xsd:include schemaLocation ="B2MML-MI-OperationsPerformance.xsd"/>
+	<xsd:include schemaLocation ="B2MML-MI-OperationsSchedule.xsd"/>
+	<xsd:include schemaLocation ="B2MML-MI-ResourceRelationshipNetwork.xsd"/>
+	<xsd:include schemaLocation ="B2MML-MI-WorkAlert.xsd"/>
+	<xsd:include schemaLocation ="B2MML-MI-WorkDefinition.xsd"/>
+	<xsd:include schemaLocation ="B2MML-MI-WorkCapability.xsd"/>
+	<xsd:include schemaLocation ="B2MML-MI-WorkPerformance.xsd"/>
+	<xsd:include schemaLocation ="B2MML-MI-WorkSchedule.xsd"/>
+	 
+	<xsd:import 	namespace="http://www.mesa.org/xml/B2MML-MI-AllExtensions"
+					schemaLocation="B2MML-MI-AllExtensions.xsd"/>
+<xsd:annotation> 
+   <xsd:documentation>
+		This file simply includes the B2MML schemas into a single 
+		definition that will allow the inclusion of these schemas into the
+		global set of Process Centric Notifys as the Process Centric Notify 
+		Proposal 0.1.  
+   
+        Copyright 2012 MESA International 
+		All Rights Reserved. http://www.mesa.org
+
+        This MESA International work (including specifications, documents, 
+        software, and related items) referred to as the Business To 
+        Manufacturing Markup Language (B2MML) is provided by the copyright 
+        holders under the following license. 
+
+        Permission to use, copy, modify, or redistribute this Work and its 
+        documentation, with or without modification, for any purpose and 
+        without fee or royalty is hereby granted provided the World Batch 
+        Forum is acknowledged as the originator of this Work using the 
+        following statement:
+
+        "The Business To Manufacturing Markup Language (B2MML) is used 
+        courtesy of MESA International."
+
+        In no Notify shall MESA International, its members, or any 
+        third party be liable for any costs, expenses, losses, damages or 
+        injuries incurred by use of the Work or as a result of this 
+        agreement.
+      
+        Based upon the ANSI/ISA-95.00.02-2010 Enterprise-Control System 
+        Integration Part 2: Object Model Attributes Standard and the
+        ANSI/ISA-95.00.05-2006 Enterprise-Control System Integration 
+        Part 5: Business to Manufacturing Transactions
+   </xsd:documentation>
+
+   <xsd:documentation>
+
+     Revision History
+
+     Ver           Date            Person          Note
+     ---           ----            ------          ----
+     BHPBilliton   22 Jun 2015     B. Poole        This is a BHPBilliton specific branch of V0600
+     BHPBilliton   18 Apr 2016     B. Poole        Added all process centric Notifys as per Process Centric Notify Proposal 0.1
+     MI            16 Aug 2016     B. Pogson       Manufacturing Intelligence branch of V0600
+   </xsd:documentation>
+</xsd:annotation>
+
+<!-- Global Elements -->
+
+<xsd:element name = "NotifyOperationsScheduledEvent" type = "NotifyOperationsScheduledEventType"/>
+<xsd:element name = "NotifyOperationsRescheduledEvent" type = "NotifyOperationsRescheduledEventType"/>
+<xsd:element name = "NotifyOperationsDesignedEvent" type = "NotifyOperationsDesignedEventType"/>
+<xsd:element name = "NotifySupplyChainDesignedEvent" type = "NotifySupplyChainDesignedEventType"/>
+<xsd:element name = "NotifyOperationsResourceAcquiredEvent" type = "NotifyOperationsResourceAcquiredEventType"/>
+<xsd:element name = "NotifyOperationsResourceAdjustedEvent" type = "NotifyOperationsResourceAdjustedEventType"/>
+<xsd:element name = "NotifyOperationsResourceRetiredEvent" type = "NotifyOperationsResourceRetiredEventType"/>
+<xsd:element name = "NotifyOperationsResourceCommittedEvent" type = "NotifyOperationsResourceCommittedEventType"/>
+<xsd:element name = "NotifyOperationsResourceUsedEvent" type = "NotifyOperationsResourceUsedEventType"/>
+<xsd:element name = "NotifyWorkDesignedEvent" type = "NotifyWorkDesignedEventType"/>
+<xsd:element name = "NotifyWorkResourceAcquiredEvent" type = "NotifyWorkResourceAcquiredEventType"/>
+<xsd:element name = "NotifyWorkResourceAdjustedEvent" type = "NotifyWorkResourceAdjustedEventType"/>
+<xsd:element name = "NotifyWorkResourceRetiredEvent" type = "NotifyWorkResourceRetiredEventType"/>
+<xsd:element name = "NotifyWorkResourceCommittedEvent" type = "NotifyWorkResourceCommittedEventType"/>
+<xsd:element name = "NotifyWorkResourceUsedEvent" type = "NotifyWorkResourceUsedEventType"/>
+<xsd:element name = "NotifyWorkScheduledEvent" type = "NotifyWorkScheduledEventType"/>
+<xsd:element name = "NotifyWorkRescheduledEvent" type = "NotifyWorkRescheduledEventType"/>
+<xsd:element name = "NotifyWorkDispatchedEvent" type = "NotifyWorkDispatchedEventType"/>
+<xsd:element name = "NotifyWorkPerformedEvent" type = "NotifyWorkPerformedEventType"/>
+<xsd:element name = "NotifyWorkAdjustedEvent" type = "NotifyWorkAdjustedEventType"/>
+<xsd:element name = "NotifyWorkCommencedEvent" type = "NotifyWorkCommencedEventType"/>
+<xsd:element name = "NotifyWorkRedirectedEvent" type = "NotifyWorkRedirectedEventType"/>
+<xsd:element name = "NotifyWorkCompletedEvent" type = "NotifyWorkCompletedEventType"/>
+<xsd:element name = "NotifyWorkAbortedEvent" type = "NotifyWorkAbortedEventType"/>
+<xsd:element name = "NotifyWorkAlertRaisedEvent" type = "NotifyWorkAlertRaisedEventType"/>
+<xsd:element name = "NotifyWorkAlertAmendedEvent" type = "NotifyWorkAlertAmendedEventType"/>
+<xsd:element name = "NotifyPerformanceTrackedEvent" type = "NotifyPerformanceTrackedEventType"/>
+<xsd:element name = "NotifyPerformanceAdjustedEvent" type = "NotifyPerformanceAdjustedEventType"/>
+<xsd:element name = "NotifyMaterialTestSpecifiedEvent" type = "NotifyMaterialTestSpecifiedEventType"/>
+<xsd:element name = "NotifyMaterialTestSpecificationAdjustedEvent" type = "NotifyMaterialTestSpecificationAdjustedEventType"/>
+<xsd:element name = "NotifyMaterialTestSpecificationRetiredEvent" type = "NotifyMaterialTestSpecificationRetiredEventType"/>
+<xsd:element name = "NotifyEquipmentCapabilityTestSpecifiedEvent" type = "NotifyEquipmentCapabilityTestSpecifiedEventType"/>
+<xsd:element name = "NotifyEquipmentCapabilityTestAdjustedEvent" type = "NotifyEquipmentCapabilityTestAdjustedEventType"/>
+<xsd:element name = "NotifyEquipmentCapabilityTestRetiredEvent" type = "NotifyEquipmentCapabilityTestRetiredEventType"/>
+<xsd:element name = "NotifyQualificationTestSpecifiedEvent" type = "NotifyQualificationTestSpecifiedEventType"/>
+<xsd:element name = "NotifyQualificationTestAdjustedEvent" type = "NotifyQualificationTestAdjustedEventType"/>
+<xsd:element name = "NotifyQualificationTestRetiredEvent" type = "NotifyQualificationTestRetiredType"/>
+<xsd:element name = "NotifyPhysicalAssetCapabilityTestSpecifiedEvent" type = "NotifyPhysicalAssetCapabilityTestSpecifiedEventType"/>
+<xsd:element name = "NotifyPhysicalAssetCapabilityTestAdjustedEvent" type = "NotifyPhysicalAssetCapabilityTestAdjustedEventType"/>
+<xsd:element name = "NotifyPhysicalAssetCapabilityTestRetiredEvent" type = "NotifyPhysicalAssetCapabilityTestRetiredEventType"/>
+
+<!-- Simple & Complex Types	-->
+
+<xsd:complexType name = "NotifyOperationsScheduledEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	            	<xsd:element name = "Notify" type = "TransNotifyType"/>
+	            	<xsd:element name = "OperationsScheduledEvent" type = "OperationsScheduledEventType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="OperationsScheduledEventType">
+	<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+              		<xsd:element name = "ID" type="IdentifierType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Description" type="DescriptionType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Priority" type="PriorityType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "HierarchyScope" type="HierarchyScopeType"  minOccurs = "0" maxOccurs = "1"/>
+	  				<xsd:element name = "Added" minOccurs = "1" maxOccurs = "unbounded">
+	  				    <xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "OperationSchedule" type = "OperationsScheduleType" minOccurs = "1" maxOccurs = "unbounded"/>
+							    <xsd:element name = "MaterialLot" type = "MaterialLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+							    <xsd:element name = "MaterialSubLot" type = "MaterialSubLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name = "Changed" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>								
+								<xsd:element name = "MaterialLot" type = "MaterialLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialSubLot" type = "MaterialSubLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>		
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+<!--    -->
+
+<xsd:complexType name = "NotifyOperationsRescheduledEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	            	<xsd:element name = "Notify" type = "TransNotifyType"/>
+	            	<xsd:element name = "OperationsRescheduledEvent" type = "OperationsRescheduledEventType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name = "OperationsRescheduledEventType">
+	<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+              		<xsd:element name = "ID" type="IdentifierType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Description" type="DescriptionType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Priority" type="PriorityType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "HierarchyScope" type="HierarchyScopeType"  minOccurs = "0" maxOccurs = "1"/>
+	  				<xsd:element name = "Added" minOccurs = "1" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "OperationsSchedule" type = "OperationsScheduleType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialLot" type = "MaterialLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialSubLot" type = "MaterialSubLotType" minOccurs = "0" maxOccurs = "unbounded"/>								
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name = "Changed" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "OperationsSchedule" type = "OperationsScheduleType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialLot" type = "MaterialLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialSubLot" type = "MaterialSubLotType" minOccurs = "0" maxOccurs = "unbounded"/>								
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name = "Deleted" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "OperationsSchedule" type = "OperationsScheduleType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialLot" type = "MaterialLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialSubLot" type = "MaterialSubLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+<!--    -->
+
+<xsd:complexType name = "NotifyOperationsDesignedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	            	<xsd:element name = "Notify" type = "TransNotifyType"/>
+	            	<xsd:element name = "OperationsDesignedEvent" type = "OperationsDesignedEventType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name = "OperationsDesignedEventType">
+	<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+              		<xsd:element name = "ID" type="IdentifierType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Description" type="DescriptionType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Priority" type="PriorityType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "HierarchyScope" type="HierarchyScopeType"  minOccurs = "0" maxOccurs = "1"/>	  				
+	  				<xsd:element name = "Added" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "OperationsDefinition" type = "OperationsDefinitionType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "ProcessSegment" type = "ProcessSegmentType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "Equipment" type = "EquipmentType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "EquipmentClass" type = "EquipmentClassType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "EquipmentAssetMapping" type = "EquipmentAssetMappingType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "PersonnelClass" type = "PersonnelClassType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "PhysicalAssetClass" type = "PhysicalAssetClassType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialDefinition" type = "MaterialDefinitionType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialClass" type = "MaterialClassType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "ResourceRelationshipNetwork" type = "ResourceRelationshipNetworkType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name = "Changed" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "OperationsDefinition" type = "OperationsDefinitionType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "ProcessSegment" type = "ProcessSegmentType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "Equipment" type = "EquipmentType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "EquipmentClass" type = "EquipmentClassType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "EquipmentAssetMapping" type = "EquipmentAssetMappingType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "PersonnelClass" type = "PersonnelClassType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "PhysicalAssetClass" type = "PhysicalAssetClassType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialDefinition" type = "MaterialDefinitionType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialClass" type = "MaterialClassType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "ResourceRelationshipNetwork" type = "ResourceRelationshipNetworkType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name = "Deleted" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "OperationsDefinition" type = "OperationsDefinitionType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "ProcessSegment" type = "ProcessSegmentType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "Equipment" type = "EquipmentType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "EquipmentClass" type = "EquipmentClassType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "EquipmentAssetMapping" type = "EquipmentAssetMappingType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "PersonnelClass" type = "PersonnelClassType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "PhysicalAssetClass" type = "PhysicalAssetClassType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialDefinition" type = "MaterialDefinitionType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialClass" type = "MaterialClassType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "ResourceRelationshipNetwork" type = "ResourceRelationshipNetworkType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+<!--    -->
+
+<xsd:complexType name = "NotifySupplyChainDesignedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	            	<xsd:element name = "Notify" type = "TransNotifyType"/>
+	            	<xsd:element name = "SupplyChainDesignedEvent" type = "SupplyChainDesignedEventType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name = "SupplyChainDesignedEventType">
+	<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+              		<xsd:element name = "ID" type="IdentifierType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Description" type="DescriptionType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Priority" type="PriorityType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "HierarchyScope" type="HierarchyScopeType"  minOccurs = "0" maxOccurs = "1"/>
+	  				<xsd:element name = "Added" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "OperationsDefinition" type = "OperationsDefinitionType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "ProcessSegment" type = "ProcessSegmentType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "Equipment" type = "EquipmentType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "EquipmentClass" type = "EquipmentClassType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "EquipmentAssetMapping" type = "EquipmentAssetMappingType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "PersonnelClass" type = "PersonnelClassType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "PhysicalAssetClass" type = "PhysicalAssetClassType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialDefinition" type = "MaterialDefinitionType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialClass" type = "MaterialClassType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "ResourceRelationshipNetwork" type = "ResourceRelationshipNetworkType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "WorkAlertDefinition" type = "WorkAlertDefinitionType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "WorkflowSpecification" type = "WorkflowSpecificationType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name = "Changed" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "OperationsDefinition" type = "OperationsDefinitionType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "ProcessSegment" type = "ProcessSegmentType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "Equipment" type = "EquipmentType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "EquipmentClass" type = "EquipmentClassType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "EquipmentAssetMapping" type = "EquipmentAssetMappingType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "PersonnelClass" type = "PersonnelClassType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "PhysicalAssetClass" type = "PhysicalAssetClassType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialDefinition" type = "MaterialDefinitionType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialClass" type = "MaterialClassType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "ResourceRelationshipNetwork" type = "ResourceRelationshipNetworkType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "WorkAlertDefinition" type = "WorkAlertDefinitionType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "WorkflowSpecification" type = "WorkflowSpecificationType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name = "Deleted" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "OperationsDefinition" type = "OperationsDefinitionType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "ProcessSegment" type = "ProcessSegmentType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "Equipment" type = "EquipmentType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "EquipmentClass" type = "EquipmentClassType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "EquipmentAssetMapping" type = "EquipmentAssetMappingType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "PersonnelClass" type = "PersonnelClassType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "PhysicalAssetClass" type = "PhysicalAssetClassType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialDefinition" type = "MaterialDefinitionType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialClass" type = "MaterialClassType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "ResourceRelationshipNetwork" type = "ResourceRelationshipNetworkType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "WorkAlertDefinition" type = "WorkAlertDefinitionType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "WorkflowSpecification" type = "WorkflowSpecificationType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+<!--    -->
+
+<xsd:complexType name = "NotifyOperationsResourceAcquiredEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	            	<xsd:element name = "Notify" type = "TransNotifyType"/>
+	            	<xsd:element name = "OperationsResourceAcquiredEvent" type = "OperationsResourceAcquiredEventType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name = "OperationsResourceAcquiredEventType">
+	<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+              		<xsd:element name = "ID" type="IdentifierType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Description" type="DescriptionType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Priority" type="PriorityType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "HierarchyScope" type="HierarchyScopeType"  minOccurs = "0" maxOccurs = "1"/>
+	  				<xsd:element name = "Added" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "Equipment" type = "EquipmentType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialDefinition" type = "MaterialDefinitionType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialLot" type = "MaterialLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialSubLot" type = "MaterialSubLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "Person" type = "PersonType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "PhysicalAsset" type = "PhysicalAssetType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "OperationsCapability" type = "OperationsCapabilityType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>		
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+<!--    -->
+
+<xsd:complexType name = "NotifyOperationsResourceAdjustedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	            	<xsd:element name = "Notify" type = "TransNotifyType"/>
+	            	<xsd:element name = "OperationsResourceAdjustedEvent" type = "OperationsResourceAdjustedEventType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name = "OperationsResourceAdjustedEventType">
+	<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+              		<xsd:element name = "ID" type="IdentifierType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Description" type="DescriptionType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Priority" type="PriorityType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "HierarchyScope" type="HierarchyScopeType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Added" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>		
+								<xsd:element name = "EquipmentAssetMapping" type = "EquipmentAssetMappingType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name = "Changed" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "Equipment" type = "EquipmentType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialDefinition" type = "MaterialDefinitionType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialLot" type = "MaterialLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialSubLot" type = "MaterialSubLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "Person" type = "PersonType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "PhysicalAsset" type = "PhysicalAssetType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "OperationsCapability" type = "OperationsCapabilityType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "EquipmentAssetMapping" type = "EquipmentAssetMappingType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>		
+					<xsd:element name = "Deleted" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>								
+								<xsd:element name = "EquipmentAssetMapping" type = "EquipmentAssetMappingType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>	
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+<!--    -->
+
+<xsd:complexType name = "NotifyOperationsResourceRetiredEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	            	<xsd:element name = "Notify" type = "TransNotifyType"/>
+	            	<xsd:element name = "OperationsResourceRetiredEvent" type = "OperationsResourceRetiredEventType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name = "OperationsResourceRetiredEventType">
+	<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+              		<xsd:element name = "ID" type="IdentifierType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Description" type="DescriptionType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Priority" type="PriorityType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "HierarchyScope" type="HierarchyScopeType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Deleted" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "Equipment" type = "EquipmentType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialDefinition" type = "MaterialDefinitionType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialLot" type = "MaterialLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialSubLot" type = "MaterialSubLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "Person" type = "PersonType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "PhysicalAsset" type = "PhysicalAssetType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "OperationsCapability" type = "OperationsCapabilityType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>	
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+<!--    -->
+
+<xsd:complexType name = "NotifyOperationsResourceCommittedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	            	<xsd:element name = "Notify" type = "TransNotifyType"/>
+	            	<xsd:element name = "OperationsResourceCommittedEvent" type = "OperationsResourceCommittedEventType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name = "OperationsResourceCommittedEventType">
+	<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+              		<xsd:element name = "ID" type="IdentifierType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Description" type="DescriptionType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Priority" type="PriorityType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "HierarchyScope" type="HierarchyScopeType"  minOccurs = "0" maxOccurs = "1"/>  				
+					<xsd:element name = "Added" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>		
+								<xsd:element name = "OperationsCapability" type = "OperationsCapabilityType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name = "Changed" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>		
+								<xsd:element name = "OperationsCapability" type = "OperationsCapabilityType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name = "Deleted" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>		
+								<xsd:element name = "OperationsCapability" type = "OperationsCapabilityType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+<!--    -->
+
+<xsd:complexType name = "NotifyOperationsResourceUsedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	            	<xsd:element name = "Notify" type = "TransNotifyType"/>
+	            	<xsd:element name = "OperationsResourceUsedEvent" type = "OperationsResourceUsedEventType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name = "OperationsResourceUsedEventType">
+	<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+              		<xsd:element name = "ID" type="IdentifierType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Description" type="DescriptionType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Priority" type="PriorityType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "HierarchyScope" type="HierarchyScopeType"  minOccurs = "0" maxOccurs = "1"/>	  				
+					<xsd:element name = "Added" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>		
+								<xsd:element name = "OperationsCapability" type = "OperationsCapabilityType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name = "Changed" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>		
+								<xsd:element name = "OperationsCapability" type = "OperationsCapabilityType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name = "Deleted" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>		
+								<xsd:element name = "OperationsCapability" type = "OperationsCapabilityType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>				
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+<!--	-->
+
+<xsd:complexType name = "NotifyWorkDesignedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	            	<xsd:element name = "Notify" type = "TransNotifyType"/>
+	            	<xsd:element name = "WorkDesignedEvent" type = "WorkDesignedEventType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name = "WorkDesignedEventType">
+	<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+              		<xsd:element name = "ID" type="IdentifierType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Description" type="DescriptionType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Priority" type="PriorityType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "HierarchyScope" type="HierarchyScopeType"  minOccurs = "0" maxOccurs = "1"/>
+	  				<xsd:element name = "Added" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "WorkMaster" type = "WorkMasterType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "Equipment" type = "EquipmentType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "EquipmentClass" type = "EquipmentClassType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "EquipmentAssetMapping" type = "EquipmentAssetMappingType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "PersonnelClass" type = "PersonnelClassType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "PhysicalAssetClass" type = "PhysicalAssetClassType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialDefinition" type = "MaterialDefinitionType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialClass" type = "MaterialClassType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "ResourceRelationshipNetwork" type = "ResourceRelationshipNetworkType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "WorkAlertDefinition" type = "WorkAlertDefinitionType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "WorkflowSpecification" type = "WorkflowSpecificationType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name = "Changed" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "WorkMaster" type = "WorkMasterType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "Equipment" type = "EquipmentType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "EquipmentClass" type = "EquipmentClassType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "EquipmentAssetMapping" type = "EquipmentAssetMappingType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "PersonnelClass" type = "PersonnelClassType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "PhysicalAssetClass" type = "PhysicalAssetClassType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialDefinition" type = "MaterialDefinitionType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialClass" type = "MaterialClassType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "ResourceRelationshipNetwork" type = "ResourceRelationshipNetworkType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "WorkAlertDefinition" type = "WorkAlertDefinitionType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "WorkflowSpecification" type = "WorkflowSpecificationType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name = "Deleted" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "WorkMaster" type = "WorkMasterType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "Equipment" type = "EquipmentType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "EquipmentClass" type = "EquipmentClassType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "EquipmentAssetMapping" type = "EquipmentAssetMappingType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "PersonnelClass" type = "PersonnelClassType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "PhysicalAssetClass" type = "PhysicalAssetClassType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialDefinition" type = "MaterialDefinitionType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialClass" type = "MaterialClassType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "ResourceRelationshipNetwork" type = "ResourceRelationshipNetworkType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "WorkAlertDefinition" type = "WorkAlertDefinitionType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "WorkflowSpecification" type = "WorkflowSpecificationType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+<!--    -->
+
+<xsd:complexType name = "NotifyWorkResourceAcquiredEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	            	<xsd:element name = "Notify" type = "TransNotifyType"/>
+	            	<xsd:element name = "WorkResourceAcquiredEvent" type = "WorkResourceAcquiredEventType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name = "WorkResourceAcquiredEventType">
+	<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+              		<xsd:element name = "ID" type="IdentifierType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Description" type="DescriptionType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Priority" type="PriorityType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "HierarchyScope" type="HierarchyScopeType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Added" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "Equipment" type = "EquipmentType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialDefinition" type = "MaterialDefinitionType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialLot" type = "MaterialLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialSubLot" type = "MaterialSubLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "Person" type = "PersonType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "PhysicalAsset" type = "PhysicalAssetType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "OperationsCapability" type = "OperationsCapabilityType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "ResourceRelationshipNetwork" type = "ResourceRelationshipNetworkType" minOccurs = "0" maxOccurs = "unbounded"/>	
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name = "Changed" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "ResourceRelationshipNetwork" type = "ResourceRelationshipNetworkType" minOccurs = "0" maxOccurs = "unbounded"/>		
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name = "Deleted" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+									<xsd:element name = "ResourceRelationshipNetwork" type = "ResourceRelationshipNetworkType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+<!--    -->
+
+<xsd:complexType name = "NotifyWorkResourceAdjustedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	            	<xsd:element name = "Notify" type = "TransNotifyType"/>
+	            	<xsd:element name = "WorkResourceAdjustedEvent" type = "WorkResourceAdjustedEventType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name = "WorkResourceAdjustedEventType">
+	<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+              		<xsd:element name = "ID" type="IdentifierType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Description" type="DescriptionType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Priority" type="PriorityType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "HierarchyScope" type="HierarchyScopeType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Added" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "ResourceRelationshipNetwork" type = "ResourceRelationshipNetworkType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "EquipmentAssetMapping" type = "EquipmentAssetMappingType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name = "Changed" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "Equipment" type = "EquipmentType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialDefinition" type = "MaterialDefinitionType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialLot" type = "MaterialLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialSubLot" type = "MaterialSubLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "Person" type = "PersonType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "PhysicalAsset" type = "PhysicalAssetType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "OperationsCapability" type = "OperationsCapabilityType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "ResourceRelationshipNetwork" type = "ResourceRelationshipNetworkType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "EquipmentAssetMapping" type = "EquipmentAssetMappingType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name = "Deleted" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "ResourceRelationshipNetwork" type = "ResourceRelationshipNetworkType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "EquipmentAssetMapping" type = "EquipmentAssetMappingType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+<!--    -->
+
+<xsd:complexType name = "NotifyWorkResourceRetiredEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	            	<xsd:element name = "Notify" type = "TransNotifyType"/>
+	            	<xsd:element name = "WorkResourceRetiredEvent" type = "WorkResourceRetiredEventType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name = "WorkResourceRetiredEventType">
+	<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+              		<xsd:element name = "ID" type="IdentifierType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Description" type="DescriptionType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Priority" type="PriorityType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "HierarchyScope" type="HierarchyScopeType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Deleted" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "Equipment" type = "EquipmentType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialDefinition" type = "MaterialDefinitionType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialLot" type = "MaterialLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialSubLot" type = "MaterialSubLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "PhysicalAsset" type = "PhysicalAssetType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "WorkCapabilityType" type = "WorkCapabilityType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "ResourceRelationshipNetwork" type = "ResourceRelationshipNetworkType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "EquipmentAssetMapping" type = "EquipmentAssetMappingType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+<!--    -->
+
+<xsd:complexType name = "NotifyWorkResourceCommittedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	            	<xsd:element name = "Notify" type = "TransNotifyType"/>
+	            	<xsd:element name = "WorkResourceCommittedEvent" type = "WorkResourceCommittedEventType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name = "WorkResourceCommittedEventType">
+	<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+              		<xsd:element name = "ID" type="IdentifierType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Description" type="DescriptionType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Priority" type="PriorityType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "HierarchyScope" type="HierarchyScopeType"  minOccurs = "0" maxOccurs = "1"/>	  				
+					<xsd:element name = "Added" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+							    <xsd:element name = "WorkCapability" type = "WorkCapabilityType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name = "Changed" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "WorkCapability" type = "WorkCapabilityType" minOccurs = "0" maxOccurs = "unbounded"/>					
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name = "Deleted" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "WorkCapability" type = "WorkCapabilityType" minOccurs = "0" maxOccurs = "unbounded"/>						
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>					
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+<!--    -->
+
+<xsd:complexType name = "NotifyWorkResourceUsedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	            	<xsd:element name = "Notify" type = "TransNotifyType"/>
+	            	<xsd:element name = "WorkResourceUsedEvent" type = "WorkResourceUsedEventType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name = "WorkResourceUsedEventType">
+	<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+              		<xsd:element name = "ID" type="IdentifierType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Description" type="DescriptionType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Priority" type="PriorityType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "HierarchyScope" type="HierarchyScopeType"  minOccurs = "0" maxOccurs = "1"/>	  				
+					<xsd:element name = "Added" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+							    <xsd:element name = "WorkCapability" type = "WorkCapabilityType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name = "Changed" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "WorkCapability" type = "WorkCapabilityType" minOccurs = "0" maxOccurs = "unbounded"/>					
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name = "Deleted" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "WorkCapability" type = "WorkCapabilityType" minOccurs = "0" maxOccurs = "unbounded"/>						
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>					
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+<!--    -->
+
+<xsd:complexType name = "NotifyWorkScheduledEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	            	<xsd:element name = "Notify" type = "TransNotifyType"/>
+	            	<xsd:element name = "WorkScheduledEvent" type = "WorkScheduledEventType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name = "WorkScheduledEventType">
+	<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+              		<xsd:element name = "ID" type="IdentifierType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Description" type="DescriptionType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Priority" type="PriorityType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "HierarchyScope" type="HierarchyScopeType"  minOccurs = "0" maxOccurs = "1"/>
+              		<xsd:element name = "Added" minOccurs = "1" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "WorkSchedule" type = "WorkScheduleType" minOccurs = "1" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialLot" type = "MaterialLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialSubLot" type = "MaterialSubLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name = "Changed" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "MaterialLot" type = "MaterialLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialSubLot" type = "MaterialSubLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>					
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+<!--    -->
+
+<xsd:complexType name = "NotifyWorkRescheduledEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	            	<xsd:element name = "Notify" type = "TransNotifyType"/>
+	            	<xsd:element name = "WorkRescheduledEvent" type = "WorkRescheduledEventType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name = "WorkRescheduledEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+              		<xsd:element name = "ID" type="IdentifierType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Description" type="DescriptionType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Priority" type="PriorityType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "HierarchyScope" type="HierarchyScopeType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Added" minOccurs = "1" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "WorkSchedule" type = "WorkScheduleType" minOccurs = "1" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialLot" type = "MaterialLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialSubLot" type = "MaterialSubLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name = "Changed" minOccurs = "1" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "WorkSchedule" type = "WorkScheduleType" minOccurs = "1" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialLot" type = "MaterialLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialSubLot" type = "MaterialSubLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name = "Deleted" minOccurs = "1" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "WorkSchedule" type = "WorkScheduleType" minOccurs = "1" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialLot" type = "MaterialLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialSubLot" type = "MaterialSubLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+<!--    -->
+
+<xsd:complexType name = "NotifyWorkDispatchedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	            	<xsd:element name = "Notify" type = "TransNotifyType"/>
+	            	<xsd:element name = "WorkDispatchedEvent" type = "WorkDispatchedEventType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name = "WorkDispatchedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+              		<xsd:element name = "ID" type="IdentifierType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Description" type="DescriptionType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Priority" type="PriorityType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "HierarchyScope" type="HierarchyScopeType"  minOccurs = "0" maxOccurs = "1"/>
+	  				<xsd:element name = "Added" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "JobList" type = "JobListType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name = "Changed" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "JobList" type = "JobListType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name = "Deleted" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "JobList" type = "JobListType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>					
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+ <!--    -->
+ 
+<xsd:complexType name = "NotifyWorkPerformedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	            	<xsd:element name = "Notify" type = "TransNotifyType"/>
+	            	<xsd:element name = "WorkPerformedEvent" type = "WorkPerformedEventType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+ 
+<xsd:complexType name = "WorkPerformedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+              		<xsd:element name = "ID" type="IdentifierType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Description" type="DescriptionType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Priority" type="PriorityType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "HierarchyScope" type="HierarchyScopeType"  minOccurs = "0" maxOccurs = "1"/>
+	  				<xsd:element name = "Added" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "JobResponse" type = "JobResponseType" minOccurs = "1" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialLot" type = "MaterialLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialSubLot" type = "MaterialSubLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name = "Changed" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "MaterialLot" type = "MaterialLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialSubLot" type = "MaterialSubLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name = "Deleted" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "MaterialLot" type = "MaterialLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialSubLot" type = "MaterialSubLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>		
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+<!--    -->
+
+<xsd:complexType name = "NotifyWorkAdjustedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	            	<xsd:element name = "Notify" type = "TransNotifyType"/>
+	            	<xsd:element name = "WorkAdjustedEvent" type = "WorkAdjustedEventType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name = "WorkAdjustedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+              		<xsd:element name = "Notify" type = "TransNotifyType"/>
+					<xsd:element name = "Description" type="DescriptionType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Priority" type="PriorityType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "HierarchyScope" type="HierarchyScopeType"  minOccurs = "0" maxOccurs = "1"/>
+	  				<xsd:element name = "Added" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "JobResponse" type = "JobResponseType" minOccurs = "1" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialLot" type = "MaterialLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialSubLot" type = "MaterialSubLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name = "Changed" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "JobResponse" type = "JobResponseType" minOccurs = "1" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialLot" type = "MaterialLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialSubLot" type = "MaterialSubLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name = "Deleted" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "JobResponse" type = "JobResponseType" minOccurs = "1" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialLot" type = "MaterialLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialSubLot" type = "MaterialSubLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>		
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+<!--    -->
+
+<xsd:complexType name = "NotifyWorkCommencedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	            	<xsd:element name = "Notify" type = "TransNotifyType"/>
+	            	<xsd:element name = "WorkCommencedEvent" type = "WorkCommencedEventType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name = "WorkCommencedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+              		<xsd:element name = "ID" type="IdentifierType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Description" type="DescriptionType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Priority" type="PriorityType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "HierarchyScope" type="HierarchyScopeType"  minOccurs = "0" maxOccurs = "1"/>
+	  				<xsd:element name = "Added" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "WorkDirective" type = "WorkDirectiveType" minOccurs = "1" maxOccurs = "unbounded"/>
+								<xsd:element name = "JobResponse" type = "JobResponseType" minOccurs = "1" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+<!--    -->
+
+<xsd:complexType name = "NotifyWorkRedirectedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	            	<xsd:element name = "Notify" type = "TransNotifyType"/>
+	            	<xsd:element name = "WorkRedirectedEvent" type = "WorkRedirectedEventType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name = "WorkRedirectedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+              		<xsd:element name = "ID" type="IdentifierType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Description" type="DescriptionType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Priority" type="PriorityType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "HierarchyScope" type="HierarchyScopeType"  minOccurs = "0" maxOccurs = "1"/>
+	  				<xsd:element name = "Added" minOccurs = "1" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "WorkDirective" type = "WorkDirectiveType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "JobResponse" type = "JobResponseType" minOccurs = "1" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name = "Changed" minOccurs = "1" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "WorkDirective" type = "WorkDirectiveType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "JobResponse" type = "JobResponseType" minOccurs = "1" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name = "Deleted" minOccurs = "1" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "WorkDirective" type = "WorkDirectiveType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "JobResponse" type = "JobResponseType" minOccurs = "1" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>	
+<!--    -->
+
+<xsd:complexType name = "NotifyWorkCompletedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	            	<xsd:element name = "Notify" type = "TransNotifyType"/>
+	            	<xsd:element name = "WorkCompletedEvent" type = "WorkCompletedEventType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name = "WorkCompletedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+              		<xsd:element name = "ID" type="IdentifierType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Description" type="DescriptionType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Priority" type="PriorityType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "HierarchyScope" type="HierarchyScopeType"  minOccurs = "0" maxOccurs = "1"/>
+	  				<xsd:element name = "Changed" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "WorkDirective" type = "WorkDirectiveType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "JobResponse" type = "JobResponseType" minOccurs = "1" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name = "Deleted" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "WorkDirective" type = "WorkDirectiveType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "JobResponse" type = "JobResponseType" minOccurs = "1" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+<!--    -->
+
+<xsd:complexType name = "NotifyWorkAbortedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	            	<xsd:element name = "Notify" type = "TransNotifyType"/>
+	            	<xsd:element name = "WorkAbortedEvent" type = "WorkAbortedEventType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name = "WorkAbortedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+              		<xsd:element name = "ID" type="IdentifierType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Description" type="DescriptionType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Priority" type="PriorityType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "HierarchyScope" type="HierarchyScopeType"  minOccurs = "0" maxOccurs = "1"/>
+	  				<xsd:element name = "Changed" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "WorkDirective" type = "WorkDirectiveType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "JobResponse" type = "JobResponseType" minOccurs = "1" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name = "Deleted" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "WorkDirective" type = "WorkDirectiveType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "JobResponse" type = "JobResponseType" minOccurs = "1" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>		
+<!--    -->
+
+<xsd:complexType name = "NotifyWorkAlertRaisedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	            	<xsd:element name = "Notify" type = "TransNotifyType"/>
+	            	<xsd:element name = "WorkAlertRaisedEvent" type = "WorkAlertRaisedEventType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name = "WorkAlertRaisedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+              		<xsd:element name = "ID" type="IdentifierType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Description" type="DescriptionType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Priority" type="PriorityType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "HierarchyScope" type="HierarchyScopeType"  minOccurs = "0" maxOccurs = "1"/>
+	  				<xsd:element name = "Added" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "WorkAlert" type = "WorkAlertType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>	
+<!--    -->
+
+<xsd:complexType name = "NotifyWorkAlertAmendedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	            	<xsd:element name = "Notify" type = "TransNotifyType"/>
+	            	<xsd:element name = "WorkAlertAmendedEvent" type = "WorkAlertAmendedEventType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name = "WorkAlertAmendedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+              		<xsd:element name = "ID" type="IdentifierType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Description" type="DescriptionType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Priority" type="PriorityType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "HierarchyScope" type="HierarchyScopeType"  minOccurs = "0" maxOccurs = "1"/>
+	  				<xsd:element name = "Changed" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "WorkAlert" type = "WorkAlertType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name = "Deleted" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "WorkAlert" type = "WorkAlertType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+<!--    -->
+
+<xsd:complexType name = "NotifyPerformanceTrackedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	            	<xsd:element name = "Notify" type = "TransNotifyType"/>
+	            	<xsd:element name = "PerformanceTrackedEvent" type = "PerformanceTrackedEventType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name = "PerformanceTrackedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	             	<xsd:element name = "ID" type="IdentifierType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Description" type="DescriptionType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Priority" type="PriorityType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "HierarchyScope" type="HierarchyScopeType"  minOccurs = "0" maxOccurs = "1"/>
+	  				<xsd:element name = "Added" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "OperationsPerformance" type = "OperationsPerformanceType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "WorkPerformance" type = "WorkPerformanceType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialLot" type = "MaterialLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialSubLot" type = "MaterialSubLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>	
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />			
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name = "Changed" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "MaterialLot" type = "MaterialLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialSubLot" type = "MaterialSubLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>	
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />			
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name = "Deleted" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "MaterialLot" type = "MaterialLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialSubLot" type = "MaterialSubLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>	
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />			
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+<!--    -->
+
+<xsd:complexType name = "NotifyPerformanceAdjustedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	            	<xsd:element name = "Notify" type = "TransNotifyType"/>
+	            	<xsd:element name = "PerformanceAdjustedEvent" type = "PerformanceAdjustedEventType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name = "PerformanceAdjustedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	             	<xsd:element name = "ID" type="IdentifierType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Description" type="DescriptionType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Priority" type="PriorityType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "HierarchyScope" type="HierarchyScopeType"  minOccurs = "0" maxOccurs = "1"/>
+	  				<xsd:element name = "Added" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "OperationsPerformance" type = "OperationsPerformanceType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "WorkPerformance" type = "WorkPerformanceType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialLot" type = "MaterialLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialSubLot" type = "MaterialSubLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>	
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />			
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name = "Changed" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "OperationsPerformance" type = "OperationsPerformanceType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "WorkPerformance" type = "WorkPerformanceType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialLot" type = "MaterialLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialSubLot" type = "MaterialSubLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>	
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />			
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name = "Deleted" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "OperationsPerformance" type = "OperationsPerformanceType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "WorkPerformance" type = "WorkPerformanceType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialLot" type = "MaterialLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+								<xsd:element name = "MaterialSubLot" type = "MaterialSubLotType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>	
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />			
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+<!--    -->
+
+<xsd:complexType name = "NotifyMaterialTestSpecifiedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	            	<xsd:element name = "Notify" type = "TransNotifyType"/>
+	            	<xsd:element name = "MaterialTestSpecifiedEvent" type = "MaterialTestSpecifiedEventType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name = "MaterialTestSpecifiedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+              		<xsd:element name = "ID" type="IdentifierType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Description" type="DescriptionType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Priority" type="PriorityType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "HierarchyScope" type="HierarchyScopeType"  minOccurs = "0" maxOccurs = "1"/>
+	  				<xsd:element name = "Added" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "MaterialTestSpecification" type = "MaterialTestSpecificationType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<!--    -->
+
+<xsd:complexType name = "NotifyMaterialTestSpecificationAdjustedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	            	<xsd:element name = "Notify" type = "TransNotifyType"/>
+	            	<xsd:element name = "MaterialTestSpecificationAdjustedEvent" type = "MaterialTestSpecificationAdjustedEventType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name = "MaterialTestSpecificationAdjustedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+              		<xsd:element name = "ID" type="IdentifierType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Description" type="DescriptionType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Priority" type="PriorityType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "HierarchyScope" type="HierarchyScopeType"  minOccurs = "0" maxOccurs = "1"/>
+	  				<xsd:element name = "Changed" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "MaterialTestSpecification" type = "MaterialTestSpecificationType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<!--    -->
+
+<xsd:complexType name = "NotifyMaterialTestSpecificationRetiredEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	            	<xsd:element name = "Notify" type = "TransNotifyType"/>
+	            	<xsd:element name = "MaterialTestSpecificationRetiredEvent" type = "MaterialTestSpecificationRetiredEventType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name = "MaterialTestSpecificationRetiredEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+			<xsd:complexType>
+				<xsd:sequence>
+              		<xsd:element name = "ID" type="IdentifierType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Description" type="DescriptionType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Priority" type="PriorityType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "HierarchyScope" type="HierarchyScopeType"  minOccurs = "0" maxOccurs = "1"/>
+	  				<xsd:element name = "Deleted" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "MaterialTestSpecification" type = "MaterialTestSpecificationType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+				<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+				<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<!--    -->
+
+<xsd:complexType name = "NotifyEquipmentCapabilityTestSpecifiedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	            	<xsd:element name = "Notify" type = "TransNotifyType"/>
+	            	<xsd:element name = "EquipmentCapabilityTestSpecifiedEvent" type = "EquipmentCapabilityTestSpecifiedEventType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name = "EquipmentCapabilityTestSpecifiedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+              		<xsd:element name = "ID" type="IdentifierType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Description" type="DescriptionType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Priority" type="PriorityType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "HierarchyScope" type="HierarchyScopeType"  minOccurs = "0" maxOccurs = "1"/>
+	  				<xsd:element name = "Added" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "EquipmentCapabilityTestSpecification" type = "EquipmentCapabilityTestSpecificationType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<!--    -->
+
+<xsd:complexType name = "NotifyEquipmentCapabilityTestAdjustedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	            	<xsd:element name = "Notify" type = "TransNotifyType"/>
+	            	<xsd:element name = "EquipmentCapabilityTestAdjustedEvent" type = "EquipmentCapabilityTestAdjustedEventType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name = "EquipmentCapabilityTestAdjustedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+              		<xsd:element name = "ID" type="IdentifierType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Description" type="DescriptionType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Priority" type="PriorityType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "HierarchyScope" type="HierarchyScopeType"  minOccurs = "0" maxOccurs = "1"/>
+	  				<xsd:element name = "Changed" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "EquipmentCapabilityTestSpecification" type = "EquipmentCapabilityTestSpecificationType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<!--    -->
+
+<xsd:complexType name = "NotifyEquipmentCapabilityTestRetiredEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	            	<xsd:element name = "Notify" type = "TransNotifyType"/>
+	            	<xsd:element name = "EquipmentCapabilityTestRetiredEvent" type = "EquipmentCapabilityTestRetiredEventType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name = "EquipmentCapabilityTestRetiredEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+              		<xsd:element name = "ID" type="IdentifierType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Description" type="DescriptionType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Priority" type="PriorityType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "HierarchyScope" type="HierarchyScopeType"  minOccurs = "0" maxOccurs = "1"/>
+	  				<xsd:element name = "Deleted" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "EquipmentCapabilityTestSpecification" type = "EquipmentCapabilityTestSpecificationType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<!--    -->
+
+<xsd:complexType name = "NotifyQualificationTestSpecifiedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	            	<xsd:element name = "Notify" type = "TransNotifyType"/>
+	            	<xsd:element name = "QualificationTestSpecifiedEvent" type = "QualificationTestSpecifiedEventType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name = "QualificationTestSpecifiedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+              		<xsd:element name = "ID" type="IdentifierType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Description" type="DescriptionType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Priority" type="PriorityType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "HierarchyScope" type="HierarchyScopeType"  minOccurs = "0" maxOccurs = "1"/>
+	  				<xsd:element name = "Added" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "QualificationTestSpecification" type = "QualificationTestSpecificationType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<!--    -->
+
+<xsd:complexType name = "NotifyQualificationTestAdjustedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	            	<xsd:element name = "Notify" type = "TransNotifyType"/>
+	            	<xsd:element name = "QualificationTestAdjustedEvent" type = "QualificationTestAdjustedEventType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name = "QualificationTestAdjustedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+              		<xsd:element name = "ID" type="IdentifierType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Description" type="DescriptionType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Priority" type="PriorityType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "HierarchyScope" type="HierarchyScopeType"  minOccurs = "0" maxOccurs = "1"/>
+	  				<xsd:element name = "Changed" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "QualificationTestSpecification" type = "QualificationTestSpecificationType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<!--    -->
+
+<xsd:complexType name = "NotifyQualificationTestRetiredType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	            	<xsd:element name = "Notify" type = "TransNotifyType"/>
+	            	<xsd:element name = "QualificationTestRetired" type = "QualificationTestRetiredType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name = "QualificationTestRetiredType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+              		<xsd:element name = "ID" type="IdentifierType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Description" type="DescriptionType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Priority" type="PriorityType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "HierarchyScope" type="HierarchyScopeType"  minOccurs = "0" maxOccurs = "1"/>
+	  				<xsd:element name = "Deleted" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "QualificationTestSpecification" type = "QualificationTestSpecificationType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<!--    -->
+
+<xsd:complexType name = "NotifyPhysicalAssetCapabilityTestSpecifiedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	            	<xsd:element name = "Notify" type = "TransNotifyType"/>
+	            	<xsd:element name = "PhysicalAssetCapabilityTestSpecifiedEvent" type = "PhysicalAssetCapabilityTestSpecifiedEventType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name = "PhysicalAssetCapabilityTestSpecifiedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+              		<xsd:element name = "ID" type="IdentifierType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Description" type="DescriptionType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Priority" type="PriorityType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "HierarchyScope" type="HierarchyScopeType"  minOccurs = "0" maxOccurs = "1"/>
+	  				<xsd:element name = "Added" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "PhysicalAssetCapabilityTestSpecification" type = "PhysicalAssetCapabilityTestSpecificationType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<!--    -->
+
+<xsd:complexType name = "NotifyPhysicalAssetCapabilityTestAdjustedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	            	<xsd:element name = "Notify" type = "TransNotifyType"/>
+	            	<xsd:element name = "PhysicalAssetCapabilityTestAdjustedEvent" type = "PhysicalAssetCapabilityTestAdjustedEventType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name = "PhysicalAssetCapabilityTestAdjustedEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+			<xsd:complexType>
+				<xsd:sequence>
+					<xsd:element name = "ID" type="IdentifierType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Description" type="DescriptionType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Priority" type="PriorityType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "HierarchyScope" type="HierarchyScopeType"  minOccurs = "0" maxOccurs = "1"/>
+	  				<xsd:element name = "Changed" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "PhysicalAssetCapabilityTestSpecification" type = "PhysicalAssetCapabilityTestSpecificationType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<!--    -->
+
+<xsd:complexType name = "NotifyPhysicalAssetCapabilityTestRetiredEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+	            	<xsd:element name = "Notify" type = "TransNotifyType"/>
+	            	<xsd:element name = "PhysicalAssetCapabilityTestRetiredEvent" type = "PhysicalAssetCapabilityTestRetiredEventType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name = "PhysicalAssetCapabilityTestRetiredEventType">
+<xsd:sequence>
+		<xsd:element name = "ApplicationArea"  type = "TransApplicationAreaType"/>
+		<xsd:element name = "DataArea">
+         	<xsd:complexType>
+            	<xsd:sequence>
+              		<xsd:element name = "ID" type="IdentifierType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Description" type="DescriptionType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "Priority" type="PriorityType"  minOccurs = "0" maxOccurs = "1"/>
+					<xsd:element name = "HierarchyScope" type="HierarchyScopeType"  minOccurs = "0" maxOccurs = "1"/>
+	  				<xsd:element name = "Deleted" minOccurs = "0" maxOccurs = "unbounded">
+				    	<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name = "PhysicalAssetCapabilityTestSpecification" type = "PhysicalAssetCapabilityTestSpecificationType" minOccurs = "0" maxOccurs = "unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="recordTimestamp" type="xsd:dateTime" use="required" />
+							<xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+<!--    -->
+</xsd:schema>

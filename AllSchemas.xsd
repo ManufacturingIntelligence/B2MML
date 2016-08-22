@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <xsd:schema 
+	xmlns:xsd 		= "http://www.w3.org/2001/XMLSchema"
+	targetNamespace = "http://www.mesa.org/xml/B2MML-MI"
+	xmlns 			= "http://www.mesa.org/xml/B2MML-MI"
+	xmlns:Extended 	= "http://www.mesa.org/xml/B2MML-MI-AllExtensions"
+ 
+	elementFormDefault 		= "qualified"
+	attributeFormDefault 	= "unqualified">
+<xsd:annotation> 
+   <xsd:documentation>
+		This file may be used to assist in code generation using XSD.EXE
+		This file simply includes all of the B2MML schemas into a single 
+		definition. This reduces the length of the generated .cs file name. 
+   
+        Copyright 2012 MESA International 
+		All Rights Reserved. http://www.mesa.org
+
+        This MESA International work (including specifications, documents, 
+        software, and related items) referred to as the Business To 
+        Manufacturing Markup Language (B2MML) is provided by the copyright 
+        holders under the following license. 
+
+        Permission to use, copy, modify, or redistribute this Work and its 
+        documentation, with or without modification, for any purpose and 
+        without fee or royalty is hereby granted provided the World Batch 
+        Forum is acknowledged as the originator of this Work using the 
+        following statement:
+
+        "The Business To Manufacturing Markup Language (B2MML) is used 
+        courtesy of MESA International."
+
+        In no event shall MESA International, its members, or any 
+        third party be liable for any costs, expenses, losses, damages or 
+        injuries incurred by use of the Work or as a result of this 
+        agreement.
+      
+        Based upon the ANSI/ISA-95.00.02-2010 Enterprise-Control System 
+        Integration Part 2: Object Model Attributes Standard and the
+        ANSI/ISA-95.00.05-2006 Enterprise-Control System Integration 
+        Part 5: Business to Manufacturing Transactions
+   </xsd:documentation>
+
+   <xsd:documentation> 
+  
+      Revision History
+
+        Ver           Date            Person          Note
+        ---           ----            ------          ----
+        BHPBilliton   22 Jun 2015     B. Poole        This is a BHPBilliton specific branch of V0600    
+        MI            16 Aug 2016     B. Pogson       Manufacturing Intelligence branch of V0600
+
+   </xsd:documentation>
+</xsd:annotation>
+ 
+ <xsd:include schemaLocation ="B2MML-MI-CoreComponents.xsd"/>
+ <xsd:include schemaLocation ="B2MML-MI-Common.xsd"/>
+ <xsd:include schemaLocation ="B2MML-MI-ConfirmBOD.xsd"/>
+ <xsd:include schemaLocation ="B2MML-MI-Equipment.xsd"/>
+ <xsd:include schemaLocation ="B2MML-MI-PhysicalAsset.xsd"/>
+ <xsd:include schemaLocation ="B2MML-MI-Material.xsd"/>
+ <xsd:include schemaLocation ="B2MML-MI-Personnel.xsd"/>
+ <xsd:include schemaLocation ="B2MML-MI-ProcessSegment.xsd"/>
+ <xsd:include schemaLocation ="B2MML-MI-OperationsDefinition.xsd"/>
+ <xsd:include schemaLocation ="B2MML-MI-OperationsCapability.xsd"/>
+ <xsd:include schemaLocation ="B2MML-MI-OperationsPerformance.xsd"/>
+ <xsd:include schemaLocation ="B2MML-MI-OperationsSchedule.xsd"/>
+ <xsd:include schemaLocation ="B2MML-MI-ProductDefinition.xsd"/>
+ <xsd:include schemaLocation ="B2MML-MI-ProductionCapability.xsd"/>
+ <xsd:include schemaLocation ="B2MML-MI-ProductionPerformance.xsd"/>
+ <xsd:include schemaLocation ="B2MML-MI-ProductionSchedule.xsd"/>
+ <xsd:include schemaLocation ="B2MML-MI-ResourceRelationshipNetwork.xsd"/>
+ <xsd:include schemaLocation ="B2MML-MI-TransactionProfile.xsd"/>
+ <xsd:include schemaLocation ="B2MML-MI-WorkAlert.xsd"/>
+ <xsd:include schemaLocation ="B2MML-MI-WorkDefinition.xsd"/>
+ <xsd:include schemaLocation ="B2MML-MI-WorkCapability.xsd"/>
+ <xsd:include schemaLocation ="B2MML-MI-WorkPerformance.xsd"/>
+ <xsd:include schemaLocation ="B2MML-MI-WorkSchedule.xsd"/>
+ <xsd:include schemaLocation ="BatchML-MI-BatchInformation.xsd"/>
+ <xsd:include schemaLocation ="BatchML-MI-GeneralRecipe.xsd"/>
+ <xsd:include schemaLocation ="BatchML-MI-BatchProductionRecord.xsd"/>
+ <xsd:include schemaLocation ="B2MML-MI-ProcessEvents.xsd"/>
+ 
+ <xsd:import 	namespace="http://www.mesa.org/xml/B2MML-MI-AllExtensions"
+				schemaLocation="B2MML-MI-AllExtensions.xsd"/>
+</xsd:schema>
