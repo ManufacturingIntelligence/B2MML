@@ -58,6 +58,8 @@
      ---           ----            ------          ----
      BHPBilliton   22 Jun 2015     B. Poole        This is a BHPBilliton specific branch of V0600
      BHPBilliton   21 Sep 2016     B. Poole        Add EquipmentCapabilityTestSpecification to EquipmentCapabilityTestSpecificationType as per comment
+     BHPBilliton   24 Oct 2016     B. Poole        Corrected EquipmentLevel in EquipmentType to EquipmentElementLevelType
+     BHPBilliton   24 Oct 2016     B. Poole        Corrected EquipmentLevel in EquipmentClassType to EquipmentElementLevelType
      MI            24 Oct 2016     B. Pogson       MI branch of B2MML
 
    </xsd:documentation>
@@ -149,7 +151,7 @@
 	                                            minOccurs="0"/> 
       <xsd:element name = "HierarchyScope"      type = "HierarchyScopeType"   
                                                 minOccurs = "0" />
-      <xsd:element name = "EquipmentLevel"      type = "HierarchyScopeType"   
+      <xsd:element name = "EquipmentLevel"      type = "EquipmentElementLevelType"   
                                                 minOccurs = "0" />
       <xsd:element name = "EquipmentAssetMapping" type = "EquipmentAssetMappingType"   
                                                 minOccurs = "0" maxOccurs = "unbounded"/>
@@ -195,7 +197,7 @@
 	                                            minOccurs="0"/> 
       <xsd:element name = "HierarchyScope"      type = "HierarchyScopeType"   
                                                 minOccurs = "0" />
-      <xsd:element name = "EquipmentLevel"      type = "HierarchyScopeType"   
+      <xsd:element name = "EquipmentLevel"      type = "EquipmentElementLevelType"   
                                                 minOccurs = "0" />
       <xsd:element name = "EquipmentClassProperty"
                                                 type = "EquipmentClassPropertyType"
