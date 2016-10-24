@@ -59,7 +59,7 @@
      BHPBilliton   11 Apr 2016     C. Gifford      Add Nesting of Properties in Equipment Specification Property (as per WD01 p 86)
      BHPBilliton   11 Apr 2016     C. Gifford      Add Nesting of Properties in Physical Asset Specification Property (as per WD01 p 88)
      BHPBilliton   11 Apr 2016     C. Gifford      Add Nesting of Properties in Personnel Specification Property (as per WD01 p 84)
-     MI            16 Aug 2016     B. Pogson       Manufacturing Intelligence branch of V0600
+     MI            24 Oct 2016     B. Pogson       MI branch of B2MML
 
    </xsd:documentation>
 </xsd:annotation>

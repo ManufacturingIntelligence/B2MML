@@ -56,7 +56,8 @@
      ---           ----            ------          ----
      BHPBilliton   22 Jun 2015     B. Poole        This is a BHPBilliton specific branch of V0600
      BHPBilliton   05  Apr 2016    C. Gifford      Add HierarchyScope to Operations Material Bill Type (as per WD01 p 80)
-     MI            16 Aug 2016     B. Pogson       Manufacturing Intelligence branch of V0600
+     BHPBilliton   28  Sep 2016    B. Poole        Updated OperationsMaterialBillItemType UseType to MaterialUseType
+     MI            24 Oct 2016     B. Pogson       MI branch of B2MML
 
    </xsd:documentation>
 </xsd:annotation>
@@ -154,7 +155,7 @@
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
       <xsd:element name = "MaterialDefinitionID"        type = "MaterialDefinitionIDType" 
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
-      <xsd:element name = "UseType"                     type = "CodeType" 
+      <xsd:element name = "UseType"                     type = "MaterialUseType" 
                                                         minOccurs = "0"/>
       <xsd:element name = "AssemblyBillOfMaterialItem"  type = "OperationsMaterialBillItemType" 
                                                         minOccurs = "0" maxOccurs = "unbounded"/>

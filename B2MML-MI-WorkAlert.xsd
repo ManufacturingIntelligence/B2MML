@@ -48,14 +48,18 @@
         Part 5: Business to Manufacturing Transactions. 
    </xsd:documentation>
 
-   <xsd:documentation>
+   <xsd:documentation> 
 
-     Revision History
+      Revision History
 
-     Ver           Date            Person          Note
-     ---           ----            ------          ----
-     BHPBilliton   22 Jun 2015     B. Poole        This is a BHPBilliton specific branch of V0600
-     MI            16 Aug 2016     B. Pogson       Manufacturing Intelligence branch of V0600
+        Ver           Date            Person          Note
+        ---           ----            ------          ----
+        BHPBilliton   22 Jun 2015     B. Poole        This is a BHPBilliton specific branch of V0600
+        BHPBilliton   22 Jun 2015     B. Poole        Add WorkAlertDefinitionID to WorkAlertType
+        BHPBilliton   28 Sep 2016     B. Poole        Add WorkAlertDefinitionID to WorkAlertType as per WD03 p 69
+        BHPBilliton   28 Sep 2016     B. Poole        Add WorkAlertPropertyID to WorkAlertPropertyType as per WD03 p 69
+        MI            24 Oct 2016     B. Pogson       MI branch of B2MML
+
 
    </xsd:documentation>
 </xsd:annotation>
@@ -151,6 +155,8 @@
                                                     minOccurs = "0"/>
       <xsd:element name = "Property"                type = "WorkAlertPropertyType"
                                                     minOccurs = "0" maxOccurs = "unbounded"/>
+      <xsd:element name = "WorkAlertDefinitionID"     type = "IdentifierType"
+                                                    minOccurs = "0" maxOccurs = "1"/>
       <xsd:group   ref  = "Extended:WorkAlert"
                                                     minOccurs = "0" maxOccurs = "1"/>
     </xsd:sequence>
@@ -163,6 +169,8 @@
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
       <xsd:element name = "Value"                       type = "ValueType"      
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
+      <xsd:element name = "WorkAlertPropertyDefinitionID" type = "IdentifierType"
+                                                        minOccurs = "0" maxOccurs = "1"/>
       <xsd:group   ref  = "Extended:WorkAlertProperty"
                                                         minOccurs = "0" maxOccurs = "1"/>
     </xsd:sequence>

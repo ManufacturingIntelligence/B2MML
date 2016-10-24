@@ -48,27 +48,30 @@
         Part 5: Business to Manufacturing Transactions. 
    </xsd:documentation>
 
-   <xsd:documentation> 
+   <xsd:documentation>
 
-      Revision History
+     Revision History
 
-        Ver           Date            Person          Note
-        ---           ----            ------          ----
-        BHPBilliton   22 Jun 2015     B. Poole        This is a BHPBilliton specific branch of V0600
-        BHPBilliton   05 Apr 2016     C. Gifford	  Add a Hierarchy Scope attribute to MaterialDefinitionType (as per WD01 p 51) 
-        BHPBilliton   05 Apr 2016     C. Gifford      Changed the Status in the MaterialLotType to be of MaterialStatusType (as per WD01 p 54)
-        BHPBilliton   05 Apr 2016     C. Gifford	  Add GeoSpatial element to MaterialLotType (as per WD01 p 54)
-        BHPBilliton   3  Jul 2015     B. Poole	      Add ID to MaterialTestSpecificationType
-        BHPBilliton   3  Jul 2015     B. Poole	      Add EffectiveStartTime to MaterialTestSpecificationType
-        BHPBilliton   3  Jul 2015     B. Poole	      Add EffectiveEndTime to MaterialTestSpecificationType
-        BHPBilliton   3  Jul 2015     B. Poole	      Add PublishedDate to MaterialTestSpecificationType
-        BHPBilliton   3  Jul 2015     B. Poole	      Add ControlQuality to MaterialTestSpecificationType
-        BHPBilliton   3  Jul 2015     B. Poole	      Add AcceptanceCriteria to MaterialTestSpecificationType
-        BHPBilliton   05 Apr 2016     C. Gifford      Changed the Status in the MaterialSubLotType to be of MaterialStatusType (as per WD01 p 58)
-        BHPBilliton   05 Apr 2016     C. Gifford	  Add GeoSpatial element to MaterialSubLotType (as per WD01 p 57)
-        BHPBilliton   05  Apr 2016    C. Gifford      Add Geospatial Definition to Material Definition (as per WD01 p 51)
-        MI            16 Aug 2016     B. Pogson       Manufacturing Intelligence branch of V0600
-        											                                        
+     Ver           Date            Person          Note
+     ---           ----            ------          ----
+     BHPBilliton   22 Jun 2015     B. Poole        This is a BHPBilliton specific branch of V0600
+     BHPBilliton   05 Apr 2016     C. Gifford	  Add a Hierarchy Scope attribute to MaterialDefinitionType (as per WD01 p 51)
+     BHPBilliton   05 Apr 2016     C. Gifford	  Add GeoSpatial element to MaterialLotType (as per WD01 p 54)
+     BHPBilliton   3  Jul 2015     B. Poole	      Add ID to MaterialTestSpecificationType
+     BHPBilliton   3  Jul 2015     B. Poole	      Add EffectiveStartTime to MaterialTestSpecificationType
+     BHPBilliton   3  Jul 2015     B. Poole	      Add EffectiveEndTime to MaterialTestSpecificationType
+     BHPBilliton   3  Jul 2015     B. Poole	      Add PublishedDate to MaterialTestSpecificationType
+     BHPBilliton   3  Jul 2015     B. Poole	      Add ControlQuality to MaterialTestSpecificationType
+     BHPBilliton   3  Jul 2015     B. Poole	      Add AcceptanceCriteria to MaterialTestSpecificationType
+     BHPBilliton   05 Apr 2016     C. Gifford	  Add GeoSpatial element to MaterialSubLotType (as per WD01 p 57)
+     BHPBilliton   05  Apr 2016    C. Gifford      Add Geospatial Definition to Material Definition (as per WD01 p 51)
+     BHPBilliton   3  Jul 2015     B. Poole        Add MaterialTestSpecification to MaterialTestSpecificationType as per comment
+     BHPBilliton   3  Oct 2016     B. Poole        Added MaterialDispositionStatusType as Disposition on MaterialLotType as per WD04 p 77
+     BHPBilliton   3  Oct 2016     B. Poole        Added MaterialDispositionStatusType as Disposition on MaterialSubLotType as per WD04 p 77
+     MI            24 Oct 2016     B. Pogson       MI branch of B2MML
+
+
+
 
    </xsd:documentation>
 </xsd:annotation>
@@ -270,7 +273,9 @@
                                                         minOccurs = "0" />
       <xsd:element name = "MaterialDefinitionID"        type = "MaterialDefinitionIDType"       
                                                         minOccurs = "0"/>
-      <xsd:element name = "Status"                      type = "MaterialStatusType"
+      <xsd:element name = "Status"                      type = "StatusType"
+                                                        minOccurs = "0"/>
+      <xsd:element name = "Disposition"                 type = "MaterialDispositionStatusType"
                                                         minOccurs = "0"/>
       <xsd:element name = "MaterialLotProperty"         type = "MaterialLotPropertyType"
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
@@ -325,6 +330,8 @@
                                                         minOccurs = "0" />
       <xsd:element name = "Status"                      type = "StatusType"     
                                                         minOccurs = "0"/>
+      <xsd:element name = "Dispositiion"                type = "MaterialDispositionStatusType"
+                                                        minOccurs = "0"/>
       <xsd:element name = "MaterialSublotProperty"      type = "MaterialLotPropertyType"
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
       <xsd:element name = "StorageLocation"             type = "StorageHierarchyScopeType"    
@@ -352,6 +359,8 @@
   <xsd:complexType name = "MaterialTestSpecificationType">
     <xsd:sequence>
       <xsd:group   ref  = "TestSpecificationType"/>
+      <xsd:element name = "MaterialTestSpecification"  type = "MaterialTestSpecificationType"
+                                                       minOccurs = "0" maxOccurs = "unbounded"/>
       <xsd:group   ref  = "Extended:MaterialTestSpecification"         minOccurs = "0" maxOccurs = "1"/>
     </xsd:sequence>
   </xsd:complexType>

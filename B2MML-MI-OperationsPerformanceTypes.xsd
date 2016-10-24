@@ -47,22 +47,22 @@
         Part 5: Business to Manufacturing Transactions. 
    </xsd:documentation>
 
-   <xsd:documentation>
+   <xsd:documentation> 
 
-     Revision History
+      Revision History
 
-     Ver           Date            Person          Note
-     ---           ----            ------          ----
-     BHPBilliton   22 Jun 2015     B. Poole        This is a BHPBilliton specific branch of V0600
-     BHPBilliton   11  Apr 2016    C. Gifford      Added OperationsSegmentID to OpSegmentResponseType (as per WD01 p 117)
-     BHPBilliton   11  Apr 2016    C. Gifford      Added SegmentRequirementID to OpSegmentResponseType (as per WD01 p 117)
-     BHPBilliton   11  Apr 2016    C. Gifford      Added PostingDate to OpSegmentResponseType (as per WD01 p 117)
-     BHPBilliton   11  Apr 2016    C. Gifford      Added HierarchyScope to SegmentDataType (as per WD01 p 118)
-     BHPBilliton   11  Apr 2016    C. Gifford      Added GeoSpatial element to OpMaterialActualType (as per WD01 p 125)
-     BHPBilliton   11  Apr 2016    C. Gifford      Added GeoSpatial element to OpEquipmentActualType (as per WD01 p 121)
-     BHPBilliton   11  Apr 2016    C. Gifford      Added GeoSpatial element to OpPersonnelActualType (as per WD01 p 119)
-     BHPBilliton   11  Apr 2016    C. Gifford      Added GeoSpatial element to OpPhysicalAssetActualType (as per WD01 p 123)
-     MI            16 Aug 2016     B. Pogson       Manufacturing Intelligence branch of V0600
+        Ver           Date            Person          Note
+        ---           ----            ------          ----
+        BHPBilliton   22 Jun 2015     B. Poole        This is a BHPBilliton specific branch of V0600
+        BHPBilliton   11  Apr 2016    C. Gifford      Added OperationsSegmentID to OpSegmentResponseType (as per WD01 p 117)
+        BHPBilliton   11  Apr 2016    C. Gifford      Added SegmentRequirementID to OpSegmentResponseType (as per WD01 p 117)
+        BHPBilliton   11  Apr 2016    C. Gifford      Added PostingDate to OpSegmentResponseType (as per WD01 p 117)
+        BHPBilliton   11  Apr 2016    C. Gifford      Added HierarchyScope to SegmentDataType (as per WD01 p 118)
+        BHPBilliton   11  Apr 2016    C. Gifford      Added GeoSpatial element to OpMaterialActualType (as per WD01 p 125)                                    
+        BHPBilliton   11  Apr 2016    C. Gifford      Added GeoSpatial element to OpEquipmentActualType (as per WD01 p 121)
+        BHPBilliton   11  Apr 2016    C. Gifford      Added GeoSpatial element to OpPersonnelActualType (as per WD01 p 119)
+        BHPBilliton   11  Apr 2016    C. Gifford      Added GeoSpatial element to OpPhysicalAssetActualType (as per WD01 p 123)
+        MI            24 Oct 2016     B. Pogson       MI branch of B2MML
 
    </xsd:documentation>
 </xsd:annotation>

@@ -47,27 +47,27 @@
         Part 5: Business to Manufacturing Transactions. 
    </xsd:documentation>
 
-   <xsd:documentation> 
+   <xsd:documentation>
 
-      Revision History
+     Revision History
 
-        Ver           Date            Person          Note
-        ---           ----            ------          ----
-        BHPBilliton   22 Jun 2015     B. Poole        This is a BHPBilliton specific branch of V0600
-        BHPBilliton   05 Apr 2016     C. Gifford      Add a Hierarchy Scope attribute to EquipmentSegmentSpecificationType (as per WD01 p 67)
-        BHPBilliton   05 Apr 2016     C. Gifford      Add a Hierarchy Scope attribute to PhysicalAssetSegmentSpecificationType (as per WD01 p 73)
-        BHPBilliton   05 Apr 2016     C. Gifford      Add a Hierarchy Scope attribute to MaterialSegmentSpecificationType (as per WD01 p 69)
-        BHPBilliton   05 Apr 2016     C. Gifford      Add a Hierarchy Scope attribute to PersonnelSegmentSpecificationType (as per WD01 p 65)                                   
-		BHPBilliton   11 Apr 2016     C. Gifford      Add Nesting of Properties in Material Segment Specification Property (as per WD01 p 71)
-		BHPBilliton   11 Apr 2016     C. Gifford      Add Nesting of Properties in Equipment Segment Specification Property (as per WD01 p 67)
-		BHPBilliton   11 Apr 2016     C. Gifford      Add Nesting of Properties in Physical Segment Asset Specification Property (as per WD01 p 73)
-		BHPBilliton   11 Apr 2016     C. Gifford      Add Nesting of Properties in Personnel Segment Specification Property (as per WD01 p 65)
-		BHPBilliton   11 Apr 2016     C. Gifford      Add Geospatial element to the Material Segment Specification (as per WD01 p 69)
-		BHPBilliton   05 Apr 2016     C. Gifford      Add Geospatial element to the Equipment Segment Specification (as per WD01 p 67)
-		BHPBilliton   05 Apr 2016     C. Gifford      Add Geospatial element to the Physical Asset Segment Specification (as per WD01 p 73)
-    MI            16 Aug 2016     B. Pogson       Manufacturing Intelligence branch of V0600
+     Ver           Date            Person          Note
+     ---           ----            ------          ----
+     BHPBilliton   22 Jun 2015     B. Poole        This is a BHPBilliton specific branch of V0600
+     BHPBilliton   05 Apr 2016     C. Gifford      Add a Hierarchy Scope attribute to EquipmentSegmentSpecificationType (as per WD01 p 67)
+     BHPBilliton   05 Apr 2016     C. Gifford      Add a Hierarchy Scope attribute to PhysicalAssetSegmentSpecificationType (as per WD01 p 73)
+     BHPBilliton   05 Apr 2016     C. Gifford      Add a Hierarchy Scope attribute to MaterialSegmentSpecificationType (as per WD01 p 69)
+     BHPBilliton   05 Apr 2016     C. Gifford      Add a Hierarchy Scope attribute to PersonnelSegmentSpecificationType (as per WD01 p 65)
+     BHPBilliton   11 Apr 2016     C. Gifford      Add Nesting of Properties in Material Segment Specification Property (as per WD01 p 71)
+     BHPBilliton   11 Apr 2016     C. Gifford      Add Nesting of Properties in Equipment Segment Specification Property (as per WD01 p 67)
+     BHPBilliton   11 Apr 2016     C. Gifford      Add Nesting of Properties in Physical Segment Asset Specification Property (as per WD01 p 73)
+     BHPBilliton   11 Apr 2016     C. Gifford      Add Nesting of Properties in Personnel Segment Specification Property (as per WD01 p 65)
+     BHPBilliton   11 Apr 2016     C. Gifford      Add Geospatial element to the Material Segment Specification (as per WD01 p 69)
+     BHPBilliton   05 Apr 2016     C. Gifford      Add Geospatial element to the Equipment Segment Specification (as per WD01 p 67)
+     BHPBilliton   05 Apr 2016     C. Gifford      Add Geospatial element to the Physical Asset Segment Specification (as per WD01 p 73)
+     MI            24 Oct 2016     B. Pogson       MI branch of B2MML
 
-        </xsd:documentation>
+   </xsd:documentation>
 </xsd:annotation>
 
 <!-- Global Elements -->

@@ -56,8 +56,8 @@
         Ver           Date            Person          Note
         ---           ----            ------          ----
         BHPBilliton   22 Jun 2015     B. Poole        This is a BHPBilliton specific branch of V0600
-        BHPBilliton   05 Apr 2016     C. Gifford      Add a OperationsSegmentID to the OpSegmentRequirementType (as per WD01 p 100)
-        MI            16 Aug 2016     B. Pogson       Manufacturing Intelligence branch of V0600
+        BHPBilliton   05 Apr 2016     C. Gifford      Add a OperationsSegmentID to the OpSegmentRequirementType (as per WD01 p 100)         
+        MI            24 Oct 2016     B. Pogson       MI branch of B2MML
 
    </xsd:documentation>
 </xsd:annotation>

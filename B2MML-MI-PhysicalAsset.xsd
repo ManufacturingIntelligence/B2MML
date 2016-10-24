@@ -57,7 +57,8 @@
      Ver           Date            Person          Note
      ---           ----            ------          ----
      BHPBilliton   22 Jun 2015     B. Poole        This is a BHPBilliton specific branch of V0600
-     MI            16 Aug 2016     B. Pogson       Manufacturing Intelligence branch of V0600
+     BHPBilliton   22 Jun 2015     B. Poole        Add PhysicalAssetCapabilityTestSpecification to PhysicalAssetCapabilityTestSpecificationType as per comment
+     MI            24 Oct 2016     B. Pogson       MI branch of B2MML
 
    </xsd:documentation>
 </xsd:annotation>
@@ -223,6 +224,9 @@
   <xsd:complexType name = "PhysicalAssetCapabilityTestSpecificationType">
     <xsd:sequence>
       <xsd:group   ref  = "TestSpecificationType"/>
+      <xsd:element name = "PhysicalAssetCapabilityTestSpecification"  
+                                                type = "PhysicalAssetCapabilityTestSpecificationType"
+                                                minOccurs = "0" maxOccurs = "unbounded"/>
       <xsd:group   ref  = "Extended:PhysicalAssetCapabilityTestSpecification"         minOccurs = "0" maxOccurs = "1"/>
     </xsd:sequence>
   </xsd:complexType>

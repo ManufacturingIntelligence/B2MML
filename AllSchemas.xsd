@@ -41,14 +41,15 @@
         Part 5: Business to Manufacturing Transactions
    </xsd:documentation>
 
-   <xsd:documentation> 
-  
-      Revision History
+   <xsd:documentation>
 
-        Ver           Date            Person          Note
-        ---           ----            ------          ----
-        BHPBilliton   22 Jun 2015     B. Poole        This is a BHPBilliton specific branch of V0600    
-        MI            16 Aug 2016     B. Pogson       Manufacturing Intelligence branch of V0600
+     Revision History
+
+     Ver           Date            Person          Note
+     ---           ----            ------          ----
+     BHPBilliton   22 Jun 2015     B. Poole        This is a BHPBilliton specific branch of V0600
+     BHPBilliton   22 Sep 2016     B. Poole        Include new OperationsEvent schema as per comment
+     MI            24 Oct 2016     B. Pogson       MI branch of B2MML
 
    </xsd:documentation>
 </xsd:annotation>
@@ -80,6 +81,7 @@
  <xsd:include schemaLocation ="BatchML-MI-GeneralRecipe.xsd"/>
  <xsd:include schemaLocation ="BatchML-MI-BatchProductionRecord.xsd"/>
  <xsd:include schemaLocation ="B2MML-MI-ProcessEvents.xsd"/>
+ <xsd:include schemaLocation ="B2MML-MI-OperationsEvent.xsd"/>
  
  <xsd:import 	namespace="http://www.mesa.org/xml/B2MML-MI-AllExtensions"
 				schemaLocation="B2MML-MI-AllExtensions.xsd"/>

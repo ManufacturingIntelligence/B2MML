@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<xsd:schema
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://www.mesa.org/xml/B2MML-MI"
+  xmlns="http://www.mesa.org/xml/B2MML-MI"
+  xmlns:Extended="http://www.mesa.org/xml/B2MML-MI-AllExtensions"
+
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified">
+
+  <xsd:include schemaLocation="B2MML-MI-Common.xsd" />
+  <xsd:include schemaLocation="B2MML-MI-ConfirmBOD.xsd" />
+  <xsd:include schemaLocation="B2MML-MI-Equipment.xsd" />
+  <xsd:include schemaLocation="B2MML-MI-Material.xsd" />
+  <xsd:include schemaLocation="B2MML-MI-OperationsCapability.xsd" />
+  <xsd:include schemaLocation="B2MML-MI-OperationsDefinition.xsd" />
+  <xsd:include schemaLocation="B2MML-MI-OperationsPerformance.xsd" />
+  <xsd:include schemaLocation="B2MML-MI-OperationsSchedule.xsd" />
+  <xsd:include schemaLocation="B2MML-MI-Personnel.xsd" />
+  <xsd:include schemaLocation="B2MML-MI-PhysicalAsset.xsd" />
+  <xsd:include schemaLocation="B2MML-MI-ProcessSegment.xsd" />
+  <xsd:include schemaLocation="B2MML-MI-ProductDefinition.xsd" />
+  <xsd:include schemaLocation="B2MML-MI-ProductionCapability.xsd" />
+  <xsd:include schemaLocation="B2MML-MI-ProductionPerformance.xsd" />
+  <xsd:include schemaLocation="B2MML-MI-ProductionSchedule.xsd" />
+  <xsd:include schemaLocation="B2MML-MI-ResourceRelationshipNetwork.xsd" />
+  <xsd:include schemaLocation="B2MML-MI-TransactionProfile.xsd" />
+  <xsd:include schemaLocation="B2MML-MI-WorkAlert.xsd" />
+  <xsd:include schemaLocation="B2MML-MI-WorkCapability.xsd" />
+  <xsd:include schemaLocation="B2MML-MI-WorkDefinition.xsd" />
+  <xsd:include schemaLocation="B2MML-MI-WorkPerformance.xsd" />
+  <xsd:include schemaLocation="B2MML-MI-WorkSchedule.xsd" />
+  
+
+  <xsd:import namespace="http://www.mesa.org/xml/B2MML-MI-AllExtensions"
+              schemaLocation="B2MML-MI-AllExtensions.xsd" />
+  <xsd:annotation>
+    <xsd:documentation>
+      This file simply includes the B2MML schemas into a single
+      definition that will allow the inclusion of these schemas into the
+      global set of Process Centric Notifys as the Process Centric Notify
+      Proposal 0.1.
+
+      Copyright 2012 MESA International
+      All Rights Reserved. http://www.mesa.org
+
+      This MESA International work (including specifications, documents,
+      software, and related items) referred to as the Business To
+      Manufacturing Markup Language (B2MML) is provided by the copyright
+      holders under the following license.
+
+      Permission to use, copy, modify, or redistribute this Work and its
+      documentation, with or without modification, for any purpose and
+      without fee or royalty is hereby granted provided the World Batch
+      Forum is acknowledged as the originator of this Work using the
+      following statement:
+
+      "The Business To Manufacturing Markup Language (B2MML) is used
+      courtesy of MESA International."
+
+      In no Notify shall MESA International, its members, or any
+      third party be liable for any costs, expenses, losses, damages or
+      injuries incurred by use of the Work or as a result of this
+      agreement.
+
+      Based upon the ANSI/ISA-95.00.02-2010 Enterprise-Control System
+      Integration Part 2: Object Model Attributes Standard and the
+      ANSI/ISA-95.00.05-2006 Enterprise-Control System Integration
+      Part 5: Business to Manufacturing Transactions
+    </xsd:documentation>
+
+    <xsd:documentation>
+
+      Revision History
+
+      Ver           Date            Person          Note
+      ---           ----            ------          ----
+      BHPBilliton   22 Jun 2015     B. Poole        This is a BHPBilliton specific branch of V0600
+      BHPBilliton   21 Sep 2016     B. Poole        Inital draft of OperationsEvent schema
+      MI            24 Oct 2016     B. Pogson       MI branch of B2MML
+    </xsd:documentation>
+  </xsd:annotation>
+
+  <!-- Global Elements -->
+  <xsd:element name="OperationsEventClass" type="OperationsEventClassType"/>
+  <xsd:element name="OperationsEventDefinition" type="OperationsEventDefinitionType"/>
+  <xsd:element name="OperationsEvent" type="OperationsEventType"/>
+
+  <!-- Simple & Complex Types	-->
+  <xsd:complexType name="OperationsEventClassType">
+    <xsd:sequence>
+      <xsd:element name="ID" type="IdentifierType" />
+      <xsd:element name="Description" type="DescriptionType" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="OperationsEventProfileID" type="IdentifierType" />
+      <xsd:element name="OperationsEventClass" type="OperationsEventClassType" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="OperationsEventClassProperty" type="OperationsEventClassPropertyType" minOccurs="0"
+                   maxOccurs="unbounded" />
+      <xsd:element name="OperationsEventClassRecordSpecification" type="OperationsEventClassRecordSpecificationType"
+                   minOccurs="0" maxOccurs="unbounded" />
+      <xsd:group ref="Extended:OperationsEventClass" minOccurs="0" maxOccurs="1" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="OperationsEventClassPropertyType">
+    <xsd:sequence>
+      <xsd:element name="ID" type="IdentifierType" />
+      <xsd:element name="Description" type="DescriptionType" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="Value" type="ValueType" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="OperationsEventClassProperty" type="OperationsEventClassPropertyType" minOccurs="0" maxOccurs="unbounded" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="RecordEntryType">
+    <xsd:sequence>
+      <xsd:element name="ID" type="IdentifierType" />
+      <xsd:choice>
+         <xsd:element name="ConfirmBOD" type="ConfirmBODType" />
+         <xsd:element name="EquipmentInformation" type="EquipmentInformationType" />
+         <xsd:element name="Equipment" type="EquipmentType" />
+         <xsd:element name="EquipmentClass" type="EquipmentClassType" />
+         <xsd:element name="EquipmentCapabilityTestSpecification" type="EquipmentCapabilityTestSpecificationType" />
+         <xsd:element name="MaterialInformation" type="MaterialInformationType" />
+         <xsd:element name="MaterialClass" type="MaterialClassType" />
+         <xsd:element name="MaterialDefinition" type="MaterialDefinitionType" />
+         <xsd:element name="MaterialLot" type="MaterialLotType" />
+         <xsd:element name="MaterialTestSpecification" type="MaterialTestSpecificationType" />
+         <xsd:element name="MaterialSubLot" type="MaterialSubLotType" />
+         <xsd:element name="OperationsCapabilityInformation" type="OperationsCapabilityInformationType" />
+         <xsd:element name="OperationsCapability" type="OperationsCapabilityType" />
+         <xsd:element name="OperationsDefinitionInformation" type="OperationsDefinitionInformationType" />
+         <xsd:element name="OperationsDefinition" type="OperationsDefinitionType" />
+         <xsd:element name="OperationsEventClass" type="OperationsEventClassType" />
+         <xsd:element name="OperationsEventDefinition" type="OperationsEventDefinitionType" />
+         <xsd:element name="OperationsEvent" type="OperationsEventType" />
+         <xsd:element name="OperationsPerformance" type="OperationsPerformanceType" />
+         <xsd:element name="OperationsResponse" type="OperationsResponseType" />
+         <xsd:element name="OperationsSchedule" type="OperationsScheduleType" />
+         <xsd:element name="OperationsRequest" type="OperationsRequestType" />
+         <xsd:element name="PersonnelInformation" type="PersonnelInformationType" />
+         <xsd:element name="PersonnelClass" type="PersonnelClassType" />
+         <xsd:element name="Person" type="PersonType" />
+         <xsd:element name="QualificationTestSpecification" type="QualificationTestSpecificationType" />
+         <xsd:element name="PhysicalAssetInformation" type="PhysicalAssetInformationType" />
+         <xsd:element name="PhysicalAsset" type="PhysicalAssetType" />
+         <xsd:element name="PhysicalAssetClass" type="PhysicalAssetClassType" />
+         <xsd:element name="PhysicalAssetCapabilityTestSpecification" type="PhysicalAssetCapabilityTestSpecificationType" />
+         <xsd:element name="ProcessSegmentInformation" type="ProcessSegmentInformationType" />
+         <xsd:element name="ProcessSegment" type="ProcessSegmentType" />
+         <xsd:element name="ProductInformation" type="ProductInformationType" />
+         <xsd:element name="ProductDefinition" type="ProductDefinitionType" />
+         <xsd:element name="ProductionCapability" type="ProductionCapabilityType" />
+         <xsd:element name="ProductionPerformance" type="ProductionPerformanceType" />
+         <xsd:element name="ProductionResponse" type="ProductionResponseType" />
+         <xsd:element name="ProductionSchedule" type="ProductionScheduleType" />
+         <xsd:element name="ProductionRequest" type="ProductionRequestType" />
+         <xsd:element name="ResourceRelationshipNetwork" type="ResourceRelationshipNetworkType" />
+         <xsd:element name="ResourceNetworkConnectionInformation" type="ResourceNetworkConnectionInformationType" />
+         <xsd:element name="TransactionProfile" type="TransactionProfileType" />
+         <xsd:element name="WorkAlertInformation" type="WorkAlertInformationType" />
+         <xsd:element name="WorkAlertDefinition" type="WorkAlertDefinitionType" />
+         <xsd:element name="WorkAlert" type="WorkAlertType" />
+         <xsd:element name="WorkCapabilityInformation" type="WorkCapabilityInformationType" />
+         <xsd:element name="WorkCapability" type="WorkCapabilityType" />
+         <xsd:element name="WorkDefinitionInformation" type="WorkDefinitionInformationType" />
+         <xsd:element name="WorkMaster" type="WorkMasterType" />
+         <xsd:element name="WorkDirective" type="WorkDirectiveType" />
+         <xsd:element name="WorkflowSpecificationInformation" type="WorkflowSpecificationInformationType" />
+         <xsd:element name="WorkflowSpecification" type="WorkflowSpecificationType" />
+         <xsd:element name="WorkflowSpecificationType" type="WorkflowSpecificationTypeType" />
+         <xsd:element name="WorkPerformance" type="WorkPerformanceType" />
+         <xsd:element name="WorkResponse" type="WorkResponseType" />
+         <xsd:element name="JobResponse" type="JobResponseType" />
+         <xsd:element name="WorkSchedule" type="WorkScheduleType" />
+         <xsd:element name="WorkRequest" type="WorkRequestType" />
+         <xsd:element name="JobList" type="JobListType" />
+         <xsd:element name="JobOrder" type="JobOrderType" />
+      </xsd:choice>
+      <xsd:element name="HierarchyScope" type="HierarchyScopeType" minOccurs="0" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:simpleType name="RecordEntryActionCodeEnumerationType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Added" />
+      <xsd:enumeration value="Changed" />
+      <xsd:enumeration value="Deleted" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="RecordEntryActionActionCodeType">
+    <xsd:union memberTypes="RecordEntryActionCodeEnumerationType xsd:normalizedString" />
+  </xsd:simpleType>
+
+  <xsd:simpleType name="MultiplicityMaxType">
+    <xsd:restriction base="xsd:token">
+      <xsd:pattern value="^\d+$|^unbound$"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+
+  <xsd:complexType name="MultiplicityType">
+    <xsd:sequence>
+      <xsd:element name="Min" type="xsd:integer" />
+      <xsd:element name="Max" type="MultiplicityMaxType" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="OperationsEventClassRecordSpecificationType">
+    <xsd:sequence>
+      <xsd:element name="ID" type="IdentifierType" />
+      <xsd:element name="Description" type="DescriptionType" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="RecordEntry" type="RecordEntryType" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="RecordEntryMultiplicity" type="MultiplicityType" minOccurs="0" />
+      <xsd:element name="Action" type="RecordEntryActionActionCodeType" minOccurs="0" maxOccurs="unbounded" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:simpleType name="OperationsEventTypeEnumerationType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Event" />
+      <xsd:enumeration value="Alert" />
+      <xsd:enumeration value="Alarm" />
+      <xsd:enumeration value="Other" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:complexType name="OperationsEventTypeType">
+    <xsd:simpleContent>
+      <xsd:extension base="OperationsEventTypeEnumerationType">
+        <xsd:attribute name="OtherValue" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+
+  <xsd:simpleType name="OperationsEventLevelEnumerationType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="3" />
+      <xsd:enumeration value="4" />
+      <xsd:enumeration value="Other" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:complexType name="OperationsEventLevelType">
+    <xsd:simpleContent>
+      <xsd:extension base="OperationsEventLevelEnumerationType">
+        <xsd:attribute name="OtherValue" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+
+  <xsd:simpleType name="FunctionEnumerationType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Resource Management" />
+      <xsd:enumeration value="Definition Management" />
+      <xsd:enumeration value="Detailed Scheduling" />
+      <xsd:enumeration value="Dispatching" />
+      <xsd:enumeration value="Execution Management" />
+      <xsd:enumeration value="Data Collection" />
+      <xsd:enumeration value="Performance Analysis" />
+      <xsd:enumeration value="Tracking" />
+      <xsd:enumeration value="Order Processing" />
+      <xsd:enumeration value="Production Scheduling" />
+      <xsd:enumeration value="Production Control" />
+      <xsd:enumeration value="Material and Entergy Control" />
+      <xsd:enumeration value="Procurement" />
+      <xsd:enumeration value="Quality Assurance" />
+      <xsd:enumeration value="Product Inventory Control" />
+      <xsd:enumeration value="Product Cost Accounting" />
+      <xsd:enumeration value="Product Shipping Administration" />
+      <xsd:enumeration value="Maintenence Management" />
+      <xsd:enumeration value="Marketing and Sales" />
+      <xsd:enumeration value="Research and Development" />
+      <xsd:enumeration value="Engineering" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="FunctionType">
+    <xsd:union memberTypes="FunctionEnumerationType xsd:normalizedString" />
+  </xsd:simpleType>
+
+  <xsd:complexType name="OperationsEventDefinitionType">
+    <xsd:sequence>
+      <xsd:element name="ID" type="IdentifierType" />
+      <xsd:element name="Description" type="DescriptionType" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="HierarchyScope" type="HierarchyScopeType" minOccurs="0" />
+      <xsd:element name="Priority" type="TextType" minOccurs="0" maxOccurs="unbounded"/>
+      <xsd:element name="OperationsEventType" type="OperationsEventTypeType" minOccurs="0"/>
+      <xsd:element name="OperationsEventLevel" type="OperationsEventLevelType" minOccurs="0"/>
+      <xsd:element name="OperationsType" type="OperationsTypeType" minOccurs="0"/>
+      <xsd:element name="OperationsEventFunction" type="FunctionType" minOccurs="0"/>
+      <xsd:element name="Category" type="TextType" minOccurs="0" />
+      <xsd:element name="Source" type="TextType" minOccurs="0" />
+      <xsd:element name="Acknowledgement" type="IdentifierType" minOccurs="0" />
+      <xsd:element name="OperationsEventProfileID" type="IdentifierType" />
+      <xsd:element name="OperationsEventDefinitionRecordSpecification" type="OperationsEventDefinitionRecordSpecificationType" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="OperationsEventDefinitionProperty" type="OperationsEventDefinitionPropertyType" minOccurs="0" maxOccurs="unbounded" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="OperationsEventDefinitionPropertyType">
+    <xsd:sequence>
+      <xsd:element name="ID" type="IdentifierType" />
+      <xsd:element name="Description" type="DescriptionType" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="Value" type="ValueType" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="OperationsEventClassPropertyID" type="IdentifierType" minOccurs="0" />
+      <xsd:element name="OperationsEventDefinitionProperty" type="OperationsEventDefinitionPropertyType" minOccurs="0" maxOccurs="unbounded" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="OperationsEventDefinitionRecordSpecificationType">
+    <xsd:sequence>
+      <xsd:element name="ID" type="IdentifierType" />
+      <xsd:element name="Description" type="DescriptionType" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="RecordEntry" type="RecordEntryType" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="RecordEntryMultiplicity" type="MultiplicityType" minOccurs="0" />
+      <xsd:element name="Action" type="RecordEntryActionActionCodeType" minOccurs="0" maxOccurs="unbounded" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="OperationsEventType">
+    <xsd:sequence>
+      <xsd:element name="ID" type="IdentifierType" />
+      <xsd:element name="Description" type="DescriptionType" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="EffectiveDateTime" type="DateTimeType" minOccurs="0"/>
+      <xsd:element name="RecordDateTime" type="DateTimeType" minOccurs="0"/>
+      <xsd:element name="HierarchyScope" type="HierarchyScopeType" minOccurs="0" />
+      <xsd:element name="Priority" type="TextType" minOccurs="0" maxOccurs="unbounded"/>
+      <xsd:element name="OperationsEventType" type="OperationsEventTypeType" minOccurs="0"/>
+      <xsd:element name="OperationsEventLevel" type="OperationsEventLevelType" minOccurs="0"/>
+      <xsd:element name="OperationsType" type="OperationsTypeType" minOccurs="0"/>
+      <xsd:element name="Function" type="FunctionType" minOccurs="0"/>
+      <xsd:element name="Category" type="TextType" minOccurs="0" />
+      <xsd:element name="Source" type="TextType" minOccurs="0" />
+      <xsd:element name="OperationsEventDefinitionID" type="IdentifierType" />
+      <xsd:element name="AssociatedOperationsEventID" type="IdentifierType" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="OperationsEventClassID" type="IdentifierType" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="OperationsEventProfileID" type="IdentifierType" />
+      <xsd:element name="OperationsEventRecord" type="OperationsEventRecordType" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="OperationsEventProperty" type="OperationsEventPropertyType" minOccurs="0" maxOccurs="unbounded" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="OperationsEventPropertyType">
+    <xsd:sequence>
+      <xsd:element name="ID" type="IdentifierType" />
+      <xsd:element name="Description" type="DescriptionType" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="Value" type="ValueType" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:element name="OperationsEventDefinitionPropertyID" type="IdentifierType" minOccurs="0" />
+      <xsd:element name="OperationsEventProperty" type="OperationsEventPropertyType" minOccurs="0" maxOccurs="unbounded" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="OperationsEventRecordType">
+    <xsd:sequence>
+      <xsd:element name="Action" type="RecordEntryActionActionCodeType" />
+      <xsd:element name="EffectiveDateTime" type="DateTimeType" minOccurs="0"/>
+      <xsd:element name="RecordDateTime" type="DateTimeType" minOccurs="0"/>
+      <xsd:element name="RecordEntry" type="RecordEntryType" minOccurs="1" maxOccurs="unbounded" />
+      <xsd:element name="OperationsEventClassRecordSpecificationID" type="IdentifierType" minOccurs="0" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+</xsd:schema>

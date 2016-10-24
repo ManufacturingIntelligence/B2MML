@@ -48,17 +48,17 @@
         Part 5: Business to Manufacturing Transactions. 
      </xsd:documentation>
 
-   <xsd:documentation>
+   <xsd:documentation> 
+  
+      Revision History
 
-     Revision History
-
-     Ver           Date            Person          Note
-     ---           ----            ------          ----
-     BHPBilliton   22 Jun 2015     B. Poole        This is a BHPBilliton specific branch of V0600
-     BHPBilliton   2  Jul 2015     B. Poole        Add a OperationsSegmentID to the SegmentRequirementType (added for completeness but not part of WD01)
-     BHPBilliton   2  Jul 2015     B. Poole        Add a GeoSpatial element to the MaterialRequirementType (added for completeness but not part of WD01)
-     BHPBilliton   3  Jul 2015     B. Poole        Add a MaterialTestSpecificationID to the MaterialRequirementType (added for completeness but not part of WD01)
-     MI            16 Aug 2016     B. Pogson       Manufacturing Intelligence branch of V0600
+        Ver           Date            Person          Note
+        ---           ----            ------          ----
+        BHPBilliton   22 Jun 2015     B. Poole        This is a BHPBilliton specific branch of V0600
+        BHPBilliton   2  Jul 2015     B. Poole        Add a OperationsSegmentID to the SegmentRequirementType (added for completeness but not part of WD01)
+        BHPBilliton   2  Jul 2015     B. Poole        Add a GeoSpatial element to the MaterialRequirementType (added for completeness but not part of WD01)
+        BHPBilliton   3  Jul 2015     B. Poole        Add a MaterialTestSpecificationID to the MaterialRequirementType (added for completeness but not part of WD01)     
+        MI            24 Oct 2016     B. Pogson       MI branch of B2MML
 
    </xsd:documentation>
 </xsd:annotation>

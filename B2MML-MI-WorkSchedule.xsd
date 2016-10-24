@@ -59,7 +59,7 @@
      BHPBilliton   2  Jul 2015     B. Poole        Add SegmentRequirementID to the JobOrderType (added but not part of WD01)
      BHPBilliton   2  Jul 2015     B. Poole		  Add WorkMasterID to the WorkRequestType (added but not part of WD01)
      BHPBilliton   10 May 2016     B. Poole		  Added WorkRequestState to Work Request (Under Review)
-     MI            16 Aug 2016     B. Pogson       Manufacturing Intelligence branch of V0600
+     MI            24 Oct 2016     B. Pogson       MI branch of B2MML
 
    </xsd:documentation>
 </xsd:annotation>
