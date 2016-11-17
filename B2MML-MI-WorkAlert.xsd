@@ -169,8 +169,6 @@
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
       <xsd:element name = "Value"                       type = "ValueType"      
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
-      <xsd:element name = "WorkAlertPropertyDefinitionID" type = "IdentifierType"
-                                                        minOccurs = "0" maxOccurs = "1"/>
       <xsd:group   ref  = "Extended:WorkAlertProperty"
                                                         minOccurs = "0" maxOccurs = "1"/>
     </xsd:sequence>

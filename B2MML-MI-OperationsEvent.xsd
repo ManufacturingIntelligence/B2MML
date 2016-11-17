@@ -33,8 +33,8 @@
   <xsd:include schemaLocation="B2MML-MI-WorkSchedule.xsd" />
   
 
-  <xsd:import namespace="http://www.mesa.org/xml/B2MML-MI-AllExtensions"
-              schemaLocation="B2MML-MI-AllExtensions.xsd" />
+  <xsd:import namespace="http://www.mesa.org/xml/B2MML-BHPBilliton-AllExtensions"
+              schemaLocation="B2MML-BHPBilliton-AllExtensions.xsd" />
   <xsd:annotation>
     <xsd:documentation>
       This file simply includes the B2MML schemas into a single
@@ -303,7 +303,6 @@
       <xsd:element name="ID" type="IdentifierType" />
       <xsd:element name="Description" type="DescriptionType" minOccurs="0" maxOccurs="unbounded" />
       <xsd:element name="Value" type="ValueType" minOccurs="0" maxOccurs="unbounded" />
-      <xsd:element name="OperationsEventClassPropertyID" type="IdentifierType" minOccurs="0" />
       <xsd:element name="OperationsEventDefinitionProperty" type="OperationsEventDefinitionPropertyType" minOccurs="0" maxOccurs="unbounded" />
     </xsd:sequence>
   </xsd:complexType>
@@ -346,7 +345,6 @@
       <xsd:element name="ID" type="IdentifierType" />
       <xsd:element name="Description" type="DescriptionType" minOccurs="0" maxOccurs="unbounded" />
       <xsd:element name="Value" type="ValueType" minOccurs="0" maxOccurs="unbounded" />
-      <xsd:element name="OperationsEventDefinitionPropertyID" type="IdentifierType" minOccurs="0" />
       <xsd:element name="OperationsEventProperty" type="OperationsEventPropertyType" minOccurs="0" maxOccurs="unbounded" />
     </xsd:sequence>
   </xsd:complexType>
@@ -357,7 +355,6 @@
       <xsd:element name="EffectiveDateTime" type="DateTimeType" minOccurs="0"/>
       <xsd:element name="RecordDateTime" type="DateTimeType" minOccurs="0"/>
       <xsd:element name="RecordEntry" type="RecordEntryType" minOccurs="1" maxOccurs="unbounded" />
-      <xsd:element name="OperationsEventClassRecordSpecificationID" type="IdentifierType" minOccurs="0" />
     </xsd:sequence>
   </xsd:complexType>
 
