@@ -66,6 +66,9 @@
      BHPBilliton   05 Apr 2016     C. Gifford      Add Geospatial element to the Equipment Segment Specification (as per WD01 p 67)
      BHPBilliton   05 Apr 2016     C. Gifford      Add Geospatial element to the Physical Asset Segment Specification (as per WD01 p 73)
      MI            24 Oct 2016     B. Pogson       MI branch of B2MML
+     BHPBilliton   03 Jan 2017     B. Poole        Add WorkmasterID element to the ProcessSegmentType as per part 2 WD04_2016_comment _Poole_02
+     BHPBilliton   03 Jan 2017     B. Poole        Add AbstractProcessSegmentID element to the ProcessSegmentType as per part 2 WD04_2016_comment _Poole_05
+     BHPBilliton   03 Jan 2017     B. Poole        Add DefinitionType element to the ProcessSegmentType as per part 2 WD04_2016_comment _Poole_05
 
    </xsd:documentation>
 </xsd:annotation>
@@ -132,6 +135,8 @@
                                                         minOccurs = "0"/>
       <xsd:element name = "Duration"                    type = "DurationType"
                                                         minOccurs = "0"/>
+      <xsd:element name = "DefinitionType"              type="DefinitionTypeType" />
+      <xsd:element name = "AbstractProcessSegmentID"    type = "IdentifierType" minOccurs = "0" />
       <xsd:element name = "PersonnelSegmentSpecification"
                                                         type = "PersonnelSegmentSpecificationType" 
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
@@ -149,6 +154,8 @@
       <xsd:element name = "SegmentDependency"           type = "SegmentDependencyType" 
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
       <xsd:element name = "ProcessSegment"              type = "ProcessSegmentType" 
+                                                        minOccurs = "0" maxOccurs = "unbounded"/>
+      <xsd:element name = "WorkMasterID"                type = "IdentifierType"
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
       <xsd:group   ref  = "Extended:ProcessSegment"     minOccurs = "0" maxOccurs = "1"/>
     </xsd:sequence>

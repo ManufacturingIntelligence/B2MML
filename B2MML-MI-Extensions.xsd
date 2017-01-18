@@ -52,6 +52,14 @@
         ---           ----            ------          ----
         BHPBilliton   22 Jun 2015     B. Poole        This is a BHPBilliton specific branch of V0600
         MI            24 Oct 2016     B. Pogson       MI branch of B2MML
+        BHPBilliton   03 Jan 2017     B. Poole        Add ResourceRelationshipNetworkProperty as per part 4 WD04_2016_comment_Poole_04
+        BHPBilliton   03 Jan 2017     B. Poole        Add OperationalLocationClass as per part 2 WD04_2016_comment_Poole_06 and part 5 2016_comment _Poole_01
+        BHPBilliton   03 Jan 2017     B. Poole        Add OperationalLocation as per part 2 WD04_2016_comment_Poole_06 and part 5 2016_comment _Poole_01
+        BHPBilliton   03 Jan 2017     B. Poole        Add OperationalLocationProperty as per part 2 WD04_2016_comment_Poole_06 and part 5 2016_comment _Poole_01
+        BHPBilliton   03 Jan 2017     B. Poole        Add WorkCalendarDefinition as per Part 4 ed 2 WD03 and ISA-95.05 2016_comment_Poole_01
+        BHPBilliton   03 Jan 2017     B. Poole        Add WorkCalendarDefinitionProperty as per Part 4 ed 2 WD03 and ISA-95.05 2016_comment_Poole_01
+        BHPBilliton   03 Jan 2017     B. Poole        Add WorkCalendarDefinitionEntry as per Part 4 ed 2 WD03 and ISA-95.05 2016_comment_Poole_01
+        BHPBilliton   03 Jan 2017     B. Poole        Add WorkCalendarProperty as per Part 4 ed 2 WD03 and ISA-95.05 2016_comment_Poole_01
 
    </xsd:documentation>
 </xsd:annotation>
@@ -880,6 +888,12 @@ of elements when used in an XML document.
                 </xsd:sequence>
         </xsd:group>
 
+        <xsd:group name = "ResourceRelationshipNetworkProperty">
+          <xsd:sequence>
+            <!-- add extended elements here -->
+          </xsd:sequence>
+        </xsd:group>
+
         <xsd:group name = "ResourceNetworkConnection">
                 <xsd:sequence>
                         <!-- add extended elements here -->
@@ -1098,6 +1112,52 @@ of elements when used in an XML document.
                 <xsd:sequence>
                         <!-- add extended elements here -->
                 </xsd:sequence>
-        </xsd:group>     
+        </xsd:group>
+
+  <!-- B2MML extension groups for OperationlLocation schemas  -->
+
+        <xsd:group name="OperationalLocationClass">
+          <xsd:sequence>
+            <!-- add extended elements here -->
+          </xsd:sequence>
+        </xsd:group>
+
+        <xsd:group name="OperationalLocation">
+          <xsd:sequence>
+            <!-- add extended elements here -->
+          </xsd:sequence>
+        </xsd:group>
+
+        <xsd:group name="OperationalLocationProperty">
+          <xsd:sequence>
+            <!-- add extended elements here -->
+          </xsd:sequence>
+        </xsd:group>
+
+  <!-- B2MML extension groups for WorkCalendar schemas  -->
+
+        <xsd:group name="WorkCalendarDefinition">
+          <xsd:sequence>
+            <!-- add extended elements here -->
+          </xsd:sequence>
+        </xsd:group>
+
+        <xsd:group name="WorkCalendarDefinitionProperty">
+          <xsd:sequence>
+            <!-- add extended elements here -->
+          </xsd:sequence>
+        </xsd:group>
+
+        <xsd:group name="WorkCalendarDefinitionEntry">
+          <xsd:sequence>
+            <!-- add extended elements here -->
+          </xsd:sequence>
+        </xsd:group>
+
+        <xsd:group name="WorkCalendarProperty">
+          <xsd:sequence>
+            <!-- add extended elements here -->
+          </xsd:sequence>
+        </xsd:group>
  
 </xsd:schema>

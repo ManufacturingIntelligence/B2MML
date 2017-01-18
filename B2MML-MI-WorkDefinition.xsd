@@ -63,8 +63,11 @@
      BHPBilliton   21 Sep 2016     B. Poole	      Add WorkflowSpecificationID to WorkDirectiveType as per WD03 p34
      BHPBilliton   21 Sep 2016     B. Poole	      Add WorkflowSpecificationID to WorkMasterType as per WD03 p34
      MI            24 Oct 2016     B. Pogson       MI branch of B2MML
+     BHPBilliton   03 Jan 2017     B. Poole	      Add AbstractWorkMasterID to WorkMasterType as per part 4 WD04_2016_comment_Poole_02
+     BHPBilliton   03 Jan 2017     B. Poole	      Add DefinitionType to WorkMasterType as per part 4 WD04_2016_comment_Poole_02
+     BHPBilliton   03 Jan 2017     B. Poole	      Add ProcessSegmentID to WorkMasterType as per part 4 WD04_2016_comment_Poole_03
 
-</xsd:documentation>
+   </xsd:documentation>
 </xsd:annotation>
 
 <!-- Global Elements -->
@@ -165,9 +168,13 @@
   <xsd:complexType name = "WorkMasterType">
     <xsd:sequence>
       <xsd:group   ref  = "WorkDefinitionType"/>
+      <xsd:element name = "DefinitionType"              type = "DefinitionTypeType" />
       <xsd:element name = "WorkflowSpecificationID"     type = "IdentifierType"
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
-      <xsd:element name = "WorkMaster"                  type = "WorkMasterType"       
+      <xsd:element name = "AbstractWorkMasterID"        type = "IdentifierType" minOccurs = "0" />
+      <xsd:element name = "ProcessSegmentID"            type = "IdentifierType"
+                                                        minOccurs = "0" maxOccurs = "unbounded" />
+      <xsd:element name = "WorkMaster"                  type = "WorkMasterType"
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
       <xsd:group   ref  = "Extended:WorkMaster"         minOccurs = "0" maxOccurs = "1"/>
     </xsd:sequence>
@@ -180,7 +187,7 @@
                                                         minOccurs = "0"/>
       <xsd:element name = "JobOrderID"                  type = "IdentifierType"    
                                                         minOccurs = "0" />
-      <xsd:element name = "WorkflowSpecificationID"       type = "IdentifierType"
+      <xsd:element name = "WorkflowSpecificationID"     type = "IdentifierType"
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
       <xsd:element name = "WorkDirective"               type = "WorkDirectiveType"       
                                                         minOccurs = "0" maxOccurs = "unbounded"/>

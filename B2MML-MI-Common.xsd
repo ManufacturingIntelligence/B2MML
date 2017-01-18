@@ -100,6 +100,68 @@
           BHPBilliton   28  Sep 2016     B.Poole      Corrected typo in MaterialUse1Type to Returned Sample
           BHPBilliton   03  Oct 2016     B.Poole      Added MaterialDispositionStatusType of MaterialDispositionStatus1Type enumeration as per WD04 p 73
           MI            24 Oct 2016     B. Pogson       MI branch of B2MML
+          BHPBilliton   03  Jan 2017     B.Poole      Added DefinitionTypeType as per part 4 WD04_2016_comment_Poole_02
+          BHPBilliton   03  Jan 2017     B.Poole      Added ID to OpPersonnelSpecificationType as per part 2 WD04_2016_comment_Poole_01
+          BHPBilliton   03  Jan 2017     B.Poole      Added ID to OpEquipmentSpecificationType as per part 2 WD04_2016_comment_Poole_01
+          BHPBilliton   03  Jan 2017     B.Poole      Added ID to OpPhysicalAssetSpecificationType as per part 2 WD04_2016_comment_Poole_01
+          BHPBilliton   03  Jan 2017     B.Poole      Added LevelOfConfidence to ValueType as per comment
+          BHPBilliton   03  Jan 2017     B.Poole      Added ExpandedUncertainty to ValueType as per comment
+          BHPBilliton   03  Jan 2017     B.Poole      Added CoverageFactor to ValueType as per comment
+          BHPBilliton   03  Jan 2017     B.Poole      Added Precision to ValueType as per comment
+          BHPBilliton   03  Jan 2017     B.Poole      Added Accuracy to ValueType as per comment
+          BHPBilliton   03  Jan 2017     B.Poole      Added LevelOfConfidence to QuantityValueType as per comment
+          BHPBilliton   03  Jan 2017     B.Poole      Added ExpandedUncertainty to QuantityValueType as per comment
+          BHPBilliton   03  Jan 2017     B.Poole      Added CoverageFactor to QuantityValueType as per comment
+          BHPBilliton   03  Jan 2017     B.Poole      Added Precision to QuantityValueType as per comment
+          BHPBilliton   03  Jan 2017     B.Poole      Added Accuracy to QuantityValueType as per comment
+          BHPBilliton   03 Jan 2017      B. Poole     Add SpatialLocation to OpPersonnelSpecificationType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Add LocationDescription to OpPersonnelSpecificationType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Add OperationalLocationID to OpPersonnelSpecificationType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Remove GeospatialDesignation from OpPersonnelSpecificationType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Add SpatialLocation to OpEquipmentSpecificationType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Add LocationDescription to OpEquipmentSpecificationType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Add OperationalLocationID to OpEquipmentSpecificationType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Remove GeospatialDesignation from OpEquipmentSpecificationType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Add SpatialLocation to OpPhysicalAssetSpecificationType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Add LocationDescription to OpPhysicalAssetSpecificationType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Add OperationalLocationID to OpPhysicalAssetSpecificationType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Remove GeospatialDesignation from OpPhysicalAssetSpecificationType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Add SpatialLocation to OpMaterialSpecificationType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Add LocationDescription to OpMaterialSpecificationType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Add OperationalLocationID to OpMaterialSpecificationType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Remove GeospatialDesignation from OpMaterialSpecificationType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Add SpatialLocation to OpPersonnelRequirementType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Add LocationDescription to OpPersonnelRequirementType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Add OperationalLocationID to OpPersonnelRequirementType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Remove GeospatialDesignation from OpPersonnelRequirementType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Add SpatialLocation to OpEquipmentRequirementType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Add LocationDescription to OpEquipmentRequirementType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Add OperationalLocationID to OpEquipmentRequirementType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Remove GeospatialDesignation from OpEquipmentRequirementType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Add SpatialLocation to OpPhysicalAssetRequirementType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Add LocationDescription to OpPhysicalAssetRequirementType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Add OperationalLocationID to OpPhysicalAssetRequirementType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Remove GeospatialDesignation from OpPhysicalAssetRequirementType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Add SpatialLocation to OpMaterialRequirementType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Add LocationDescription to OpMaterialRequirementType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Add OperationalLocationID to OpMaterialRequirementType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Remove GeospatialDesignation from OpMaterialRequirementType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Add SpatialLocation to OpPersonnelCapabilityType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Add LocationDescription to OpPersonnelCapabilityType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Add OperationalLocationID to OpPersonnelCapabilityType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Remove GeospatialDesignation from OpPersonnelCapabilityType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Add SpatialLocation to OpEquipmentCapabilityType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Add LocationDescription to OpEquipmentCapabilityType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Add OperationalLocationID to OpEquipmentCapabilityType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Remove GeospatialDesignation from OpEquipmentCapabilityType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Add SpatialLocation to OpPhysicalAssetCapabilityType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Add LocationDescription to OpPhysicalAssetCapabilityType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Add OperationalLocationID to OpPhysicalAssetCapabilityType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Remove GeospatialDesignation from OpPhysicalAssetCapabilityType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Add SpatialLocation to OpMaterialCapabilityType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Add LocationDescription to OpMaterialCapabilityType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Add OperationalLocationID to OpMaterialCapabilityType as per part 2 WD04_2016_comment_Poole_06
+          BHPBilliton   03 Jan 2017      B. Poole     Remove GeospatialDesignation from OpMaterialCapabilityType as per part 2 WD04_2016_comment_Poole_06
 
         </xsd:documentation>
     </xsd:annotation>
@@ -621,9 +683,11 @@
             <xsd:element name="Description" type="DescriptionType" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:element name="EquipmentUse" type="EquipmentUseType" minOccurs="0"/>
             <xsd:element name="Quantity" type="QuantityValueType" minOccurs="0" maxOccurs="unbounded"/>
-            <xsd:element name="GeospatialDesignation" type="GeospatialDesignationType" minOccurs="0"/>
             <xsd:element name="HierarchyScope" type="HierarchyScopeType" minOccurs="0"/>
             <xsd:element name="EquipmentLevel" type="HierarchyScopeType" minOccurs="0"/>
+            <xsd:element name="SpatialLocation" type="GeospatialDesignationType" minOccurs = "0" />
+            <xsd:element name="LocationDescription"  type = "DescriptionType" minOccurs = "0" />
+            <xsd:element name="OperationalLocationID" type="IdentifierType" minOccurs = "0" />
             <xsd:element name="EquipmentRequirementProperty" type="OpEquipmentRequirementPropertyType" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:element name="RequiredByRequestedSegmentResponse" type="RequiredByRequestedSegmentResponseType" minOccurs="0"/>
             <xsd:group ref="Extended:OpEquipmentRequirement" minOccurs="0" maxOccurs="1"/>
@@ -648,8 +712,10 @@
             <xsd:element name="Description" type="DescriptionType" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:element name="PersonnelUse" type="PersonnelUseType" minOccurs="0"/>
             <xsd:element name="Quantity" type="QuantityValueType" minOccurs="0" maxOccurs="unbounded"/>
-            <xsd:element name="GeospatialDesignation" type="GeospatialDesignationType" minOccurs="0"/>
             <xsd:element name="HierarchyScope" type="HierarchyScopeType" minOccurs="0"/>
+            <xsd:element name="SpatialLocation" type="GeospatialDesignationType" minOccurs = "0" />
+            <xsd:element name="LocationDescription"  type = "DescriptionType" minOccurs = "0" />
+            <xsd:element name="OperationalLocationID" type="IdentifierType" minOccurs = "0" />
             <xsd:element name="PersonnelRequirementProperty" type="OpPersonnelRequirementPropertyType" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:element name="RequiredByRequestedSegmentResponse" type="RequiredByRequestedSegmentResponseType" minOccurs="0"/>
             <xsd:group ref="Extended:OpPersonnelRequirement" minOccurs="0" maxOccurs="1"/>
@@ -674,9 +740,11 @@
             <xsd:element name="Description" type="DescriptionType" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:element name="PhysicalAssetUse" type="PhysicalAssetUseType" minOccurs="0"/>
             <xsd:element name="Quantity" type="QuantityValueType" minOccurs="0" maxOccurs="unbounded"/>
-            <xsd:element name="GeospatialDesignation" type="GeospatialDesignationType" minOccurs="0"/>
             <xsd:element name="HierarchyScope" type="HierarchyScopeType" minOccurs="0"/>
             <xsd:element name="EquipmentLevel" type="HierarchyScopeType" minOccurs="0"/>
+            <xsd:element name="SpatialLocation" type="GeospatialDesignationType" minOccurs = "0" />
+            <xsd:element name="LocationDescription"  type = "DescriptionType" minOccurs = "0" />
+            <xsd:element name="OperationalLocationID" type="IdentifierType" minOccurs = "0" />
             <xsd:element name="PhysicalAssetRequirementProperty" type="OpPhysicalAssetRequirementPropertyType" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:element name="RequiredByRequestedSegmentResponse" type="RequiredByRequestedSegmentResponseType" minOccurs="0"/>
             <xsd:group ref="Extended:OpPhysicalAssetRequirement" minOccurs="0" maxOccurs="1"/>
@@ -704,11 +772,13 @@
             <xsd:element name="MaterialUse" type="MaterialUseType" minOccurs="0"/>
             <xsd:element name="StorageLocation" type="StorageLocationType" minOccurs="0"/>
             <xsd:element name="Quantity" type="QuantityValueType" minOccurs="0" maxOccurs="unbounded"/>
-            <xsd:element name="GeospatialDesignation" type="GeospatialDesignationType" minOccurs="0"/>
             <xsd:element name="AssemblyRequirement" type="OpMaterialRequirementType" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:element name="AssemblyType" type="AssemblyTypeType" minOccurs="0"/>
             <xsd:element name="AssemblyRelationship" type="AssemblyRelationshipType" minOccurs="0"/>
             <xsd:element name="HierarchyScope" type="HierarchyScopeType" minOccurs="0"/>
+            <xsd:element name="SpatialLocation" type="GeospatialDesignationType" minOccurs = "0" />
+            <xsd:element name="LocationDescription"  type = "DescriptionType" minOccurs = "0" />
+            <xsd:element name="OperationalLocationID" type="IdentifierType" minOccurs = "0" />
             <xsd:element name="MaterialRequirementProperty" type="OpMaterialRequirementPropertyType" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:element name="RequiredByRequestedSegmentResponse" type="RequiredByRequestedSegmentResponseType" minOccurs="0"/>
             <xsd:element name="MaterialTestSpecificationID" type="MaterialTestSpecificationIDType" minOccurs="0" maxOccurs="unbounded"/>
@@ -729,13 +799,16 @@
     <!--     -->    
     <xsd:complexType name="OpPersonnelSpecificationType">
         <xsd:sequence>
+            <xsd:element name="ID" type="IdentifierType" minOccurs="0"/>
             <xsd:element name="PersonnelClassID" type="PersonnelClassIDType" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:element name="PersonID" type="PersonIDType" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:element name="Description" type="DescriptionType" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:element name="PersonnelUse" type="PersonnelUseType" minOccurs="0"/>
             <xsd:element name="Quantity" type="QuantityValueType" minOccurs="0" maxOccurs="unbounded"/>
-            <xsd:element name="GeospatialDesignation" type="GeospatialDesignationType" minOccurs = "0"/>
             <xsd:element name="HierarchyScope" type="HierarchyScopeType" minOccurs="0"/>
+            <xsd:element name="SpatialLocation" type="GeospatialDesignationType" minOccurs = "0" />
+            <xsd:element name="LocationDescription"  type = "DescriptionType" minOccurs = "0" />
+            <xsd:element name="OperationalLocationID" type="IdentifierType" minOccurs = "0" />
             <xsd:element name="PersonnelSpecificationProperty" type="OpPersonnelSpecificationPropertyType" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:group ref="Extended:OpPersonnelSpecification" minOccurs="0" maxOccurs="1"/>
         </xsd:sequence>
@@ -754,13 +827,16 @@
     <!--     -->    
     <xsd:complexType name="OpEquipmentSpecificationType">
         <xsd:sequence>
+            <xsd:element name="ID" type="IdentifierType"/>
             <xsd:element name="EquipmentClassID" type="EquipmentClassIDType" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:element name="EquipmentID" type="EquipmentIDType" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:element name="Description" type="DescriptionType" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:element name="EquipmentUse" type="EquipmentUseType" minOccurs="0"/>
             <xsd:element name="Quantity" type="QuantityValueType" minOccurs="0" maxOccurs="unbounded"/>
-            <xsd:element name="GeospatialDesignation" type="GeospatialDesignationType" minOccurs = "0"/>
             <xsd:element name="HierarchyScope" type="HierarchyScopeType" minOccurs="0"/>
+            <xsd:element name="SpatialLocation" type="GeospatialDesignationType" minOccurs = "0" />
+            <xsd:element name="LocationDescription"  type = "DescriptionType" minOccurs = "0" />
+            <xsd:element name="OperationalLocationID" type="IdentifierType" minOccurs = "0" />
             <xsd:element name="EquipmentSpecificationProperty" type="OpEquipmentSpecificationPropertyType" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:group ref="Extended:OpEquipmentSpecification" minOccurs="0" maxOccurs="1"/>
         </xsd:sequence>
@@ -779,13 +855,16 @@
     <!--     -->    
     <xsd:complexType name="OpPhysicalAssetSpecificationType">
         <xsd:sequence>
+          <xsd:element name="ID" type="IdentifierType"/>
             <xsd:element name="PhysicalAssetClassID" type="PhysicalAssetClassIDType" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:element name="PhysicalAssetID" type="PhysicalAssetIDType" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:element name="Description" type="DescriptionType" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:element name="PhysicalAssetUse" type="PhysicalAssetUseType" minOccurs="0"/>
             <xsd:element name="Quantity" type="QuantityValueType" minOccurs="0" maxOccurs="unbounded"/>
-            <xsd:element name="GeospatialDesignation" type="GeospatialDesignationType" minOccurs = "0"/>
             <xsd:element name="HierarchyScope" type="HierarchyScopeType" minOccurs="0"/>
+            <xsd:element name="SpatialLocation" type="GeospatialDesignationType" minOccurs = "0" />
+            <xsd:element name="LocationDescription"  type = "DescriptionType" minOccurs = "0" />
+            <xsd:element name="OperationalLocationID" type="IdentifierType" minOccurs = "0" />
             <xsd:element name="PhysicalAssetSpecificationProperty" type="OpPhysicalAssetSpecificationPropertyType" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:group ref="Extended:OpPhysicalAssetSpecification" minOccurs="0" maxOccurs="1"/>
         </xsd:sequence>
@@ -810,11 +889,13 @@
             <xsd:element name="Description" type="DescriptionType" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:element name="MaterialUse" type="MaterialUseType" minOccurs="0"/>
             <xsd:element name="Quantity" type="QuantityValueType" minOccurs="0" maxOccurs="unbounded"/>
-            <xsd:element name="GeospatialDesignation" type="GeospatialDesignationType" minOccurs = "0"/>
             <xsd:element name="AssemblySpecification" type="OpMaterialSpecificationType" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:element name="AssemblyType" type="AssemblyTypeType" minOccurs="0"/>
             <xsd:element name="AssemblyRelationship" type="AssemblyRelationshipType" minOccurs="0"/>
             <xsd:element name="HierarchyScope" type="HierarchyScopeType" minOccurs="0"/>
+            <xsd:element name="SpatialLocation" type="GeospatialDesignationType" minOccurs = "0" />
+            <xsd:element name="LocationDescription"  type = "DescriptionType" minOccurs = "0" />
+            <xsd:element name="OperationalLocationID" type="IdentifierType" minOccurs = "0" />
             <xsd:element name="MaterialSpecificationProperty" type="OpMaterialSpecificationPropertyType" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:group ref="Extended:OpMaterialSpecification" minOccurs="0" maxOccurs="1"/>
         </xsd:sequence>
@@ -844,7 +925,9 @@
             <xsd:element name="StartTime" type="StartTimeType" minOccurs="0"/>
             <xsd:element name="EndTime" type="EndTimeType" minOccurs="0"/>
             <xsd:element name="Quantity" type="QuantityValueType" minOccurs="0" maxOccurs="unbounded"/>
-            <xsd:element name="GeospatialDesignation" type="GeospatialDesignationType" minOccurs="0"/>
+            <xsd:element name="SpatialLocation" type="GeospatialDesignationType" minOccurs = "0" />
+            <xsd:element name="LocationDescription"  type = "DescriptionType" minOccurs = "0" />
+            <xsd:element name="OperationalLocationID" type="IdentifierType" minOccurs = "0" />
             <xsd:element name="PersonnelCapabilityProperty" type="OpPersonnelCapabilityPropertyType" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:group ref="Extended:OpPersonnelCapability" minOccurs="0" maxOccurs="1"/>
         </xsd:sequence>
@@ -874,7 +957,9 @@
             <xsd:element name="StartTime" type="StartTimeType" minOccurs="0"/>
             <xsd:element name="EndTime" type="EndTimeType" minOccurs="0"/>
             <xsd:element name="Quantity" type="QuantityValueType" minOccurs="0" maxOccurs="unbounded"/>
-            <xsd:element name="GeospatialDesignation" type="GeospatialDesignationType" minOccurs="0"/>
+            <xsd:element name="SpatialLocation" type="GeospatialDesignationType" minOccurs = "0" />
+            <xsd:element name="LocationDescription"  type = "DescriptionType" minOccurs = "0" />
+            <xsd:element name="OperationalLocationID" type="IdentifierType" minOccurs = "0" />
             <xsd:element name="EquipmentCapabilityProperty" type="OpEquipmentCapabilityPropertyType" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:group ref="Extended:OpEquipmentCapability" minOccurs="0" maxOccurs="1"/>
         </xsd:sequence>
@@ -904,7 +989,9 @@
             <xsd:element name="StartTime" type="StartTimeType" minOccurs="0"/>
             <xsd:element name="EndTime" type="EndTimeType" minOccurs="0"/>
             <xsd:element name="Quantity" type="QuantityValueType" minOccurs="0" maxOccurs="unbounded"/>
-            <xsd:element name="GeospatialDesignation" type="GeospatialDesignationType" minOccurs="0"/>
+            <xsd:element name="SpatialLocation" type="GeospatialDesignationType" minOccurs = "0" />
+            <xsd:element name="LocationDescription"  type = "DescriptionType" minOccurs = "0" />
+            <xsd:element name="OperationalLocationID" type="IdentifierType" minOccurs = "0" />
             <xsd:element name="PhysicalAssetCapabilityProperty" type="OpPhysicalAssetCapabilityPropertyType" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:group ref="Extended:OpPhysicalAssetCapability" minOccurs="0" maxOccurs="1"/>
         </xsd:sequence>
@@ -939,7 +1026,9 @@
             <xsd:element name="AssemblyType" type="AssemblyTypeType" minOccurs="0"/>
             <xsd:element name="AssemblyRelationship" type="AssemblyRelationshipType" minOccurs="0"/>
             <xsd:element name="Quantity" type="QuantityValueType" minOccurs="0" maxOccurs="unbounded"/>
-            <xsd:element name="GeospatialDesignation" type="GeospatialDesignationType" minOccurs="0"/>
+            <xsd:element name="SpatialLocation" type="GeospatialDesignationType" minOccurs = "0" />
+            <xsd:element name="LocationDescription"  type = "DescriptionType" minOccurs = "0" />
+            <xsd:element name="OperationalLocationID" type="IdentifierType" minOccurs = "0" />
             <xsd:element name="MaterialCapabilityProperty" type="OpMaterialCapabilityPropertyType" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:group ref="Extended:OpMaterialCapability" minOccurs="0" maxOccurs="1"/>
         </xsd:sequence>
@@ -1174,6 +1263,11 @@
             <xsd:element name="QuantityString" type="QuantityStringType" nillable="true"/>
             <xsd:element name="DataType" type="DataTypeType" nillable="true" minOccurs="0"/>
             <xsd:element name="UnitOfMeasure" type="UnitOfMeasureType" nillable="true" minOccurs="0"/>
+            <xsd:element name="LevelOfConfidence" type="DataTypeType" nillable="true" minOccurs="0"/>
+            <xsd:element name="ExpandedUncertainty" type="DataTypeType" nillable="true" minOccurs="0"/>
+            <xsd:element name="CoverageFactor" type="DataTypeType" nillable="true" minOccurs="0"/>
+            <xsd:element name="Precision" type="DataTypeType" nillable="true" minOccurs="0"/>
+            <xsd:element name="Accuracy" type="DataTypeType" nillable="true" minOccurs="0"/>
             <xsd:element name="Key" type="IdentifierType" minOccurs="0" maxOccurs="1"/>
             <xsd:group ref="Extended:Quantity" minOccurs="0" maxOccurs="1"/>
         </xsd:sequence>
@@ -1437,6 +1531,11 @@
             <xsd:element name="ValueString" type="ValueStringType" nillable="true"/>
             <xsd:element name="DataType" type="DataTypeType" nillable="true" minOccurs="0"/>
             <xsd:element name="UnitOfMeasure" type="UnitOfMeasureType" nillable="true" minOccurs="0"/>
+            <xsd:element name="LevelOfConfidence" type="DataTypeType" nillable="true" minOccurs="0"/>
+            <xsd:element name="ExpandedUncertainty" type="DataTypeType" nillable="true" minOccurs="0"/>
+            <xsd:element name="CoverageFactor" type="DataTypeType" nillable="true" minOccurs="0"/>
+            <xsd:element name="Precision" type="DataTypeType" nillable="true" minOccurs="0"/>
+            <xsd:element name="Accuracy" type="DataTypeType" nillable="true" minOccurs="0"/>
             <xsd:element name="Key" type="IdentifierType" minOccurs="0" maxOccurs="1"/>
             <xsd:group ref="Extended:Value" minOccurs="0" maxOccurs="1"/>
         </xsd:sequence>
@@ -1805,6 +1904,21 @@
 	                                                        minOccurs = "0" maxOccurs = "unbounded"/>                                                  
 	    </xsd:sequence>
     </xsd:group>
-<!--     -->
+  <!--     -->
+  <xsd:complexType name="DefinitionTypeType">
+    <xsd:simpleContent>
+      <xsd:restriction base="CodeType">
+        <xsd:enumeration value="Abstract"/>
+        <xsd:enumeration value="Concrete"/>
+      </xsd:restriction>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <!--     -->
+  <xsd:simpleType name="RecurrenceType">
+      <xsd:restriction base="xsd:token">
+        <!-- regex to check valid ISO 8601 repeating interval -->
+        <xsd:pattern value="/^R(\d*)\/(\d{4}(?:-\d{2}){2}T\d{2}(?::\d{2}){2}(?>[^\/]+))\/(P(?=.)(?:\d+Y)?(?:\d+M)?(?:\d+D)?(?:T(?=.)(?:\d+H)?(?:\d+M)?(?:\d+S)?)?)$/"/>
+      </xsd:restriction>
+  </xsd:simpleType>
 
 </xsd:schema>

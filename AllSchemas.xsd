@@ -50,6 +50,8 @@
      BHPBilliton   22 Jun 2015     B. Poole        This is a BHPBilliton specific branch of V0600
      BHPBilliton   22 Sep 2016     B. Poole        Include new OperationsEvent schema as per comment
      MI            24 Oct 2016     B. Pogson       MI branch of B2MML
+     BHPBilliton   03 Jan 2017     B. Poole        Include new OperationalLocation schema as per part 2 WD04_2016_comment_Poole_06 and part 5 2016_comment _Poole_01
+     BHPBilliton   03 Jan 2017     B. Poole        Include new WorkCalendar schema as per Part 4 ed 2 WD03 and ISA-95.05 2016_comment_Poole_01
 
    </xsd:documentation>
 </xsd:annotation>
@@ -82,6 +84,8 @@
  <xsd:include schemaLocation ="BatchML-MI-BatchProductionRecord.xsd"/>
  <xsd:include schemaLocation ="B2MML-MI-ProcessEvents.xsd"/>
  <xsd:include schemaLocation ="B2MML-MI-OperationsEvent.xsd"/>
+ <xsd:include schemaLocation ="B2MML-MI-OperationalLocation.xsd"/>
+ <xsd:include schemaLocation ="B2MML-MI-WorkCalendar.xsd"/>
  
  <xsd:import 	namespace="http://www.mesa.org/xml/B2MML-MI-AllExtensions"
 				schemaLocation="B2MML-MI-AllExtensions.xsd"/>

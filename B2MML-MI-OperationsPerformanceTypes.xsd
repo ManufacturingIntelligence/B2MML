@@ -63,6 +63,22 @@
         BHPBilliton   11  Apr 2016    C. Gifford      Added GeoSpatial element to OpPersonnelActualType (as per WD01 p 119)
         BHPBilliton   11  Apr 2016    C. Gifford      Added GeoSpatial element to OpPhysicalAssetActualType (as per WD01 p 123)
         MI            24 Oct 2016     B. Pogson       MI branch of B2MML
+        BHPBilliton   03 Jan 2017     B. Poole        Add SpatialLocation to OpPersonnelRequirementType as per part 2 WD04_2016_comment_Poole_06
+        BHPBilliton   03 Jan 2017     B. Poole        Add LocationDescription to OpPersonnelActualType as per part 2 WD04_2016_comment_Poole_06
+        BHPBilliton   03 Jan 2017     B. Poole        Add OperationalLocationID to OpPersonnelActualType as per part 2 WD04_2016_comment_Poole_06
+        BHPBilliton   03 Jan 2017     B. Poole        Remove GeospatialDesignation from OpPersonnelActualType as per part 2 WD04_2016_comment_Poole_06
+        BHPBilliton   03 Jan 2017     B. Poole        Add SpatialLocation to OpEquipmentActualType as per part 2 WD04_2016_comment_Poole_06
+        BHPBilliton   03 Jan 2017     B. Poole        Add LocationDescription to OpEquipmentActualType as per part 2 WD04_2016_comment_Poole_06
+        BHPBilliton   03 Jan 2017     B. Poole        Add OperationalLocationID to OpEquipmentActualType as per part 2 WD04_2016_comment_Poole_06
+        BHPBilliton   03 Jan 2017     B. Poole        Remove GeospatialDesignation from OpEquipmentActualType as per part 2 WD04_2016_comment_Poole_06
+        BHPBilliton   03 Jan 2017     B. Poole        Add SpatialLocation to OpPhysicalAssetActualType as per part 2 WD04_2016_comment_Poole_06
+        BHPBilliton   03 Jan 2017     B. Poole        Add LocationDescription to OpPhysicalAssetActualType as per part 2 WD04_2016_comment_Poole_06
+        BHPBilliton   03 Jan 2017     B. Poole        Add OperationalLocationID to OpPhysicalAssetActualType as per part 2 WD04_2016_comment_Poole_06
+        BHPBilliton   03 Jan 2017     B. Poole        Remove GeospatialDesignation from OpPhysicalAssetActualType as per part 2 WD04_2016_comment_Poole_06
+        BHPBilliton   03 Jan 2017     B. Poole        Add SpatialLocation to OpMaterialActualType as per part 2 WD04_2016_comment_Poole_06
+        BHPBilliton   03 Jan 2017     B. Poole        Add LocationDescription to OpMaterialActualType as per part 2 WD04_2016_comment_Poole_06
+        BHPBilliton   03 Jan 2017     B. Poole        Add OperationalLocationID to OpMaterialActualType as per part 2 WD04_2016_comment_Poole_06
+        BHPBilliton   03 Jan 2017     B. Poole        Remove GeospatialDesignation from OpMaterialActualType as per part 2 WD04_2016_comment_Poole_06
 
    </xsd:documentation>
 </xsd:annotation>
@@ -142,9 +158,13 @@
                                                         minOccurs = "0" />
       <xsd:element name = "Quantity"                    type = "QuantityValueType" 
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
-      <xsd:element name = "GeospatialDesignation"        type = "GeospatialDesignationType"
-                                                        minOccurs = "0"/>
       <xsd:element name = "HierarchyScope"              type = "HierarchyScopeType"   
+                                                        minOccurs = "0" />
+      <xsd:element name = "SpatialLocation"             type="GeospatialDesignationType" 
+                                                        minOccurs = "0" />
+      <xsd:element name = "LocationDescription"         type = "DescriptionType" 
+                                                        minOccurs = "0" />
+      <xsd:element name = "OperationalLocationID"       type="IdentifierType" 
                                                         minOccurs = "0" />
       <xsd:element name = "PersonnelActualProperty"     type = "OpPersonnelActualPropertyType" 
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
@@ -186,9 +206,13 @@
                                                         minOccurs = "0" />
       <xsd:element name = "Quantity"                    type = "QuantityValueType" 
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
-      <xsd:element name = "GeospatialDesignation"        type = "GeospatialDesignationType"
-                                                        minOccurs = "0"/>
       <xsd:element name = "HierarchyScope"              type = "HierarchyScopeType"   
+                                                        minOccurs = "0" />
+      <xsd:element name = "SpatialLocation"             type="GeospatialDesignationType"
+                                                        minOccurs = "0" />
+      <xsd:element name = "LocationDescription"         type = "DescriptionType"
+                                                        minOccurs = "0" />
+      <xsd:element name = "OperationalLocationID"       type="IdentifierType"
                                                         minOccurs = "0" />
       <xsd:element name = "EquipmentActualProperty"     type = "OpEquipmentActualPropertyType" 
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
@@ -228,9 +252,13 @@
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
       <xsd:element name = "Quantity"                    type = "QuantityValueType" 
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
-      <xsd:element name = "GeospatialDesignation"        type = "GeospatialDesignationType"
-                                                        minOccurs = "0"/>
       <xsd:element name = "HierarchyScope"              type = "HierarchyScopeType"   
+                                                        minOccurs = "0" />
+      <xsd:element name = "SpatialLocation"             type="GeospatialDesignationType"
+                                                        minOccurs = "0" />
+      <xsd:element name = "LocationDescription"         type = "DescriptionType"
+                                                        minOccurs = "0" />
+      <xsd:element name = "OperationalLocationID"       type="IdentifierType"
                                                         minOccurs = "0" />
       <xsd:element name = "PhysicalAssetActualProperty" type = "OpPhysicalAssetActualPropertyType" 
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
@@ -278,8 +306,6 @@
                                                         minOccurs = "0"/>
       <xsd:element name = "Quantity"                    type = "QuantityValueType" 
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
-      <xsd:element name = "GeospatialDesignation"        type = "GeospatialDesignationType" 
-                                                        minOccurs = "0"/>
       <xsd:element name = "AssemblyActual"              type = "OpMaterialActualType" 
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
       <xsd:element name = "AssemblyType"                type = "AssemblyTypeType" 
@@ -288,6 +314,12 @@
                                                         minOccurs = "0"/>
       <xsd:element name = "HierarchyScope"              type = "HierarchyScopeType"           
                                                         minOccurs = "0"/>
+      <xsd:element name = "SpatialLocation"             type="GeospatialDesignationType"
+                                                        minOccurs = "0" />
+      <xsd:element name = "LocationDescription"         type = "DescriptionType"
+                                                        minOccurs = "0" />
+      <xsd:element name = "OperationalLocationID"       type="IdentifierType"
+                                                        minOccurs = "0" />
       <xsd:element name = "MaterialActualProperty"      type = "OpMaterialActualPropertyType" 
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
       <xsd:element name = "RequiredByRequestedSegmentResponse"

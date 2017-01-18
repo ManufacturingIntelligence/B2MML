@@ -61,6 +61,11 @@
      BHPBilliton   24 Oct 2016     B. Poole        Corrected EquipmentLevel in EquipmentType to EquipmentElementLevelType
      BHPBilliton   24 Oct 2016     B. Poole        Corrected EquipmentLevel in EquipmentClassType to EquipmentElementLevelType
      MI            24 Oct 2016     B. Pogson       MI branch of B2MML
+     BHPBilliton   03 Jan 2017     B. Poole        Add EquipmentSuperclassID to EquipmentClassType as per part 2 WD04_2016_comment_Poole_04
+     BHPBilliton   03 Jan 2017     B. Poole        Add ContainedEquipmentClass to EquipmentClassType as per part 2 WD04_2016_comment_Poole_04
+     BHPBilliton   03 Jan 2017     B. Poole        Add SpatialLocation to EquipmentType as per part 2 WD04_2016_comment_Poole_06
+     BHPBilliton   03 Jan 2017     B. Poole        Add LocationDescription to EquipmentType as per part 2 WD04_2016_comment_Poole_06
+     BHPBilliton   03 Jan 2017     B. Poole        Add OperationalLocationID to EquipmentType as per part 2 WD04_2016_comment_Poole_06
 
    </xsd:documentation>
 </xsd:annotation>
@@ -153,6 +158,9 @@
                                                 minOccurs = "0" />
       <xsd:element name = "EquipmentLevel"      type = "EquipmentElementLevelType"   
                                                 minOccurs = "0" />
+      <xsd:element name = "SpatialLocation"       type="GeospatialDesignationType"
+                                                       minOccurs = "0" />
+      <xsd:element name = "LocationDescription"  type = "DescriptionType" minOccurs = "0" />
       <xsd:element name = "EquipmentAssetMapping" type = "EquipmentAssetMappingType"   
                                                 minOccurs = "0" maxOccurs = "unbounded"/>
       <xsd:element name = "EquipmentProperty"   type = "EquipmentPropertyType"  
@@ -164,6 +172,8 @@
       <xsd:element name = "EquipmentCapabilityTestSpecificationID"
                                                 type = "EquipmentCapabilityTestSpecificationIDType"
                                                 minOccurs = "0" maxOccurs = "unbounded"/>
+      <xsd:element name = "OperationalLocationID" type="IdentifierType"
+                                                       minOccurs = "0" />
       <xsd:group   ref  = "Extended:Equipment"  minOccurs = "0" maxOccurs = "1"/>
     </xsd:sequence>
   </xsd:complexType>
@@ -206,6 +216,10 @@
                                                 minOccurs = "0" maxOccurs = "unbounded"/>
       <xsd:element name = "EquipmentCapabilityTestSpecificationID"
                                                 type = "EquipmentCapabilityTestSpecificationIDType"
+                                                minOccurs = "0" maxOccurs = "unbounded"/>
+      <xsd:element name = "EquipmentSuperclassID"         type = "IdentifierType"
+                                                minOccurs = "0" maxOccurs = "unbounded"/>
+      <xsd:element name = "ContainedEquipmentClass"      type = "EquipmentClassType"
                                                 minOccurs = "0" maxOccurs = "unbounded"/>
       <xsd:group   ref  = "Extended:EquipmentClass"
                                                 minOccurs = "0" maxOccurs = "1"/>

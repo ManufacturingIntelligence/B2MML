@@ -16,6 +16,7 @@
   <xsd:include schemaLocation="B2MML-MI-Material.xsd" />
   <xsd:include schemaLocation="B2MML-MI-Personnel.xsd" />
   <xsd:include schemaLocation="B2MML-MI-ProcessSegment.xsd" />
+  <xsd:include schemaLocation="B2MML-MI-OperationalLocation.xsd" />
   <xsd:include schemaLocation="B2MML-MI-OperationsDefinition.xsd" />
   <xsd:include schemaLocation="B2MML-MI-OperationsCapability.xsd" />
   <xsd:include schemaLocation="B2MML-MI-OperationsPerformance.xsd" />
@@ -71,7 +72,68 @@
       ---           ----            ------          ----
       BHPBilliton   22 Jun 2015     B. Poole        This is a BHPBilliton specific branch of V0600
       BHPBilliton   18 Apr 2016     B. Poole        Added all process centric Notifys as per Process Centric Notify Proposal 0.1
+      BHPBilliton   18 Apr 2016     B. Poole        Add AddedOperationalLocationClassRecord to ResourceDefinedEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add ChangedOperationalLocationClassRecord to ResourceDefinedEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add DeletedOperationalLocationClassRecord to ResourceDefinedEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add AddedOperationalLocationRecord to ResourceDefinedEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add ChangedOperationalLocationRecord to ResourceDefinedEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add DeletedOperationalLocationRecord to ResourceDefinedEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add AddedOperationalLocationRecord to OperationsScheduledEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add ChangedOperationalLocationRecord to OperationsScheduledEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add DeletedOperationalLocationRecord to OperationsScheduledEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add AddedOperationalLocationRecord to OperationsRescheduledEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add ChangedOperationalLocationRecord to OperationsRescheduledEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add DeletedOperationalLocationRecord to OperationsRescheduledEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add AddedOperationalLocationRecord to WorkScheduledEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add ChangedOperationalLocationRecord to WorkScheduledEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add DeletedOperationalLocationRecord to WorkScheduledEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add AddedOperationalLocationRecord to WorkRescheduledEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add ChangedOperationalLocationRecord to WorkRescheduledEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add DeletedOperationalLocationRecord to WorkRescheduledEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add AddedOperationalLocationRecord to WorkExecutedEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add ChangedOperationalLocationRecord to WorkExecutedEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add DeletedOperationalLocationRecord to WorkExecutedEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add AddedOperationalLocationRecord to WorkReconciledEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add ChangedOperationalLocationRecord to WorkReconciledEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add DeletedOperationalLocationRecord to WorkReconciledEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add AddedOperationalLocationRecord to WorkCommencedEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add ChangedOperationalLocationRecord to WorkCommencedEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add DeletedOperationalLocationRecord to WorkCommencedEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add AddedOperationalLocationRecord to WorkRedirectedEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add ChangedOperationalLocationRecord to WorkRedirectedEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add DeletedOperationalLocationRecord to WorkRedirectedEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add AddedOperationalLocationRecord to WorkCompletedEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add ChangedOperationalLocationRecord to WorkCompletedEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add DeletedOperationalLocationRecord to WorkCompletedEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add AddedOperationalLocationRecord to PerformanceTrackedEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add ChangedOperationalLocationRecord to PerformanceTrackedEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add DeletedOperationalLocationRecord to PerformanceTrackedEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add AddedOperationalLocationRecord to PerformanceReconciledEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add ChangedOperationalLocationRecord to PerformanceReconciledEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add DeletedOperationalLocationRecord to PerformanceReconciledEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add ChangedEquipmentRecord to WorkExecutedEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add ChangedPersonRecord to WorkExecutedEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add ChangedPhysicalAssetRecord to WorkExecutedEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add ChangedEquipmentRecord to WorkReconciledEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add ChangedPersonRecord to WorkReconciledEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add ChangedPhysicalAssetRecord to WorkReconciledEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add ChangedEquipmentRecord to WorkCommencedEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add ChangedPersonRecord to WorkCommencedEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add ChangedPhysicalAssetRecord to WorkCommencedEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add ChangedEquipmentRecord to WorkRedirectedEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add ChangedPersonRecord to WorkRedirectedEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add ChangedPhysicalAssetRecord to WorkRedirectedEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add ChangedEquipmentRecord to WorkCompletedEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add ChangedPersonRecord to WorkCompletedEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add ChangedPhysicalAssetRecord to WorkCompletedEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add ChangedEquipmentRecord to PerformanceTrackedEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add ChangedPersonRecord to PerformanceTrackedEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add ChangedPhysicalAssetRecord to PerformanceTrackedEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add ChangedEquipmentRecord to PerformanceReconciledEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add ChangedPersonRecord to PerformanceReconciledEventType
+      BHPBilliton   18 Apr 2016     B. Poole        Add ChangedPhysicalAssetRecord to PerformanceReconciledEventType
       MI            24 Oct 2016     B. Pogson       MI branch of B2MML
+
 
     </xsd:documentation>
   </xsd:annotation>
@@ -209,6 +271,33 @@
           <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
         </xsd:complexType>
       </xsd:element>
+      <xsd:element name="AddedOperationalLocationRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OperationalLocation" type="OperationalLocationType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ChangedOperationalLocationRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OperationalLocation" type="OperationalLocationType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DeletedOperationalLocationRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OperationalLocation" type="OperationalLocationType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
     </xsd:sequence>
   </xsd:complexType>
 
@@ -292,6 +381,33 @@
         <xsd:complexType>
           <xsd:sequence>
             <xsd:element name="MaterialSubLot" type="MaterialSubLotType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="AddedOperationalLocationRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OperationalLocation" type="OperationalLocationType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ChangedOperationalLocationRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OperationalLocation" type="OperationalLocationType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DeletedOperationalLocationRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OperationalLocation" type="OperationalLocationType" />
           </xsd:sequence>
           <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
           <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
@@ -699,6 +815,60 @@
           <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
         </xsd:complexType>
       </xsd:element>
+      <xsd:element name="AddedOperationalLocationClassRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OperationalLocationClass" type="OperationalLocationClassType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ChangedOperationalLocationClassRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OperationalLocationClass" type="OperationalLocationClassType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DeletedOperationalLocationClassRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OperationalLocationClass" type="OperationalLocationClassType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="AddedOperationalLocationRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OperationalLocation" type="OperationalLocationType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ChangedOperationalLocationRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OperationalLocation" type="OperationalLocationType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DeletedOperationalLocationRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OperationalLocation" type="OperationalLocationType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
     </xsd:sequence>
   </xsd:complexType>
   <!--    -->
@@ -861,7 +1031,32 @@
       </xsd:element>
       <xsd:element name="ChangedMaterialSubLotRecord" minOccurs="0" maxOccurs="unbounded">
         <xsd:complexType>
+          <xsd:sequence><xsd:element name="ChangedEquipmentRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
           <xsd:sequence>
+            <xsd:element name="Equipment" type="EquipmentType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element><xsd:element name="ChangedPersonRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Person" type="PersonType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ChangedPhysicalAssetRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="PhysicalAsset" type="PhysicalAssetType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
             <xsd:element name="MaterialSubLot" type="MaterialSubLotType" />
           </xsd:sequence>
           <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
@@ -1526,6 +1721,33 @@
           <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
         </xsd:complexType>
       </xsd:element>
+      <xsd:element name="AddedOperationalLocationRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OperationalLocation" type="OperationalLocationType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ChangedOperationalLocationRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OperationalLocation" type="OperationalLocationType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DeletedOperationalLocationRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OperationalLocation" type="OperationalLocationType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
     </xsd:sequence>
   </xsd:complexType>
   <!--    -->
@@ -1610,6 +1832,33 @@
         <xsd:complexType>
           <xsd:sequence>
             <xsd:element name = "MaterialSubLot" type = "MaterialSubLotType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="AddedOperationalLocationRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OperationalLocation" type="OperationalLocationType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ChangedOperationalLocationRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OperationalLocation" type="OperationalLocationType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DeletedOperationalLocationRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OperationalLocation" type="OperationalLocationType" />
           </xsd:sequence>
           <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
           <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
@@ -1757,6 +2006,60 @@
           <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
         </xsd:complexType>
       </xsd:element>
+      <xsd:element name="AddedOperationalLocationRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OperationalLocation" type="OperationalLocationType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ChangedOperationalLocationRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OperationalLocation" type="OperationalLocationType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DeletedOperationalLocationRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OperationalLocation" type="OperationalLocationType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ChangedEquipmentRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Equipment" type="EquipmentType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ChangedPersonRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Person" type="PersonType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ChangedPhysicalAssetRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="PhysicalAsset" type="PhysicalAssetType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
     </xsd:sequence>
   </xsd:complexType>
   <!--    -->
@@ -1864,6 +2167,60 @@
           <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
         </xsd:complexType>
       </xsd:element>
+      <xsd:element name="AddedOperationalLocationRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OperationalLocation" type="OperationalLocationType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ChangedOperationalLocationRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OperationalLocation" type="OperationalLocationType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DeletedOperationalLocationRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OperationalLocation" type="OperationalLocationType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ChangedEquipmentRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Equipment" type="EquipmentType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ChangedPersonRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Person" type="PersonType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ChangedPhysicalAssetRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="PhysicalAsset" type="PhysicalAssetType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
     </xsd:sequence>
   </xsd:complexType>
   <!--    -->
@@ -1966,6 +2323,60 @@
         <xsd:complexType>
           <xsd:sequence>
             <xsd:element name="MaterialSubLot" type="MaterialSubLotType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="AddedOperationalLocationRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OperationalLocation" type="OperationalLocationType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ChangedOperationalLocationRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OperationalLocation" type="OperationalLocationType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DeletedOperationalLocationRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OperationalLocation" type="OperationalLocationType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ChangedEquipmentRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Equipment" type="EquipmentType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ChangedPersonRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Person" type="PersonType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ChangedPhysicalAssetRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="PhysicalAsset" type="PhysicalAssetType" />
           </xsd:sequence>
           <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
           <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
@@ -2096,6 +2507,60 @@
           <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
         </xsd:complexType>
       </xsd:element>
+      <xsd:element name="AddedOperationalLocationRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OperationalLocation" type="OperationalLocationType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ChangedOperationalLocationRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OperationalLocation" type="OperationalLocationType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DeletedOperationalLocationRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OperationalLocation" type="OperationalLocationType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ChangedEquipmentRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Equipment" type="EquipmentType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ChangedPersonRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Person" type="PersonType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ChangedPhysicalAssetRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="PhysicalAsset" type="PhysicalAssetType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
     </xsd:sequence>
   </xsd:complexType>
   <!--    -->
@@ -2216,6 +2681,60 @@
         <xsd:complexType>
           <xsd:sequence>
             <xsd:element name="MaterialSubLot" type="MaterialSubLotType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="AddedOperationalLocationRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OperationalLocation" type="OperationalLocationType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ChangedOperationalLocationRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OperationalLocation" type="OperationalLocationType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DeletedOperationalLocationRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OperationalLocation" type="OperationalLocationType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ChangedEquipmentRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Equipment" type="EquipmentType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ChangedPersonRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Person" type="PersonType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ChangedPhysicalAssetRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="PhysicalAsset" type="PhysicalAssetType" />
           </xsd:sequence>
           <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
           <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
@@ -2390,6 +2909,60 @@
           <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
         </xsd:complexType>
       </xsd:element>
+      <xsd:element name="AddedOperationalLocationRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OperationalLocation" type="OperationalLocationType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ChangedOperationalLocationRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OperationalLocation" type="OperationalLocationType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DeletedOperationalLocationRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OperationalLocation" type="OperationalLocationType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ChangedEquipmentRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Equipment" type="EquipmentType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ChangedPersonRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Person" type="PersonType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ChangedPhysicalAssetRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="PhysicalAsset" type="PhysicalAssetType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
     </xsd:sequence>
   </xsd:complexType>
   <!--    -->
@@ -2519,6 +3092,60 @@
         <xsd:complexType>
           <xsd:sequence>
             <xsd:element name = "MaterialSubLot" type = "MaterialSubLotType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="AddedOperationalLocationRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OperationalLocation" type="OperationalLocationType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ChangedOperationalLocationRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OperationalLocation" type="OperationalLocationType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DeletedOperationalLocationRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="OperationalLocation" type="OperationalLocationType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ChangedEquipmentRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Equipment" type="EquipmentType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ChangedPersonRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Person" type="PersonType" />
+          </xsd:sequence>
+          <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
+          <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ChangedPhysicalAssetRecord" minOccurs="0" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="PhysicalAsset" type="PhysicalAssetType" />
           </xsd:sequence>
           <xsd:attribute name="recordTimestamp" type="xsd:dateTime" />
           <xsd:attribute name="effectiveTimestamp" type="xsd:dateTime" />

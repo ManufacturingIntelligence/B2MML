@@ -59,6 +59,12 @@
      BHPBilliton   22 Jun 2015     B. Poole        This is a BHPBilliton specific branch of V0600
      BHPBilliton   22 Jun 2015     B. Poole        Add PhysicalAssetCapabilityTestSpecification to PhysicalAssetCapabilityTestSpecificationType as per comment
      MI            24 Oct 2016     B. Pogson       MI branch of B2MML
+     BHPBilliton   03 Jan 2017     B. Poole        Add PhysicalAssetSuperclassID to PhysicalAssetClassType as per part 2 WD04_2016_comment_Poole_04
+     BHPBilliton   03 Jan 2017     B. Poole        Add ContainedPhysicalAssetClass to PhysicalAssetClassType as per part 2 WD04_2016_comment_Poole_04
+     BHPBilliton   03 Jan 2017     B. Poole        Add SpatialLocation to PhysicalAssetType as per part 2 WD04_2016_comment_Poole_06
+     BHPBilliton   03 Jan 2017     B. Poole        Add LocationDescription to PhysicalAssetType as per part 2 WD04_2016_comment_Poole_06
+     BHPBilliton   03 Jan 2017     B. Poole        Add OperationalLocationID to PhysicalAssetType as per part 2 WD04_2016_comment_Poole_06
+     BHPBilliton   03 Jan 2017     B. Poole        Remove PhysicalLocation from PhysicalAssetType as per part 2 WD04_2016_comment_Poole_06
 
    </xsd:documentation>
 </xsd:annotation>
@@ -143,9 +149,12 @@
                                                 minOccurs = "0" maxOccurs = "unbounded"/>
       <xsd:element name = "HierarchyScope"      type = "HierarchyScopeType"   
                                                 minOccurs = "0" />
-      <xsd:element name = "PhysicalLocation"    type = "IdentifierType" minOccurs = "0" />
+      <xsd:element name = "SpatialLocation"       type="GeospatialDesignationType"
+                                                       minOccurs = "0" />
+      <xsd:element name = "LocationDescription"  type = "DescriptionType" minOccurs = "0" />
       <xsd:element name = "FixedAssetID"        type = "IdentifierType" minOccurs = "0" />
       <xsd:element name = "VendorID"            type = "IdentifierType" minOccurs = "0" />
+      
       <xsd:element name = "EquipmentLevel"      type = "HierarchyScopeType" minOccurs = "0" />
       <xsd:element name = "EquipmentAssetMapping" type = "EquipmentAssetMappingType"   
                                                 minOccurs = "0" maxOccurs = "unbounded"/>
@@ -158,6 +167,8 @@
       <xsd:element name = "PhysicalAssetCapabilityTestSpecificationID"
                                                 type = "PhysicalAssetCapabilityTestSpecificationIDType"
                                                 minOccurs = "0" maxOccurs = "unbounded"/>
+      <xsd:element name = "OperationalLocationID" type="IdentifierType"
+                                                       minOccurs = "0" />
       <xsd:group   ref  = "Extended:PhysicalAsset"  minOccurs = "0" maxOccurs = "1"/>
     </xsd:sequence>
   </xsd:complexType>
@@ -197,6 +208,11 @@
                                                 minOccurs = "0" maxOccurs = "unbounded"/>
       <xsd:element name = "PhysicalAssetCapabilityTestSpecificationID"
                                                 type = "PhysicalAssetCapabilityTestSpecificationIDType"
+                                                minOccurs = "0" maxOccurs = "unbounded"/>
+      <xsd:element name = "PhysicalAssetSuperclassID" 
+                                                type = "IdentifierType"
+                                                minOccurs = "0" maxOccurs = "unbounded"/>
+      <xsd:element name = "ContainedPhysicalAssetClass"      type = "PhysicalAssetClassType"
                                                 minOccurs = "0" maxOccurs = "unbounded"/>
       <xsd:group   ref  = "Extended:PhysicalAssetClass"
                                                 minOccurs = "0" maxOccurs = "1"/>

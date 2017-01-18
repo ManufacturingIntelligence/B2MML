@@ -43,15 +43,17 @@
         Part 5: Business to Manufacturing Transactions
    </xsd:documentation>
 
-   <xsd:documentation> 
-  
-      Revision History
+   <xsd:documentation>
 
-        Ver           Date            Person          Note
-        ---           ----            ------          ----
-        BHPBilliton   22 Jun 2015     B. Poole        This is a BHPBilliton specific branch of V0600
-        MI            24 Oct 2016     B. Pogson       MI branch of B2MML
-                                  
+     Revision History
+
+     Ver           Date            Person          Note
+     ---           ----            ------          ----
+     BHPBilliton   22 Jun 2015     B. Poole        This is a BHPBilliton specific branch of V0600
+     MI            24 Oct 2016     B. Pogson       MI branch of B2MML
+     BHPBilliton   03 Jan 2017     B. Poole        Add OpOperationsSegmentCapability as per part 2 WD04_2016_comment_Poole_03
+
+
    </xsd:documentation>
 </xsd:annotation>
 
@@ -234,6 +236,12 @@ of elements when used in an XML document.
                 <xsd:sequence>
                         <!-- add extended elements here -->
                 </xsd:sequence>
+        </xsd:group>
+
+        <xsd:group name = "OpOperationsSegmentCapability">
+          <xsd:sequence>
+            <!-- add extended elements here -->
+          </xsd:sequence>
         </xsd:group>
 
         <xsd:group name = "OpPersonnelSpecification">
