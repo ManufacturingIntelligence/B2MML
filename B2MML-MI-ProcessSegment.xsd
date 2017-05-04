@@ -69,6 +69,9 @@
      BHPBilliton   03 Jan 2017     B. Poole        Add WorkmasterID element to the ProcessSegmentType as per part 2 WD04_2016_comment _Poole_02
      BHPBilliton   03 Jan 2017     B. Poole        Add AbstractProcessSegmentID element to the ProcessSegmentType as per part 2 WD04_2016_comment _Poole_05
      BHPBilliton   03 Jan 2017     B. Poole        Add DefinitionType element to the ProcessSegmentType as per part 2 WD04_2016_comment _Poole_05
+     BHPBilliton   04 May 2017     B. Poole        Add ID element to PhysicalAssetSegmentSpecificationType as per part 2 WD04_2016_comment _Poole_01
+	 BHPBilliton   04 May 2017     B. Poole        Add ID element to PersonnelSegmentSpecificationType as per part 2 WD04_2016_comment _Poole_01
+	 BHPBilliton   04 May 2017     B. Poole        Add ID element to EquipmentSegmentSpecificationType as per part 2 WD04_2016_comment _Poole_01
 
    </xsd:documentation>
 </xsd:annotation>
@@ -163,6 +166,7 @@
 
   <xsd:complexType name = "PersonnelSegmentSpecificationType">
     <xsd:sequence>
+      <xsd:element name="ID" 							type="IdentifierType"/>
       <xsd:element name = "PersonnelClassID"            type = "PersonnelClassIDType" 
                                                         minOccurs = "0" />
       <xsd:element name = "PersonID"                    type = "PersonIDType" 
@@ -200,6 +204,7 @@
 
   <xsd:complexType name = "EquipmentSegmentSpecificationType">
     <xsd:sequence>
+	  <xsd:element name = "ID"                          type = "IdentifierType" />
       <xsd:element name = "EquipmentClassID"            type = "EquipmentClassIDType" 
                                                         minOccurs = "0" />
       <xsd:element name = "EquipmentID"                 type = "EquipmentIDType" 
@@ -239,6 +244,7 @@
 
   <xsd:complexType name = "PhysicalAssetSegmentSpecificationType">
     <xsd:sequence>
+      <xsd:element name="ID" 							type="IdentifierType"/>
       <xsd:element name = "PhysicalAssetClassID"        type = "PhysicalAssetClassIDType" 
                                                         minOccurs = "0" />
       <xsd:element name = "PhysicalAssetID"             type = "PhysicalAssetIDType" 
