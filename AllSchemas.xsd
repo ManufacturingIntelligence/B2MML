@@ -52,6 +52,7 @@
      MI            24 Oct 2016     B. Pogson       MI branch of B2MML
      BHPBilliton   03 Jan 2017     B. Poole        Include new OperationalLocation schema as per part 2 WD04_2016_comment_Poole_06 and part 5 2016_comment _Poole_01
      BHPBilliton   03 Jan 2017     B. Poole        Include new WorkCalendar schema as per Part 4 ed 2 WD03 and ISA-95.05 2016_comment_Poole_01
+	 MI            14 Jul 2017     B. Pogson       Include new HierarchyScope schema as per Part 5 draft
 
    </xsd:documentation>
 </xsd:annotation>
@@ -86,6 +87,7 @@
  <xsd:include schemaLocation ="B2MML-MI-OperationsEvent.xsd"/>
  <xsd:include schemaLocation ="B2MML-MI-OperationalLocation.xsd"/>
  <xsd:include schemaLocation ="B2MML-MI-WorkCalendar.xsd"/>
+ <xsd:include schemaLocation ="B2MML-MI-HierarchyScope.xsd"/>
  
  <xsd:import 	namespace="http://www.mesa.org/xml/B2MML-MI-AllExtensions"
 				schemaLocation="B2MML-MI-AllExtensions.xsd"/>
