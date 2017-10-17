@@ -86,6 +86,7 @@
      BHPBilliton   03 Jan 2017     B. Poole        Remove StorageLocation from MaterialSubLotType as per part 2 WD04_2016_comment_Poole_06
      BHPBilliton   03 Jan 2017     B. Poole        Remove GeospatialDesignation from MaterialSubLotType as per part 2 WD04_2016_comment_Poole_06
      MI            16 Oct 2017     B. Pogson       Remove deprecated location element
+     MI            17 Oct 2017     B. Pogson       Correcting language for spatial definition to match working draft
 
    </xsd:documentation>
 </xsd:annotation>
@@ -287,7 +288,7 @@
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
       <xsd:element name = "MaterialTestSpecificationID" type = "MaterialTestSpecificationIDType"
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
-      <xsd:element name = "SpatialLocation"             type="GeospatialDesignationType"
+      <xsd:element name = "SpatialLocation"             type="SpatialDefinitionType"
                                                         minOccurs = "0" />
       <xsd:element name = "LocationDescription"         type = "DescriptionType" minOccurs = "0" />
       <xsd:element name = "AssemblyLotID"               type = "MaterialLotIDType"
@@ -336,7 +337,7 @@
                                                         minOccurs = "0"/>
       <xsd:element name = "Dispositiion"                type = "MaterialDispositionStatusType"
                                                         minOccurs = "0"/>
-      <xsd:element name = "SpatialLocation"             type="GeospatialDesignationType"
+      <xsd:element name = "SpatialLocation"             type="SpatialDefinitionType"
                                                         minOccurs = "0" />
       <xsd:element name = "LocationDescription"         type = "DescriptionType" minOccurs = "0" />
       <xsd:element name = "MaterialSublotProperty"      type = "MaterialLotPropertyType"
