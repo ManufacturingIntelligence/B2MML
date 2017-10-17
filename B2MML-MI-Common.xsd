@@ -7,7 +7,7 @@
     <xsd:annotation>
         <xsd:documentation> 
 
-        Copyright 2012 MESA International 
+        Copyright 2018 MESA International 
         All Rights Reserved. http://www.mesa.org
 
         This MESA International work (including specifications, documents, 
@@ -162,9 +162,11 @@
           BHPBilliton   03 Jan 2017      B. Poole     Add LocationDescription to OpMaterialCapabilityType as per part 2 WD04_2016_comment_Poole_06
           BHPBilliton   03 Jan 2017      B. Poole     Add OperationalLocationID to OpMaterialCapabilityType as per part 2 WD04_2016_comment_Poole_06
           BHPBilliton   03 Jan 2017      B. Poole     Remove GeospatialDesignation from OpMaterialCapabilityType as per part 2 WD04_2016_comment_Poole_06
-		  MI			13 Jul 2017		 B. Pogson    Remove incorrect EquipmentLevel from OpPhysicalAssetRequirementType
-		  MI			13 Jul 2017		 B. Pogson    Remove incorrect EquipmentLevel from OpEquipmentRequirementType
-		  MI			13 Jul 2017      B. Pogson    Updating HierarchyScopeType to have many children HierarchyScope
+          MI			      13 Jul 2017      B. Pogson    Remove incorrect EquipmentLevel from OpPhysicalAssetRequirementType
+          MI			      13 Jul 2017      B. Pogson    Remove incorrect EquipmentLevel from OpEquipmentRequirementType
+          MI			      13 Jul 2017      B. Pogson    Updating HierarchyScopeType to have many children HierarchyScope
+          MI			      17 Oct 2017      B. Pogson    Remove deprecated location element
+          MI			      17 Oct 2017      B. Pogson    Remove deprecated product definition
 
         </xsd:documentation>
     </xsd:annotation>
@@ -579,17 +581,6 @@
         </xsd:simpleContent>
     </xsd:complexType>
     <!--     -->    
-    <!--  LocationType kept in V05 for use with the Production element definitions. Not used in other elements.  -->
-    <xsd:complexType name="LocationType">
-        <xsd:sequence>
-            <xsd:element name="EquipmentID" type="EquipmentIDType"/>
-            <xsd:element name="EquipmentElementLevel" type="EquipmentElementLevelType"/>
-            <xsd:element name="Location" type="LocationType" minOccurs="0"/>
-            <xsd:group ref="Extended:Location" minOccurs="0" maxOccurs="1"/>
-        </xsd:sequence>
-    </xsd:complexType>
-    <!--     -->    
-    <!--  LocationType kept in V05 for use with the Production element definitions. Not used in other elements.  -->
     <xsd:complexType name="ManufacturingBillIDType">
         <xsd:simpleContent>
             <xsd:restriction base="IdentifierType"/>
@@ -1221,20 +1212,7 @@
             <xsd:restriction base="IdentifierType"/>
         </xsd:simpleContent>
     </xsd:complexType>
-    <!--     -->    
-    <xsd:group name="ProductProductionRuleIDGroup">
-        <xsd:sequence>
-            <xsd:element name="ProductProductionRuleID" type="ProductProductionRuleIDType" minOccurs="0"/>
-            <xsd:element name="Version" type="VersionType" minOccurs="0"/>
-        </xsd:sequence>
-    </xsd:group>
-    <!--     -->    
-    <xsd:complexType name="ProductSegmentIDType">
-        <xsd:simpleContent>
-            <xsd:restriction base="IdentifierType"/>
-        </xsd:simpleContent>
-    </xsd:complexType>
-    <!--     -->    
+    <!--     -->       
     <xsd:complexType name="PropertyIDType">
         <xsd:simpleContent>
             <xsd:restriction base="IdentifierType"/>
@@ -1460,7 +1438,6 @@
             <xsd:element name="Dependency" type="DependencyType"/>
             <xsd:element name="TimingFactor" type="ValueType" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:choice minOccurs="0" maxOccurs="unbounded">
-                <xsd:element name="ProductSegmentID" type="ProductSegmentIDType"/>
                 <xsd:element name="ProcessSegmentID" type="ProcessSegmentIDType"/>
                 <xsd:element name="SegmentID" type="IdentifierType"/>
             </xsd:choice>

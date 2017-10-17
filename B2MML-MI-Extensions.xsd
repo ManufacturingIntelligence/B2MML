@@ -16,7 +16,7 @@
 <xsd:annotation> 
    <xsd:documentation>
 
-        Copyright 2012 MESA International 
+        Copyright 2018 MESA International 
 		All Rights Reserved. http://www.mesa.org
 
         This MESA International work (including specifications, documents, 
@@ -44,23 +44,24 @@
         Part 5: Business to Manufacturing Transactions
    </xsd:documentation>
 
-   <xsd:documentation> 
-  
-      Revision History
+   <xsd:documentation>
 
-        Ver           Date            Person          Note
-        ---           ----            ------          ----
-        BHPBilliton   22 Jun 2015     B. Poole        This is a BHPBilliton specific branch of V0600
-        MI            24 Oct 2016     B. Pogson       MI branch of B2MML
-        BHPBilliton   03 Jan 2017     B. Poole        Add ResourceRelationshipNetworkProperty as per part 4 WD04_2016_comment_Poole_04
-        BHPBilliton   03 Jan 2017     B. Poole        Add OperationalLocationClass as per part 2 WD04_2016_comment_Poole_06 and part 5 2016_comment _Poole_01
-        BHPBilliton   03 Jan 2017     B. Poole        Add OperationalLocation as per part 2 WD04_2016_comment_Poole_06 and part 5 2016_comment _Poole_01
-        BHPBilliton   03 Jan 2017     B. Poole        Add OperationalLocationProperty as per part 2 WD04_2016_comment_Poole_06 and part 5 2016_comment _Poole_01
-        BHPBilliton   03 Jan 2017     B. Poole        Add WorkCalendarDefinition as per Part 4 ed 2 WD03 and ISA-95.05 2016_comment_Poole_01
-        BHPBilliton   03 Jan 2017     B. Poole        Add WorkCalendarDefinitionProperty as per Part 4 ed 2 WD03 and ISA-95.05 2016_comment_Poole_01
-        BHPBilliton   03 Jan 2017     B. Poole        Add WorkCalendarDefinitionEntry as per Part 4 ed 2 WD03 and ISA-95.05 2016_comment_Poole_01
-        BHPBilliton   03 Jan 2017     B. Poole        Add WorkCalendarProperty as per Part 4 ed 2 WD03 and ISA-95.05 2016_comment_Poole_01
-	    MI			  14 Jul 2017     B. Pogson       Add HierarchyScopeInformation as per Part 5 draft
+     Revision History
+
+     Ver           Date            Person          Note
+     ---           ----            ------          ----
+     BHPBilliton   22 Jun 2015     B. Poole        This is a BHPBilliton specific branch of V0600
+     MI            24 Oct 2016     B. Pogson       MI branch of B2MML
+     BHPBilliton   03 Jan 2017     B. Poole        Add ResourceRelationshipNetworkProperty as per part 4 WD04_2016_comment_Poole_04
+     BHPBilliton   03 Jan 2017     B. Poole        Add OperationalLocationClass as per part 2 WD04_2016_comment_Poole_06 and part 5 2016_comment _Poole_01
+     BHPBilliton   03 Jan 2017     B. Poole        Add OperationalLocation as per part 2 WD04_2016_comment_Poole_06 and part 5 2016_comment _Poole_01
+     BHPBilliton   03 Jan 2017     B. Poole        Add OperationalLocationProperty as per part 2 WD04_2016_comment_Poole_06 and part 5 2016_comment _Poole_01
+     BHPBilliton   03 Jan 2017     B. Poole        Add WorkCalendarDefinition as per Part 4 ed 2 WD03 and ISA-95.05 2016_comment_Poole_01
+     BHPBilliton   03 Jan 2017     B. Poole        Add WorkCalendarDefinitionProperty as per Part 4 ed 2 WD03 and ISA-95.05 2016_comment_Poole_01
+     BHPBilliton   03 Jan 2017     B. Poole        Add WorkCalendarDefinitionEntry as per Part 4 ed 2 WD03 and ISA-95.05 2016_comment_Poole_01
+     BHPBilliton   03 Jan 2017     B. Poole        Add WorkCalendarProperty as per Part 4 ed 2 WD03 and ISA-95.05 2016_comment_Poole_01
+     MI			      14 Jul 2017     B. Pogson        Add HierarchyScopeInformation as per Part 5 draft
+     MI			      17 Oct 2017     B. Pogson        Remove deprecated product definition
 
    </xsd:documentation>
 </xsd:annotation>
@@ -362,7 +363,7 @@ of elements when used in an XML document.
 
 
 
-<!-- B2MML extension groups for OperationsDefinition and ProductDefinition schema-->
+<!-- B2MML extension groups for OperationsDefinition schema-->
 
         <xsd:group name = "OperationsDefinitionInformation">
                 <xsd:sequence>
@@ -371,18 +372,6 @@ of elements when used in an XML document.
         </xsd:group>
 
         <xsd:group name = "OperationsDefinition">
-                <xsd:sequence>
-                        <!-- add extended elements here -->
-                </xsd:sequence>
-        </xsd:group>
-
-        <xsd:group name = "ProductInformation">
-                <xsd:sequence>
-                        <!-- add extended elements here -->
-                </xsd:sequence>
-        </xsd:group>
-
-        <xsd:group name = "ProductDefinition">
                 <xsd:sequence>
                         <!-- add extended elements here -->
                 </xsd:sequence>
@@ -401,12 +390,6 @@ of elements when used in an XML document.
         </xsd:group>
 
         <xsd:group name = "ManufacturingBill">
-                <xsd:sequence>
-                        <!-- add extended elements here -->
-                </xsd:sequence>
-        </xsd:group>
-
-        <xsd:group name = "ProductSegment">
                 <xsd:sequence>
                         <!-- add extended elements here -->
                 </xsd:sequence>

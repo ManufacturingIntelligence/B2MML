@@ -13,7 +13,7 @@
 		This file simply includes all of the B2MML schemas into a single 
 		definition. This reduces the length of the generated .cs file name. 
    
-        Copyright 2012 MESA International 
+        Copyright 2018 MESA International 
 		All Rights Reserved. http://www.mesa.org
 
         This MESA International work (including specifications, documents, 
@@ -69,7 +69,6 @@
  <xsd:include schemaLocation ="B2MML-MI-OperationsCapability.xsd"/>
  <xsd:include schemaLocation ="B2MML-MI-OperationsPerformance.xsd"/>
  <xsd:include schemaLocation ="B2MML-MI-OperationsSchedule.xsd"/>
- <xsd:include schemaLocation ="B2MML-MI-ProductDefinition.xsd"/>
  <xsd:include schemaLocation ="B2MML-MI-ProductionCapability.xsd"/>
  <xsd:include schemaLocation ="B2MML-MI-ProductionPerformance.xsd"/>
  <xsd:include schemaLocation ="B2MML-MI-ProductionSchedule.xsd"/>

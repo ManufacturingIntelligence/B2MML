@@ -20,7 +20,6 @@
   <xsd:include schemaLocation="B2MML-MI-Personnel.xsd" />
   <xsd:include schemaLocation="B2MML-MI-PhysicalAsset.xsd" />
   <xsd:include schemaLocation="B2MML-MI-ProcessSegment.xsd" />
-  <xsd:include schemaLocation="B2MML-MI-ProductDefinition.xsd" />
   <xsd:include schemaLocation="B2MML-MI-ProductionCapability.xsd" />
   <xsd:include schemaLocation="B2MML-MI-ProductionPerformance.xsd" />
   <xsd:include schemaLocation="B2MML-MI-ProductionSchedule.xsd" />
@@ -42,7 +41,7 @@
       global set of Process Centric Notifys as the Process Centric Notify
       Proposal 0.1.
 
-      Copyright 2012 MESA International
+      Copyright 2018 MESA International
       All Rights Reserved. http://www.mesa.org
 
       This MESA International work (including specifications, documents,
@@ -79,6 +78,7 @@
       BHPBilliton   22 Jun 2015     B. Poole        This is a BHPBilliton specific branch of V0600
       BHPBilliton   21 Sep 2016     B. Poole        Inital draft of OperationsEvent schema
       MI            24 Oct 2016     B. Pogson       MI branch of B2MML
+      MI            17 Oct 2017     B. Pogson       Remove deprecated product definition
     </xsd:documentation>
   </xsd:annotation>
 
@@ -147,8 +147,6 @@
          <xsd:element name="PhysicalAssetCapabilityTestSpecification" type="PhysicalAssetCapabilityTestSpecificationType" />
          <xsd:element name="ProcessSegmentInformation" type="ProcessSegmentInformationType" />
          <xsd:element name="ProcessSegment" type="ProcessSegmentType" />
-         <xsd:element name="ProductInformation" type="ProductInformationType" />
-         <xsd:element name="ProductDefinition" type="ProductDefinitionType" />
          <xsd:element name="ProductionCapability" type="ProductionCapabilityType" />
          <xsd:element name="ProductionPerformance" type="ProductionPerformanceType" />
          <xsd:element name="ProductionResponse" type="ProductionResponseType" />

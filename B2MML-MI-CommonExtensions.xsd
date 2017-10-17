@@ -15,7 +15,7 @@
 <xsd:annotation> 
    <xsd:documentation>
 
-        Copyright 2012 MESA International 
+        Copyright 2018 MESA International 
 		All Rights Reserved. http://www.mesa.org
 
         This MESA International work (including specifications, documents, 
@@ -52,6 +52,7 @@
      BHPBilliton   22 Jun 2015     B. Poole        This is a BHPBilliton specific branch of V0600
      MI            24 Oct 2016     B. Pogson       MI branch of B2MML
      BHPBilliton   03 Jan 2017     B. Poole        Add OpOperationsSegmentCapability as per part 2 WD04_2016_comment_Poole_03
+     MI            16 Oct 2017     B. Pogson       Remove deprecated location element
 
 
    </xsd:documentation>
@@ -90,14 +91,6 @@ of elements when used in an XML document.
                         <!-- add extended elements here -->
                 </xsd:sequence>
         </xsd:group>
-
-<!-- Location kept in V05 for use with the Production element definitions. Not used in other elements.  -->
-        <xsd:group name = "Location">
-                <xsd:sequence>
-                        <!-- add extended elements here -->
-                </xsd:sequence>
-        </xsd:group>
-<!-- Location kept in V05 for use with the Production element definitions. Not used in other elements.  -->
 
         <xsd:group name = "Parameter">
                 <xsd:sequence>

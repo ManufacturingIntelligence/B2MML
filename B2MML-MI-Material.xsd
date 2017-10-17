@@ -20,7 +20,7 @@
 <xsd:annotation> 
    <xsd:documentation>
 
-        Copyright 2012 MESA International 
+        Copyright 2018 MESA International 
 		All Rights Reserved. http://www.mesa.org
 
         This MESA International work (including specifications, documents, 
@@ -85,6 +85,7 @@
      BHPBilliton   03 Jan 2017     B. Poole        Add PhysicalAssetLocationID to MaterialSubLotType as per part 2 WD04_2016_comment_Poole_06
      BHPBilliton   03 Jan 2017     B. Poole        Remove StorageLocation from MaterialSubLotType as per part 2 WD04_2016_comment_Poole_06
      BHPBilliton   03 Jan 2017     B. Poole        Remove GeospatialDesignation from MaterialSubLotType as per part 2 WD04_2016_comment_Poole_06
+     MI            16 Oct 2017     B. Pogson       Remove deprecated location element
 
    </xsd:documentation>
 </xsd:annotation>
@@ -167,9 +168,6 @@
                                                         minOccurs = "0" nillable="true"/>
       <xsd:element name = "Description"                 type = "DescriptionType"         
                                                         minOccurs = "0" maxOccurs = "unbounded"  nillable="true"/>
-      <!-- Location ELEMENT IS DEPRECATED and may be removed in a future release, use HierarchyScope instead -->
-      <xsd:element name = "Location"            type="LocationType" 
-	                                            minOccurs="0"/> 
       <xsd:element name = "HierarchyScope"              type = "HierarchyScopeType"    
                                                         minOccurs = "0"  nillable="true"/>
       <xsd:element name = "PublishedDate"               type = "PublishedDateType" 
@@ -193,9 +191,6 @@
       <xsd:element name = "ID"                          type = "IdentifierType"/>
       <xsd:element name = "Description"                 type = "DescriptionType" 
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
-      <!-- Location ELEMENT IS DEPRECATED and may be removed in a future release, use HierarchyScope instead -->
-      <xsd:element name = "Location"            type="LocationType" 
-	                                            minOccurs="0"/> 
       <xsd:element name = "HierarchyScope"              type = "HierarchyScopeType"   
                                                         minOccurs = "0" />
       <xsd:element name = "MaterialClassProperty"       type = "MaterialClassPropertyType"
@@ -236,9 +231,6 @@
       <xsd:element name = "ID"                          type = "IdentifierType"/>
       <xsd:element name = "Description"                 type = "DescriptionType"                
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
-      <!-- Location ELEMENT IS DEPRECATED and may be removed in a future release, use HierarchyScope instead -->
-      <xsd:element name = "Location"            type="LocationType" 
-	                                            minOccurs="0"/> 
       <xsd:element name = "HierarchyScope"              type = "HierarchyScopeType"   
                                                         minOccurs = "0" />
       <xsd:element name = "MaterialDefinitionProperty"  type = "MaterialDefinitionPropertyType" 
@@ -279,9 +271,6 @@
       <xsd:element name = "ID"                          type = "IdentifierType"/>
       <xsd:element name = "Description"                 type = "DescriptionType" 
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
-      <!-- Location ELEMENT IS DEPRECATED and may be removed in a future release, use HierarchyScope instead -->
-      <xsd:element name = "Location"            type="LocationType" 
-	                                            minOccurs="0"/> 
       <xsd:element name = "HierarchyScope"              type = "HierarchyScopeType"   
                                                         minOccurs = "0" />
       <xsd:element name = "MaterialDefinitionID"        type = "MaterialDefinitionIDType"       
@@ -341,9 +330,6 @@
       <xsd:element name = "ID"                          type = "IdentifierType"/>
       <xsd:element name = "Description"                 type = "DescriptionType" 
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
-      <!-- Location ELEMENT IS DEPRECATED and may be removed in a future release, use HierarchyScope instead -->
-      <xsd:element name = "Location"            type="LocationType" 
-	                                            minOccurs="0"/> 
       <xsd:element name = "HierarchyScope"              type = "HierarchyScopeType"   
                                                         minOccurs = "0" />
       <xsd:element name = "Status"                      type = "StatusType"     

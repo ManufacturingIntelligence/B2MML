@@ -20,7 +20,7 @@
 <xsd:annotation> 
    <xsd:documentation>
 
-        Copyright 2012 MESA International 
+        Copyright 2018 MESA International 
 		All Rights Reserved. http://www.mesa.org
 
         This MESA International work (including specifications, documents, 
@@ -56,6 +56,7 @@
         ---           ----            ------          ----
         BHPBilliton   22 Jun 2015     B. Poole        This is a BHPBilliton specific branch of V0600     
         MI            24 Oct 2016     B. Pogson       MI branch of B2MML
+        MI            17 Oct 2017     B. Pogson       Remove deprecated location element
 
    </xsd:documentation>
 </xsd:annotation>
@@ -77,9 +78,6 @@
                                                         minOccurs = "0"/>
       <xsd:element name = "Description"                 type = "DescriptionType"
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
-      <!-- Location ELEMENT IS DEPRECATED and may be removed in a future release, use HierarchyScope instead -->
-      <xsd:element name = "Location"                    type="LocationType" 
-	                                                    minOccurs="0"/> 
       <xsd:element name = "HierarchyScope"              type = "HierarchyScopeType"
                                                         minOccurs = "0"/>
       <xsd:element name = "PublishedDate"               type = "PublishedDateType"

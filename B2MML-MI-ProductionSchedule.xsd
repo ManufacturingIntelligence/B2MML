@@ -20,7 +20,7 @@
 <xsd:annotation> 
    <xsd:documentation>
 
-        Copyright 2012 MESA International 
+        Copyright 2018 MESA International 
 		All Rights Reserved. http://www.mesa.org
 
         This MESA International work (including specifications, documents, 
@@ -48,17 +48,20 @@
         Part 5: Business to Manufacturing Transactions. 
      </xsd:documentation>
 
-   <xsd:documentation> 
-  
-      Revision History
+   <xsd:documentation>
 
-        Ver           Date            Person          Note
-        ---           ----            ------          ----
-        BHPBilliton   22 Jun 2015     B. Poole        This is a BHPBilliton specific branch of V0600
-        BHPBilliton   2  Jul 2015     B. Poole        Add a OperationsSegmentID to the SegmentRequirementType (added for completeness but not part of WD01)
-        BHPBilliton   2  Jul 2015     B. Poole        Add a GeoSpatial element to the MaterialRequirementType (added for completeness but not part of WD01)
-        BHPBilliton   3  Jul 2015     B. Poole        Add a MaterialTestSpecificationID to the MaterialRequirementType (added for completeness but not part of WD01)                                  
-        MI            24 Oct 2016     B. Pogson       MI branch of B2MML
+     Revision History
+
+     Ver           Date            Person          Note
+     ---           ----            ------          ----
+     BHPBilliton   22 Jun 2015     B. Poole        This is a BHPBilliton specific branch of V0600
+     BHPBilliton   2  Jul 2015     B. Poole        Add a OperationsSegmentID to the SegmentRequirementType (added for completeness but not part of WD01)
+     BHPBilliton   2  Jul 2015     B. Poole        Add a GeoSpatial element to the MaterialRequirementType (added for completeness but not part of WD01)
+     BHPBilliton   3  Jul 2015     B. Poole        Add a MaterialTestSpecificationID to the MaterialRequirementType (added for completeness but not part of WD01)
+     MI            24 Oct 2016     B. Pogson       MI branch of B2MML
+     MI            17 Oct 2017     B. Pogson       Remove deprecated location element
+     MI            17 Oct 2017     B. Pogson       Remove deprecated product definition
+
 
    </xsd:documentation>
 </xsd:annotation>
@@ -88,9 +91,6 @@
                                                         minOccurs = "0"/>
       <xsd:element name = "Description"                 type = "DescriptionType"         
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
-      <xsd:element name = "Location"                    type = "LocationType"    
-                                                        minOccurs = "0"/>
-      <!-- HierarchyScope replaces Location, Location is retained for backward compatibility, but is depracated -->
       <xsd:element name = "HierarchyScope"              type = "HierarchyScopeType"
                                                         minOccurs = "0"/>
       <xsd:element name = "PublishedDate"               type = "PublishedDateType" 
@@ -115,11 +115,6 @@
                                                         minOccurs = "0"/>
       <xsd:element name = "Description"                 type = "DescriptionType" 
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
-      <xsd:group   ref  = "ProductProductionRuleIDGroup"
-                                                        minOccurs = "0" maxOccurs = "unbounded"/>
-      <xsd:element name = "Location"                    type = "LocationType"    
-                                                        minOccurs = "0"/>
-      <!-- HierarchyScope replaces Location, Location is retained for backward compatibility, but is depracated -->
       <xsd:element name = "HierarchyScope"              type = "HierarchyScopeType"
                                                         minOccurs = "0"/>
       <xsd:element name = "StartTime"                   type = "StartTimeType" 
@@ -142,14 +137,10 @@
     <xsd:sequence>
       <xsd:element name = "ID"                          type = "IdentifierType"
                                                         minOccurs = "0"/>
-      <xsd:element name = "ProductSegmentID"            type = "ProductSegmentIDType" minOccurs = "0"/>
       <xsd:element name = "ProcessSegmentID"            type = "ProcessSegmentIDType" minOccurs = "0"/>
       <xsd:element name = "OperationsSegmentID"         type = "OperationsSegmentIDType" minOccurs = "0"/>
       <xsd:element name = "Description"                 type = "DescriptionType" 
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
-      <xsd:element name = "Location"                    type = "LocationType"    
-                                                        minOccurs = "0"/>
-      <!-- HierarchyScope replaces Location, Location is retained for backward compatibility, but is depracated -->
       <xsd:element name = "HierarchyScope"              type = "HierarchyScopeType"
                                                         minOccurs = "0"/>
       <xsd:element name = "EarliestStartTime"           type = "EarliestStartTimeType"  
@@ -192,8 +183,6 @@
 
   <xsd:complexType name = "ProductionParameterType">
     <xsd:sequence>
-      <xsd:element name = "ProductSegmentID"            type = "ProductSegmentIDType"  
-                                                        minOccurs = "0" />
       <xsd:element name = "ProcessSegmentID"            type = "ProcessSegmentIDType"  
                                                         minOccurs = "0" />
       <xsd:element name = "Parameter"                   type = "ParameterType"          
@@ -211,9 +200,6 @@
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
       <xsd:element name = "Description"                 type = "DescriptionType" 
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
-      <xsd:element name = "Location"                    type = "LocationType"   
-                                                        minOccurs = "0" />
-      <!-- HierarchyScope replaces Location, Location is retained for backward compatibility, but is depracated -->
       <xsd:element name = "HierarchyScope"              type = "HierarchyScopeType"
                                                         minOccurs = "0"/>
       <xsd:element name = "Quantity"                    type = "QuantityValueType" 
@@ -251,9 +237,6 @@
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
       <xsd:element name = "Description"                 type = "DescriptionType" 
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
-      <xsd:element name = "Location"                    type = "LocationType"   
-                                                        minOccurs = "0" />
-      <!-- HierarchyScope replaces Location, Location is retained for backward compatibility, but is depracated -->
       <xsd:element name = "HierarchyScope"              type = "HierarchyScopeType"
                                                         minOccurs = "0"/>
       <xsd:element name = "Quantity"                    type = "QuantityValueType" 
@@ -295,9 +278,6 @@
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
       <xsd:element name = "Description"                 type = "DescriptionType" 
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
-      <xsd:element name = "Location"                    type = "LocationType"           
-                                                        minOccurs = "0"/>
-      <!-- HierarchyScope replaces Location, Location is retained for backward compatibility, but is depracated -->
       <xsd:element name = "HierarchyScope"              type = "HierarchyScopeType"
                                                         minOccurs = "0"/>
       <xsd:element name = "MaterialUse"                 type = "MaterialUseType" 
@@ -348,9 +328,6 @@
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
       <xsd:element name = "Description"                 type = "DescriptionType" 
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
-      <xsd:element name = "Location"                    type = "LocationType"   
-                                                        minOccurs = "0" />
-      <!-- HierarchyScope replaces Location, Location is retained for backward compatibility, but is depracated -->
       <xsd:element name = "HierarchyScope"              type = "HierarchyScopeType"
                                                         minOccurs = "0"/>
       <xsd:element name = "Quantity"                    type = "QuantityValueType" 
@@ -392,9 +369,6 @@
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
       <xsd:element name = "Description"                 type = "DescriptionType" 
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
-      <xsd:element name = "Location"                    type = "LocationType"           
-                                                        minOccurs = "0"/>
-      <!-- HierarchyScope replaces Location, Location is retained for backward compatibility, but is depracated -->
       <xsd:element name = "HierarchyScope"              type = "HierarchyScopeType"
                                                         minOccurs = "0"/>
       <xsd:element name = "Quantity"                    type = "QuantityValueType" 
@@ -437,9 +411,6 @@
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
       <xsd:element name = "Description"                 type = "DescriptionType"        
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
-      <xsd:element name = "Location"                    type = "LocationType"           
-                                                        minOccurs = "0"/>
-      <!-- HierarchyScope replaces Location, Location is retained for backward compatibility, but is depracated -->
       <xsd:element name = "HierarchyScope"              type = "HierarchyScopeType"
                                                         minOccurs = "0"/>
       <xsd:element name = "Quantity"                    type = "QuantityValueType" 
@@ -478,9 +449,6 @@
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
       <xsd:element name = "Description"                 type = "DescriptionType" 
                                                         minOccurs = "0"  maxOccurs = "unbounded"/>
-      <xsd:element name = "Location"                    type = "LocationType"           
-                                                        minOccurs = "0"/>
-      <!-- HierarchyScope replaces Location, Location is retained for backward compatibility, but is depracated -->
       <xsd:element name = "HierarchyScope"              type = "HierarchyScopeType"
                                                         minOccurs = "0"/>
       <xsd:element name = "Quantity"                    type = "QuantityValueType" 

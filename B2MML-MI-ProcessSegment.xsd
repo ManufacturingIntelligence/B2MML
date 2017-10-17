@@ -20,7 +20,7 @@
 <xsd:annotation> 
    <xsd:documentation>
 
-        Copyright 2012 MESA International All Rights Reserved. http://www.mesa.org
+        Copyright 2018 MESA International All Rights Reserved. http://www.mesa.org
 
         This MESA International work (including specifications, documents, 
         software, and related items) referred to as the Business To 
@@ -72,6 +72,7 @@
      BHPBilliton   04 May 2017     B. Poole        Add ID element to PhysicalAssetSegmentSpecificationType as per part 2 WD04_2016_comment _Poole_01
 	 BHPBilliton   04 May 2017     B. Poole        Add ID element to PersonnelSegmentSpecificationType as per part 2 WD04_2016_comment _Poole_01
 	 BHPBilliton   04 May 2017     B. Poole        Add ID element to EquipmentSegmentSpecificationType as per part 2 WD04_2016_comment _Poole_01
+     MI            16 Oct 2017     B. Pogson       Remove deprecated location element
 
    </xsd:documentation>
 </xsd:annotation>
@@ -111,9 +112,6 @@
                                                         minOccurs = "0"/>
       <xsd:element name = "Description"                 type = "DescriptionType"
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
-      <!-- Location ELEMENT IS DEPRECATED and may be removed in a future release, use HierarchyScope instead -->
-      <xsd:element name = "Location"                    type="LocationType" 
-	                                                    minOccurs="0"/> 
       <xsd:element name = "HierarchyScope"              type = "HierarchyScopeType"
                                                         minOccurs = "0"/>
       <xsd:element name = "PublishedDate"               type = "PublishedDateType"
@@ -131,8 +129,6 @@
       <xsd:element name = "Description"                 type = "DescriptionType" 
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
       <xsd:element name = "OperationsType"              type = "OperationsTypeType" minOccurs = "0"/>
-      <!-- Location ELEMENT IS DEPRECATED and may be removed in a future release, use HierarchyScope instead -->
-      <xsd:element name = "Location"                    type="LocationType"         minOccurs="0"/> 
       <xsd:element name = "HierarchyScope"              type = "HierarchyScopeType" minOccurs = "0"/>
       <xsd:element name = "PublishedDate"               type = "PublishedDateType"
                                                         minOccurs = "0"/>
