@@ -62,6 +62,7 @@
      BHPBilliton   03 Jan 2017     B. Poole        Add LocationDescription to PersonType as per part 2 WD04_2016_comment_Poole_06
      BHPBilliton   03 Jan 2017     B. Poole        Add OperationalLocationID to PersonType as per part 2 WD04_2016_comment_Poole_06
      MI            16 Oct 2017     B. Pogson       Remove deprecated location element
+     MI            17 Oct 2017     B. Pogson       Correcting language for spatial definition to match working draft
 
 
    </xsd:documentation>

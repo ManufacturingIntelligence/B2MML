@@ -735,7 +735,7 @@
             <xsd:element name="PhysicalAssetUse" type="PhysicalAssetUseType" minOccurs="0"/>
             <xsd:element name="Quantity" type="QuantityValueType" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:element name="HierarchyScope" type="HierarchyScopeType" minOccurs="0"/>
-            <xsd:element name="SpatialLocation" type="GeospatialDesignationType" minOccurs = "0" />
+            <xsd:element name="SpatialLocation" type="SpatialDefinitionType" minOccurs = "0" />
             <xsd:element name="LocationDescription"  type = "DescriptionType" minOccurs = "0" />
             <xsd:element name="OperationalLocationID" type="IdentifierType" minOccurs = "0" />
             <xsd:element name="PhysicalAssetRequirementProperty" type="OpPhysicalAssetRequirementPropertyType" minOccurs="0" maxOccurs="unbounded"/>
@@ -827,7 +827,7 @@
             <xsd:element name="EquipmentUse" type="EquipmentUseType" minOccurs="0"/>
             <xsd:element name="Quantity" type="QuantityValueType" minOccurs="0" maxOccurs="unbounded"/>
             <xsd:element name="HierarchyScope" type="HierarchyScopeType" minOccurs="0"/>
-            <xsd:element name="SpatialLocation" type="GeospatialDesignationType" minOccurs = "0" />
+            <xsd:element name="SpatialLocation" type="SpatialDefinitionType" minOccurs = "0" />
             <xsd:element name="LocationDescription"  type = "DescriptionType" minOccurs = "0" />
             <xsd:element name="OperationalLocationID" type="IdentifierType" minOccurs = "0" />
             <xsd:element name="EquipmentSpecificationProperty" type="OpEquipmentSpecificationPropertyType" minOccurs="0" maxOccurs="unbounded"/>

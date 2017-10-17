@@ -61,6 +61,7 @@
      MI            24 Oct 2016     B. Pogson       MI branch of B2MML
      MI            17 Oct 2017     B. Pogson       Remove deprecated location element
      MI            17 Oct 2017     B. Pogson       Remove deprecated product definition
+     MI            17 Oct 2017     B. Pogson       Correcting language for spatial definition to match working draft
 
 
    </xsd:documentation>
@@ -284,7 +285,7 @@
                                                         minOccurs = "0"/>
       <xsd:element name = "Quantity"                    type = "QuantityValueType" 
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
-      <xsd:element name = "GeospatialDesignation"        type = "GeospatialDesignationType" minOccurs = "0"/>
+      <xsd:element name = "SpatialLocation"             type = "SpatialDefinitionType" minOccurs = "0"/>
       <xsd:element name = "AssemblyRequirement"         type = "MaterialRequirementType"    
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
       <xsd:element name = "AssemblyType"                type = "AssemblyTypeType" 

@@ -70,9 +70,10 @@
      BHPBilliton   03 Jan 2017     B. Poole        Add AbstractProcessSegmentID element to the ProcessSegmentType as per part 2 WD04_2016_comment _Poole_05
      BHPBilliton   03 Jan 2017     B. Poole        Add DefinitionType element to the ProcessSegmentType as per part 2 WD04_2016_comment _Poole_05
      BHPBilliton   04 May 2017     B. Poole        Add ID element to PhysicalAssetSegmentSpecificationType as per part 2 WD04_2016_comment _Poole_01
-	 BHPBilliton   04 May 2017     B. Poole        Add ID element to PersonnelSegmentSpecificationType as per part 2 WD04_2016_comment _Poole_01
-	 BHPBilliton   04 May 2017     B. Poole        Add ID element to EquipmentSegmentSpecificationType as per part 2 WD04_2016_comment _Poole_01
+     BHPBilliton   04 May 2017     B. Poole        Add ID element to PersonnelSegmentSpecificationType as per part 2 WD04_2016_comment _Poole_01
+     BHPBilliton   04 May 2017     B. Poole        Add ID element to EquipmentSegmentSpecificationType as per part 2 WD04_2016_comment _Poole_01
      MI            16 Oct 2017     B. Pogson       Remove deprecated location element
+     MI            17 Oct 2017     B. Pogson       Correcting language for spatial definition to match working draft
 
    </xsd:documentation>
 </xsd:annotation>
@@ -210,7 +211,7 @@
       <xsd:element name = "EquipmentUse"                type = "CodeType" minOccurs = "0"/>
       <xsd:element name = "Quantity"                    type = "QuantityValueType" 
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
-      <xsd:element name = "GeospatialDesignation"        type = "GeospatialDesignationType"
+      <xsd:element name = "SpatialLocation"             type = "SpatialDefinitionType"
                                                         minOccurs = "0"/>
       <xsd:element name = "HierarchyScope" 				type="HierarchyScopeType" minOccurs="0"/>
       <xsd:element name = "EquipmentSegmentSpecificationProperty"       
@@ -250,7 +251,7 @@
       <xsd:element name = "PhysicalAssetUse"            type = "CodeType" minOccurs = "0"/>
       <xsd:element name = "Quantity"                    type = "QuantityValueType" 
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
-      <xsd:element name = "GeospatialDesignation"        type = "GeospatialDesignationType"
+      <xsd:element name = "SpatialLocation"             type = "SpatialDefinitionType"
                                                         minOccurs = "0"/>
       <xsd:element name = "PhysicalAssetSegmentSpecificationProperty"       
                                                         type = "PhysicalAssetSegmentSpecificationPropertyType" 
@@ -295,7 +296,7 @@
                                                         minOccurs = "0"/>
       <xsd:element name = "Quantity"                    type = "QuantityValueType" 
                                                         minOccurs = "0" maxOccurs = "unbounded"/>
-      <xsd:element name = "GeospatialDesignation"        type = "GeospatialDesignationType"
+      <xsd:element name = "SpatialLocation"             type = "SpatialDefinitionType"
                                                         minOccurs = "0"/>
       <xsd:element name = "HierarchyScope" 				type="HierarchyScopeType" minOccurs="0"/>
       <xsd:element name = "MaterialSegmentSpecificationProperty"        
